@@ -19,7 +19,7 @@ Add files / directories / platforms<br/>
 (Creates also all used plugins in folder /plugin)<br/>
 5. Create platform cordova platform add android@5.1.1<br/>
 
-Project tool versions:
-cordova CLI: vesion 6.1.1
-Node.js: 4.2.1
+Project tool versions:<br/>
+cordova CLI: vesion 6.1.1<br/>
+Node.js: 4.2.1<br/><br/>
 
