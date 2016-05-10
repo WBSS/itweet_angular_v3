@@ -17,7 +17,7 @@ Add files / directories / platforms<br/>
 3. Do bower install<br/>
 4. Create platform cordova platform add ios@3.9.2<br/>
 (Creates also all used plugins in folder /plugin)<br/>
-5. Create platform cordova platform add android@5.1.1<br/>v
+5. Create platform cordova platform add android@5.1.1<br/>
 
 Project tool versions:
 cordova CLI: vesion 6.1.1
