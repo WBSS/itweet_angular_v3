@@ -1,0 +1,61 @@
+<div class="map_img_container">
+    <ui-gmap-google-map
+            center="gmap.center"
+            zoom="gmap.zoom"
+            options="gmap.options"
+            events="gmap.events"
+            pan="true"
+            control="gmap.control"
+            refresh="gmap.refresh">
+        <ui-gmap-search-box
+                template="searchbox.template"
+                events="searchbox.events"
+                options="searchbox.options">
+        </ui-gmap-search-box>
+        <ui-gmap-marker
+                idKey='"position"'
+                coords='position.coords'
+                options="markeroptions">
+        </ui-gmap-marker>
+        <ui-gmap-marker
+                ng-if="currentTweetPos"
+                idKey='"currentTweet"'
+                coords='currentTweetPos'>
+        </ui-gmap-marker>
+        <ui-gmap-circle
+                center="position.coords"
+                radius="position.coords.accuracy"
+                stroke="circleoptions.stroke"
+                fill="circleoptions.fill"
+                clickable="false">
+        </ui-gmap-circle>
+    </ui-gmap-google-map>
+    <div class="map_img_crosshair"></div>
+</div>
+<div class="map-top animate-hide" ng-hide="menu_parameters.fullscreen">
+    <ng-include src="'app/menu.html'"></ng-include>
+    <!--<div layout="row" layout-align="space-around center" class="map-toolbar md-primary" layout-fill style="{{brand.getSubheaderStyle()}}">
+        <md-button class="md-primary md-raised" ng-click="vm.toggleMap()"><span translate>location_button_map_style</span></md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.zoomPlus()"> + </md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.zoomMinus()"> - </md-button>
+        <md-button class="md-primary md-raised" ng-click="vm.myPosition()"><span translate>location_button_my_position</span></md-button>
+    </div>-->
+    <div class="map_button_container"><!--
+        <md-button class="map_button md-icon-button md-primary" ng-click="vm.zoomPlus()" aria-label="Settings" style="left:10px;top:10px;">
+            <ng-md-icon icon='add_circle_outline' style="fill: #666666"></ng-md-icon>
+        </md-button>
+        <md-button class="map_button md-icon-button md-primary" ng-click="vm.zoomMinus()" aria-label="Settings" style="left:10px;top:68px;">
+            <ng-md-icon icon='remove_circle_outline' style="fill: #666666"></ng-md-icon>
+        </md-button>-->
+        <md-button class="map_button md-icon-button md-primary" ng-click="vm.myPosition()" aria-label="Settings" style="right:10px;top:10px;">
+            <ng-md-icon icon='my_location' style="fill: #666666"></ng-md-icon>
+        </md-button>
+        <md-button class="map_button md-icon-button md-primary" ng-click="vm.toggleMap()" aria-label="Settings" style="right:68px;top:10px;">
+            <ng-md-icon icon='layers' style="fill: #666666"></ng-md-icon>
+        </md-button>
+    </div>
+</div>
+<div class="bottom-navigation-box animate-hide" ng-hide="menu_parameters.fullscreen" style="{{brand.getFooterStyle()}}">
+    <md-button class="md-primary footer-button" ng-click="navigationService.next()" style="{{brand.getFooterStyle()}}">{{isWatchPosNew}}&nbsp;&nbsp;{{errorGeoLocation}}&nbsp;&nbsp;<span translate>location_button_next</span>&nbsp;&nbsp;{{position.coords.latitude}}&nbsp;|&nbsp;{{position.coords.longitude}}</md-button>
+    <!-- ng-if="vm.$previousState.get().state.name != 'map.overview'"-->
+</div>

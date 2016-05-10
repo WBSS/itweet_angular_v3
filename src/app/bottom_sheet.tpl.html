@@ -1,0 +1,11 @@
+<md-bottom-sheet class="md-list md-has-header">
+  <md-subheader><span>{{ data.title | translate}}</span></md-subheader>
+  <md-list>
+    <md-item ng-repeat="item in data.entries">
+      <md-button ng-click="dmv.listItemClick($index)" class="footer-button">
+        <!--md-icon md-svg-src="{{item.icon}}"></md-icon-->
+        <span class="md-inline-list-icon-label">{{ item.name | translate}}</span>
+      </md-button>
+    </md-item>
+  </md-list>
+</md-bottom-sheet>

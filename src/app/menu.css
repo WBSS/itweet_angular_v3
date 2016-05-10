@@ -1,0 +1,8 @@
+.sm-subheader{
+	display: flex;
+}
+.md-button.menu-button{
+	border-radius: 50%;
+	width: 56px;
+	height: 56px;
+}

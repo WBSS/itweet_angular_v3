@@ -1,0 +1,21 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader
+		style="{{subheaderStyle}}"
+		class="md-primary md-no-sticky"><span translate>item_saved_subtitle</span>
+</md-progress-linear>
+</md-subheader>
+	<md-list>
+	<md-list-item
+		ng-repeat="tweet in storageService.allTweets | toArray | orderBy: '-dateAdded'"
+		ng-click="vm.itemClicked(tweet)" class="md-3-line sm-list-item" layout="center center">
+			<div class="md-list-item-text sm-list-item-text">
+	            <h3 class="sm-list-item-text-entry">{{tweet.location}}</h3>
+	            <h4>{{categoryService.getCategoryName(tweet)}}</h4>
+	            <h4>{{tweet.dateAdded | date:'dd.MM.yyyy HH:mm'}}</h4>
+	        </div>
+	        <ng-md-icon icon='delete' style="fill: #B8B8B8" options='{"duration": 375}' ng-click="vm.itemDeleteClicked(tweet)" aria-label="Delete Item" class="md-secondary md-hue-3"></ng-md-icon>
+    	<md-divider></md-divider>
+	</md-list-item>
+	</md-list>
+</md-content>

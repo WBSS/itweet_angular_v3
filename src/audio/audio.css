@@ -1,0 +1,9 @@
+.audiobutton {
+    height: 44px;
+    flex-grow: 1;
+    margin: 5px!important;
+}
+.audioIcon{
+    height: 140px;
+    border-radius: 50%;
+}

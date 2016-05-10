@@ -1,0 +1,12 @@
+
+.myImg{
+    width: 100%;
+    height: auto;
+}
+.md-button.md-icon-button.photoButton {
+    height: auto;
+    width: 100%;
+    max-width: 100px;
+    border-radius: 0;
+    padding: 5px;
+}

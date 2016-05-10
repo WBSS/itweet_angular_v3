@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html data-framework="typescript">
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' cdvfile://* data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self' cdvfile://*  http://localhost:* https://maps.gstatic.com https://maps.googleapis.com 'unsafe-inline' 'unsafe-eval'">
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/dist.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <link rel="stylesheet" type="text/css" href="css/platform.css" />
+    <style>
+        [ng-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<script type="text/javascript" src="cordova.js"></script>
+<script src="js/labjs.js"></script>
+<script>
+    (function() {
+        var loaded = false;
+        document.itweetURL = '<%-itweetURL%>';
+        document.appID= "<%-appID%>";
+        function runApp() {
+            angular.element(document).ready(function() {
+                angular.bootstrap(document, ['itweet']);
+            });
+        }
+        function load(lang) {
+            if(loaded){
+                return;
+            }
+            loaded = true;
+            document.lang = "en";
+            navigator.language = lang;
+            var langscript = "js/en.js";
+            if (lang.indexOf('de') == 0) {
+                langscript = "js/de.js";
+                document.lang = "de";
+            } else if (lang.indexOf('it') == 0) {
+                langscript = "js/it.js";
+                document.lang = "it";
+            } else if (lang.indexOf('fr') == 0) {
+                langscript = "js/fr.js";
+                document.lang = "fr";
+            }
+            $LAB
+             .script("<%-js_dist%>").wait()
+             .script(langscript).wait()
+             .script("js/app.js").wait(function() {setTimeout(runApp, 0);})
+        }
+        var app = document.URL.indexOf('http://') === -1 && document.URL.indexOf('https://') === -1;
+        document.addEventListener("deviceready", onDeviceReady, false);
+        document.langOkay = function(lang) {
+            load(lang.value);
+        };
+        document.langError = function() {
+            load(navigator.language);
+        };
+        function onDeviceReady() {
+            if (navigator.globalization) {
+                navigator.globalization.getLocaleName(document.langOkay, document.langError);
+            } else {
+                document.langError();
+            }
+
+        }
+        if (!app) {
+            onDeviceReady();
+        }
+    })();
+</script>
+<body layout="column">
+<!-- maybe do this: http://nomis.dk/angular-material-100-height-fix/ -->
+<div layout="column" flex ui-view layout-fill></div>
+</body>
+</html>

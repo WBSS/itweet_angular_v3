@@ -1,0 +1,423 @@
+﻿msgid ""
+msgstr ""
+"Language: fr\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid ""
+msgstr ""
+
+msgid "general_warning_title"
+msgstr "Avertissement"
+
+msgid "general_info_created_message"
+msgstr "Réussite de l'envoi"
+
+msgid "general_info_created_failed_message"
+msgstr "Envoi a échoué"
+
+msgid "general_button_okay"
+msgstr "Okay"
+
+msgid "general_button_next"
+msgstr "Prochaine"
+
+msgid "option_button_no"
+msgstr "Non"
+
+msgid "option_button_yes"
+msgstr "Oui"
+
+msgid "upload_status_title"
+msgstr "Télécharger"
+
+msgid "upload_status_tweet"
+msgstr "Information"
+
+msgid "upload_status_image"
+msgstr "Image"
+
+msgid "upload_status_speech"
+msgstr "Langue"
+
+msgid "upload_cancel_title"
+msgstr "Annuler téléchargement"
+
+msgid "upload_cancel_msg"
+msgstr "Voulez-vous vraiment annuler le téléchargement?"
+
+msgid "personel_title"
+msgstr "Mes données"
+
+msgid "personel_text"
+msgstr "Vous pouvez les modifier à tout moment."
+
+msgid "personel_subtitle"
+msgstr "Saisir"
+
+msgid "personel_placeholder_email"
+msgstr "E-mail"
+
+msgid "personel_placeholder_name"
+msgstr "Prénom nom (optionnel)"
+
+msgid "personel_placeholder_phone"
+msgstr "Téléphone (optionnel)"
+
+msgid "personel_button_save"
+msgstr "Sauvegarder"
+
+msgid "personel_button_cancel"
+msgstr "Annuler"
+
+msgid "personel_error_email"
+msgstr "Adresse e-mail invalide"
+
+msgid "location_title"
+msgstr "Choisir lieu"
+
+msgid "location_button_next"
+msgstr "Prochaine"
+
+msgid "location_button_my_position"
+msgstr "Position"
+
+msgid "location_button_map_style"
+msgstr "Carte"
+
+msgid "category_title"
+msgstr "Catégorie"
+
+msgid "category_subtitle"
+msgstr "Sélectionner"
+
+msgid "message_title"
+msgstr "Texte"
+
+msgid "message_subtitle"
+msgstr "Écriture "
+
+msgid "message_button_skip"
+msgstr "Next sans texte"
+
+msgid "message_chars"
+msgstr "{0} Caractères restants"
+
+msgid "photo_title"
+msgstr "Photos"
+
+msgid "photo_subtitle"
+msgstr "Créer ou choisir à partir de l'album"
+
+msgid "photo_action_sheet_title"
+msgstr "Sélectionner l'origine"
+
+msgid "photo_action_sheet_button_1"
+msgstr "Album"
+
+msgid "photo_action_sheet_button_2"
+msgstr "Caméra"
+
+msgid "photo_action_sheet_button_delete"
+msgstr "Supprimer"
+
+msgid "photo_action_sheet_button_cancel"
+msgstr "Annuler"
+
+msgid "photo_button_skip"
+msgstr "Next sans photo"
+
+msgid "speech_title"
+msgstr "Langue"
+
+msgid "speech_subtitle"
+msgstr "Enregistrer"
+
+msgid "speech_button_skip"
+msgstr "Next  sans enregistrer"
+
+msgid "speech_button_start"
+msgstr "Commencer l'enregistrement"
+
+msgid "speech_button_continue"
+msgstr "Nouvel enregistrement"
+
+msgid "speech_button_stop"
+msgstr "Stop"
+
+msgid "speech_button_delete"
+msgstr "Effacer"
+
+msgid "speech_button_listen"
+msgstr "Lecture"
+
+msgid "speech_label_recording"
+msgstr "Parler…"
+
+msgid "speech_label_playing"
+msgstr "Lecture…"
+
+msgid "speech_label_timer"
+msgstr "{0}/{1}s"
+
+msgid "speech_alert_delete"
+msgstr "Voulez-vous vraiment effacer l'enregistrement?"
+
+msgid "speech_alert_overwrite"
+msgstr "Souhaitez-vous de remplacer l'enregistrement?"
+
+msgid "speech_label_meter"
+msgstr "Niveau"
+
+msgid "overview_button_send"
+msgstr "Envoyer"
+
+msgid "overview_button_update"
+msgstr "Soumettre les modifications"
+
+msgid "overview_button_cancel"
+msgstr "Rejeter"
+
+msgid "overview_button_new"
+msgstr "Nouveau message"
+
+msgid "overview_button_store"
+msgstr "Sauver"
+
+msgid "overview_button_save"
+msgstr "Sauver les modifications"
+
+msgid "overview_title"
+msgstr "Résumé"
+
+msgid "overview_subtitle"
+msgstr "Rédaction"
+
+msgid "overview_cancel_option_title"
+msgstr "Message non envoyé!"
+
+msgid "overview_cancel_option_message"
+msgstr "Rejeter le message actuel?"
+
+msgid "overview_label_text_placeholder"
+msgstr "Vous n'avez pas encore entré un texte."
+
+msgid "overview_button_delete"
+msgstr "Envoyer Annuler"
+
+msgid "overview_delete_option_title"
+msgstr "Avertissement"
+
+msgid "overview_delete_option_message"
+msgstr "Voulez-vous faire le vraiment annuler l'envoi du message?"
+
+msgid "delete_overview_title"
+msgstr "Effacer"
+
+msgid "delete_failed_message"
+msgstr "Effacer le messaget a échoué"
+
+msgid "delete_send_succesfull"
+msgstr "Message a été effacé avec succès"
+
+msgid "ping_failed_message"
+msgstr "Serveur non accessible"
+
+msgid "settings_title"
+msgstr "Réglages"
+
+msgid "settings_title_mytweets"
+msgstr "Mes messages"
+
+msgid "settings_title_profil"
+msgstr "Mes données"
+
+msgid "settings_title_help"
+msgstr "Aide"
+
+msgid "settings_title_demands"
+msgstr "Conditions"
+
+msgid "help_title"
+msgstr "Aide"
+
+msgid "help_subtitle"
+msgstr "-"
+
+msgid "help_text_title"
+msgstr "-"
+
+msgid "help_text"
+msgstr "-"
+
+msgid "disclaimer_title"
+msgstr "Conditions"
+
+msgid "disclaimer_subtitle"
+msgstr "Disclaimer"
+
+msgid "upload_status_connect"
+msgstr "Connecter..."
+
+msgid "general_info_high_ping_title"
+msgstr "Mauvaise connexion"
+
+msgid "general_info_high_ping_message"
+msgstr "Votre message n'a pas été livré. Veuillez réessayer plus tard."
+
+msgid "general_info_send_canceled"
+msgstr "La requête a été interrompue"
+
+msgid "general_button_back"
+msgstr "Retour"
+
+msgid "delete_status_title"
+msgstr "Effacer"
+
+msgid "delete_status_message"
+msgstr "Message envoyé est supprimé"
+
+msgid "delete_status_success"
+msgstr "Effacé avec succès"
+
+msgid "delete_status_failed"
+msgstr "Effacer échoué"
+
+msgid "disclaimer_text_title"
+msgstr "Conditions générales pour l'utilisation du site Internet de iTweet"
+
+msgid "disclaimer_text"
+msgstr "Droits sur les contenus\n\nLes moyens d'information utilisés sur Internet (tels que textes, illustrations, logos, photos, vidéos, audio, graphiques et la mise en page) sont protégés par le droit de la propriété intellectuelle et, en particulier, par le droit d'auteur, dès lors qu'ils ne sont pas expressément exclus de cette protection par des normes juridiques correspondantes (comme p. ex. les textes de loi et les jugements).\n\nLes informations mises à disposition par la page d'Internet iTweet ne peuvent donc être que consultées, téléchargées ou imprimées pour un usage propre, aucun autre droit concernant les contenus n'étant cependant transféré.\n\nToute autre utilisation des contenus du site www.itweet.ch/eu et, en particulier, l'inclusion (via cadres ou liens inline) dans d'autres sites, n'est autorisée qu'avec l'accord des titulaires des droits.\n\n\nObligations de l'utilisateur\n\nL'utilisateur n'a pas le droit de poster ou effectuer le contenu suivant sur www.itweet.ch/eu:\n        \n§ Communications commerciales non autorisée par iTweet (en particulier, spam)\n§ Des systèmes pyramidaux et d’autres distributions illégales\n§ Virus\n§ Contenus qui contiennent des discours de haine, qui sont menaçants ou pornographiques, incitant à la violence ou contenant de la nudité ainsi que de la violence\n§ Contenus liés aux boissons alcoolisées ou à des sites de rencontres pour adultes ou à d'autres contenus pour adultes inappropriés pour les mineurs (y compris des annonces publicitaires) sans restriction d'accès liée à l'âge.\n§ Activités illégales, illicites, malveillantes ou discriminatoires\n§ Activités qui peuvent empêcher le bon fonctionnement ou l'apparence de www.itweet.ch/eu\n§ Contenus et activités qui pourraient enfreindre les droits d'autrui\n        \nEn cas de violation, iTweet est en droit d’exclure l'utilisateur fautif de l'utilisation de www.itweet.ch/eu sans avertissement préalable."
+
+msgid "general_info_no_connection_title"
+msgstr "Problème de connexion"
+
+msgid "general_info_no_connection_text"
+msgstr "Aucune connexion avec iTweet n'a pu être établie. Veuillez réessayer plus tard."
+
+msgid ""
+msgstr ""
+
+msgid "login_text"
+msgstr "Entrez votre nom d'utilisateur et mot de passe. Ces données ne sont pas stockées sur le smartphone."
+
+msgid "login_button_logout"
+msgstr "Déconnecter"
+
+msgid "login_button_login"
+msgstr "Connexion"
+
+msgid "login_last_login_text"
+msgstr "Dernière connexion"
+
+msgid "login_title_logedin"
+msgstr "Login"
+
+msgid "login_title_login"
+msgstr "Login"
+
+msgid "login_subtitle_login"
+msgstr "Capture"
+
+msgid "login_subtitle_logedin"
+msgstr "Inscrit"
+
+msgid "login_status_title"
+msgstr "Login"
+
+msgid "login_status_success"
+msgstr "Inscription succès"
+
+msgid "login_status_fail"
+msgstr "Inscription manqué"
+
+msgid "login_loged_in_as"
+msgstr "Connecté en tant que:"
+
+msgid "login_placeholder_password"
+msgstr "Mot de passe"
+
+msgid "login_placeholder_name"
+msgstr "Nom d'utilisateur"
+
+msgid "login_title_create_not_allowed"
+msgstr "Aucune autorisation"
+
+msgid "login_message_create_not_allowed"
+msgstr "Vous n'êtes pas autorisé à créer des messages."
+
+msgid ""
+msgstr ""
+
+msgid "context_title"
+msgstr "Sujet"
+
+msgid "context_subtitle"
+msgstr "Créer un message à ce sujet"
+
+msgid ""
+msgstr ""
+
+msgid "settings_title_login"
+msgstr "Login"
+
+msgid "settings_title_my_items"
+msgstr "Messages pas envoyés"
+
+msgid "settings_title_clear_cache"
+msgstr "Vider le App cache"
+
+msgid "error_html5_container_loading_title"
+msgstr "Liste des messages"
+
+msgid "settings_message_cache_title"
+msgstr "App cachette"
+
+msgid "settings_message_cache_message"
+msgstr "Le cache de App a été effacée."
+
+msgid "settings_message_cache_question"
+msgstr "Voulez-vous vraiment vider le cache de App?"
+
+msgid ""
+msgstr ""
+
+msgid ""
+msgstr ""
+
+msgid "item_save_title"
+msgstr "Mes messages"
+
+msgid "item_save_text"
+msgstr "Le message a bien été enregistré."
+
+msgid "item_saved_date"
+msgstr "Établi"
+
+msgid "item_saved_subtitle"
+msgstr "Messages pas envoyés"
+
+msgid ""
+msgstr ""
+
+msgid "personel_error_name"
+msgstr "Votre nom doit être d'au moins 3 caractères"
+
+msgid "input_error_mandatory"
+msgstr "Champ obligatoire"
+
+msgid "input_error_too_long"
+msgstr "Entrée est trop longue"
+
+msgid ""
+msgstr ""
+
+msgid "item_delete_title"
+msgstr "Delete"
+
+msgid "item_delete_text"
+msgstr "Delete saved message."
+
+msgid "error_html5_container_timeout"
+msgstr "Timeout"
+

@@ -1,0 +1,17 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+<md-list>
+<md-item ng-repeat="item in ::items track by item.title">
+	<md-item-content>
+		<md-button layout-fill role="button" tabIndex="0" ng-click="vm.itemClicked(item.state)" layout="start center">
+	            {{::item.title}}
+         </md-button>
+	</md-item-content>
+    <md-divider></md-divider>
+</md-item>
+
+</md-list>
+</md-content>
+<footer class="md-padding">
+	<span>Version: {{version}}</span>
+</footer>

@@ -1,0 +1,19 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<section>
+		<md-subheader class="md-primary md-no-sticky" style="{{subheaderStyle}}">
+			<span ng-bind="::networkServiceHolder['primary'].getResponseData().displayName"></span>
+		</md-subheader>
+		<md-list layout="column">
+			<md-item ng-repeat="category in networkServiceHolder['primary'].getResponseData().categories track by category.id">
+				<md-item-content>
+					<md-button layout-fill ng-class="{active : storageService.currentTweet.refItemCategoryId == category.id }" role="button" tabIndex="0" ng-click="vm.selectCategory(category)" md-highlight="vm.isCategorySelected(category)"
+					layout="start center">
+						{{::category.name}}
+					</md-button>
+				</md-item-content>
+				<md-divider></md-divider>
+			</md-item>
+		</md-list>
+	</section>
+</md-content>

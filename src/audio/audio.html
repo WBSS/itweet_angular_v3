@@ -1,0 +1,49 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex class="audio">
+	<md-subheader class="md-primary" style="{{subheaderStyle}}">
+		<span translate>speech_subtitle</span>
+	</md-subheader>
+	<div layout="row" layout-align="space-around center" style="margin:20px;">
+		<img class="audioIcon" ng-src="{{recorderService.mediaState == recorderService.MediaStates.start ? 'img/microphone_cleargrey_big.png' : 'img/microphone_darkgrey_big.png'}}"
+		/>
+	</div>
+
+	<div layout="row" layout-align="space-around center">
+
+		<div fill-layout layout-align="space-around center">
+			<span> {{recorderService.mediaTime }} / {{recorderService.mediaTimeMax | number:0}}</span>
+		</div>
+	</div>
+
+	<div layout="row" layout-align="space-around center" fill-layout>
+		<md-button class="md-raised audiobutton" ng-click="vm.recordToggle()" ng-disabled="recorderService.mediaState != recorderService.MediaStates.start
+					&& recorderService.mediaState != recorderService.MediaStates.recording">
+			<span ng-hide="recorderService.mediaState == recorderService.MediaStates.recording" translate>
+				speech_button_start
+			</span>
+			<span ng-show="recorderService.mediaState == recorderService.MediaStates.recording" translate>
+				speech_button_stop
+			</span>
+		</md-button>
+	</div>
+
+	<div layout="row" layout-align="space-around center">
+		<md-button class="md-raised audiobutton" ng-disabled="recorderService.mediaState != recorderService.MediaStates.recorded && recorderService.mediaState != recorderService.MediaStates.playback"
+		ng-click="vm.replayToggle()">
+			<span ng-hide="recorderService.mediaState == recorderService.MediaStates.playback" translate>speech_button_listen</span>
+			<span ng-show="recorderService.mediaState == recorderService.MediaStates.playback" translate>speech_button_stop</span>
+		</md-button>
+
+		<md-button class="md-raised audiobutton" ng-click="vm.deleteRecording()" ng-disabled="recorderService.mediaState != recorderService.MediaStates.recorded">
+			<span translate>speech_button_delete</span>
+		</md-button>
+	</div>
+	</div>
+</md-content>
+
+<footer>
+	<md-button class="md-primary footer-button" ng-click="navigationService.next()" style="{{footerStyle}}">
+		<span ng-show="recorderService.mediaState == recorderService.MediaStates.start" translate>speech_button_skip</span>
+		<span ng-hide="recorderService.mediaState == recorderService.MediaStates.start" translate>location_button_next</span>
+	</md-button>
+</footer>

@@ -1,0 +1,25 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<section>
+		<md-subheader class="md-primary md-no-sticky" style="{{::subheaderStyle}}">
+			<span ng-bind="::vm.displayName"></span>
+		</md-subheader>
+		<md-list layout="column">
+			<md-item ng-repeat="category in ::vm.categories track by category.id">
+				<md-item-content>
+					<md-button layout-fill role="button" ng-class="{active : storageService.currentTweet.itemQs.refItemCategoryQsId == category.id }"
+					tabIndex="0" ng-click="vm.selectCategory(category)" md-highlight="vm.isCategorySelected(category)" layout="start center">
+						{{::category.name}}
+					</md-button>
+				</md-item-content>
+				<md-divider></md-divider>
+			</md-item>
+		</md-list>
+	</section>
+</md-content>
+
+<footer>
+	<md-button class="md-primary footer-button" ng-click="navigationService.next(false,{skip:true})" style="{{::footerStyle}}">
+		<span translate>multicategory_button_skip</span>
+	</md-button>
+</footer>

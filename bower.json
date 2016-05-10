@@ -1,0 +1,42 @@
+{
+  "name": "itweet_angular_wbss",
+  "version": "1.1.0",
+  "description": "itweet platform",
+  "main": "",
+  "authors": [
+    "Urs Kehrli ukehrli@wbss.ch"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "iTweet"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "homepage": "http:www.wbss.ch",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-cache": "~4.6.0",
+    "angular-gettext": "~2.2.1",
+    "angular-google-maps": "~2.3.2",
+    "angular-i18n": "~1.3.21",
+    "angular-material": "0.10.1",
+    "angular-material-icons": "~0.7.0",
+    "angular-messages": "~1.5.5",
+    "angular-toArrayFilter": "~1.0.1",
+    "angular-ui-router": "0.2.15",
+    "labjs": "~2.0.3",
+    "roboto": "https://github.com/sopro-components/roboto.git#0.1.0",
+    "ngCordova": "~0.1.26-alpha",
+    "ngstorage": "~0.3.10",
+    "rusha": "~0.7.7",
+    "ui-router-extras": "~0.1.2",
+    "angular": "1.4.10"
+  }
+}

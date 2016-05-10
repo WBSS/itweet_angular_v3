@@ -1,0 +1,34 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+    <span style="colcor: #ffffff">Registrieren</span>
+</md-subheader>
+<md-content class="md-padding" flex>
+      <form name="inputForm" ng-submit="vm.saveRegister()">
+         <md-input-container>
+          <label translate>personel_placeholder_email</label>
+              <input md-maxlength="128" required name="iemail" ng-model="vm.user.email" type="email">
+              <div ng-messages="inputForm.iemail.$error">
+                <div ng-message="required"><span translate>input_error_mandatory</span></div>
+                <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+              </div>
+        </md-input-container>
+        <md-input-container>
+          <label translate>personel_placeholder_name</label>
+              <input ng-minlength="3" md-maxlength="64" name="iname" ng-model="vm.user.name" type="text">
+              <div ng-messages="inputForm.iname.$error">
+                <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+                <div ng-message="md-minlength"><span translate>This does not work</span></div>
+                <div ng-message="minlength"><span translate>personel_error_name</span></div>
+              </div>
+        </md-input-container>
+        <md-input-container>
+          <label translate>personel_placeholder_phone</label>
+              <input md-maxlength="24" name="iphone" ng-model="vm.user.phone" type="phone">
+              <div ng-messages="inputForm.iphone.$error">
+                <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+              </div>
+        </md-input-container>
+        <md-button type="submit" class="md-primary footer-button" style="{{footerStyle}}" ng-click="vm.saveRegister()"><span translate>personel_button_save</span></md-button>
+        <md-button class="md-primary footer-button" style="{{::footerStyle}}" ng-click="navigationService.previous()" ng-hide="storageService.initial"><span translate>personel_button_cancel</span></md-button>
+      </form>
+</md-content>

@@ -1,0 +1,23 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex md-fill>
+	<md-subheader class="md-primary" style="{{subheaderStyle}}">
+		<span translate>photo_subtitle</span>
+	</md-subheader>
+
+	<section layout="row" layout-align="space-around" style="margin-top:20px;">
+		<div ng-repeat="image in images track by image.index">
+			<md-card>
+			<md-button class="md-icon-button launch photoButton" aria-label="Photo" ng-click="vm.addPhoto($index)">
+				<image ng-src="{{image.value}}" class="myImg" />
+			</md-button>
+			</md-card>
+		</div>
+	</section>
+</md-content>
+
+<footer>
+	<md-button class="md-primary footer-button" ng-click="navigationService.next()" style="{{footerStyle}}">
+		<span ng-show="mediaService.containsImage()" translate>location_button_next</span>
+		<span ng-hide="mediaService.containsImage()" translate>photo_button_skip</span>
+	</md-button>
+</footer>

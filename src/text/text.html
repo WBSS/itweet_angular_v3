@@ -1,0 +1,26 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader class="md-primary" style="{{subheaderStyle}}">
+		<span translate>message_subtitle</span>&nbsp;<span translate>lbl_info_file_mandatory</span>
+	</md-subheader>
+	 <md-card class="md-padding">
+		<form name="inputForm" ng-submit="vm.nextClicked(vm.inputText)" novalidate>
+	
+			<md-input-container flex>
+				<label translate>message_placeholder</label>
+				<!--<textarea ng-model="storageService.currentTweet.txt" name="itext" columns="1" md-maxlength="160"></textarea>-->
+				<textarea name="text" ng-model="vm.inputText" columns="3" md-maxlength="1000"></textarea>
+				<div ng-messages="inputForm.text.$error">
+					<div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+				</div>
+			</md-input-container>
+		</form>
+	 </md-card>
+</md-content>
+
+<footer>
+	<md-button ng-switch="vm.inputText.length" type="submit" ng-click="vm.nextClicked(vm.inputText)" class="md-primary footer-button" style="{{footerStyle}}">
+		<span ng-show="vm.inputText.length>0" translate>location_button_next</span>
+		<span ng-hide="vm.inputText.length>0" translate>message_button_skip</span>
+	</md-button>
+</footer>

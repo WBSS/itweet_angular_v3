@@ -1,0 +1,42 @@
+.bottom-navigation-box {
+    position: absolute;
+    bottom:0px;
+    width: 100%;
+    background: rgb(255, 255, 255); /* The Fallback */
+    background: rgba(255, 255, 255, 0.8);
+}
+.md-button.footer-button{
+	 width:100%;
+    margin: 0px;
+	 height: 44px;
+}
+
+.sm-toolbar{
+    min-height: 44px;
+    max-height: 54px;
+}
+
+.headerimage{
+    height: 40%;
+}
+.md-subheader{
+    margin: 0 !important;
+}
+
+.md-button.md-default-theme{
+    margin: 0px;
+    height: auto;
+    min-height: 44px;
+    line-height: 1rem;
+    text-transform: initial;
+}
+
+md-toolbar md-progress-linear{
+    position: absolute;
+    bottom: 0px;
+}
+
+md-toolbar md-progress-linear .md-container{
+    top: 0px;
+}
+/*.md-button.md-icon-button*/

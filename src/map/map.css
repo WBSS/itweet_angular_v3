@@ -1,0 +1,81 @@
+.angular-google-map {
+    height: 100%;
+    width: 100%;
+    position:absolute;}
+.angular-google-map-container {height: 100%; width: 100%;}
+.map_button_container{
+    width: 100%;
+    position: absolute;
+    height: 50px;
+    margin-top: 50px;
+}
+.map_button{
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.88);
+    height: 48px !important;
+    width: 48px;
+    line-height: 0 !important;
+}
+.map_button.active{
+    background-color:rgba(226, 0, 26, 0.8)
+}
+a.md-button:not([disabled]).md-icon-button:hover.map_button, .md-button:not([disabled]).md-icon-button:hover.map_button{
+    background-color: rgba(255, 255, 255, 0.88);
+}
+a.md-button:not([disabled]).md-icon-button:hover.map_button.active, .md-button:not([disabled]).md-icon-button:hover.map_button.active{
+   
+    background-color:rgba(226, 0, 26, 0.8)
+}
+.map_img_container{
+    width: 100%;
+    height: 100%;
+    flex-grow: 2;
+    position:absolute;
+    background-color: #f7f7f7;  
+}
+.map_img_crosshair {
+    pointer-events: none;
+    position: absolute;;
+    background:url('../img/crosshair_apple_blau.png') center center no-repeat;
+    background-size: 80px 80px;
+    width: 100%;
+    height: 100%;
+}
+.map_searchbar {
+    /*width: 100%;
+    height: 40px;
+    font-size: larger;
+    margin-top: 110px;*/
+    width: 100%;
+    height: 44px;
+    font-size: 18px;
+    margin-top: 56px;
+    padding: 0px 4px 0px 4px;
+}
+.pac-item{
+    padding: 5px 4px;
+    font-size: 18px;
+}
+.pac-item-query{
+    font-size: 18px;
+}
+.animate-hide {
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    line-height: 20px;
+    opacity: 1;
+}
+.animate-hide.ng-hide {
+    line-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+}
+.map-top{
+    position: absolute;
+    top:0px;
+    width: 100%;
+}
+.map-toolbar {
+    background: rgb(255, 255, 255); /* The Fallback */
+    padding: 10px;
+}

@@ -1,0 +1,23 @@
+md-toolbar.md-tall.md-hue-3.md-default-theme{
+	height: 148px;
+	min-height:148px;
+	padding-top:20px;
+}
+
+
+
+.map_searchbar {
+    margin-top: 72px;
+    border-radius: 0;
+    border: none;
+}
+.sm-toolbar{
+    min-height: 64px;
+    max-height: 74px;
+       padding-top:20px;
+}
+
+*:not(input):not(textarea){
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/copy in UIWebView */
+}

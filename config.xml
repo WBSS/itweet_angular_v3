@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ch.wbss.rhb.qs.dev" version="0.8.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>RhB_DEV</name>
+    <description>
+    </description>
+    <author email="info@wbss.ch" href="https://www.wbss.ch">
+        W.B.S.S GmbH
+    </author>
+
+    <content src="index.html" />
+    <access origin="*" />
+    <access origin="cdvfile://*" />
+
+    <preference name="keepRunning" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#303F9F" />
+    <preference name="DisallowOverscroll" value="true"/>
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="BackupWebStorage" value="local"/>
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="5000" />
+
+    <preference name="xwalkVersion" value="15+" />
+    <preference name="xwalkCommandLine" value="--disable-pull-to-refresh-effect" />
+    <preference name="xwalkMode" value="embedded" />
+    <preference name="xwalkMultipleApk" value="true" />
+
+    <!-- plugins: Add  best practice -->
+    <!-- 1. define plugins dependencies in config.xml -->
+    <!-- 2. remove platforms and empty plugins folder -->
+    <!-- 3. run: cordova platform add xxx -->
+    <plugin name="cordova-plugin-crosswalk-webview" spec="1.4.0" />
+    <plugin name="cordova-plugin-file" spec="3.0.0" />
+    <!--<plugin name="cordova-plugin-media" spec="1.0.1"  />-->
+    <plugin name="cordova-plugin-statusbar" spec="1.0.1" />
+    <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
+    <plugin name="org.apache.cordova.camera" spec="0.3.6" />
+    <plugin name="org.apache.cordova.device" spec="0.3.0" />
+    <plugin name="org.apache.cordova.geolocation" spec="0.3.12" />
+    <plugin name="org.apache.cordova.globalization" spec="0.3.4" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" />
+    <plugin name="org.apache.cordova.network-information" spec="0.2.15" />
+    <plugin name="org.apache.cordova.splashscreen" spec="1.0.0" />
+    <plugin name="cordova-plugin-app-version" spec="0.1.8" />
+
+    <platform name="android">
+
+        <icon src="assets/rhb/icon_android/icon-port-hdpi.png" density="hdpi"/>
+        <icon src="assets/rhb/icon_android/icon-port-ldpi.png" density="ldpi"/>
+        <icon src="assets/rhb/icon_android/icon-port-mdpi.png" density="mdpi"/>
+        <icon src="assets/rhb/icon_android/icon-port-xhdpi.png" density="xhdpi"/>
+        <icon src="assets/rhb/icon_android/icon-port-xxhdpi.png" density="xxhdpi"/>
+        <icon src="assets/rhb/icon_android/icon-port-xxxhdpi.png" density="xxxhdpi"/>
+
+        <splash src="assets/rhb/splash_android/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="assets/rhb/splash_android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="assets/rhb/splash_android/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="assets/rhb/splash_android/splash-port-xhdpi.png" density="port-xhdpi"/>
+        <splash src="assets/rhb/splash_android/splash-port-xxhdpi.png" density="port-xxhdpi"/>
+        <splash src="assets/rhb/splash_android/splash-port-xxxhdpi.png" density="port-xxxhdpi"/>
+
+    </platform>
+
+    <platform name="ios">
+
+        <!-- iOS 8.0+ -->
+        <!-- iPhone 6 Plus  -->
+        <icon src="assets/rhb/icon_ios/icon-60@3x.png" width="180" height="180" />
+        <!-- iOS 7.0+ -->
+        <!-- iPhone / iPod Touch  -->
+        <icon src="assets/rhb/icon_ios/icon-60.png" width="60" height="60" />
+        <icon src="assets/rhb/icon_ios/icon-60@2x.png" width="120" height="120" />
+        <!-- iPad -->
+        <icon src="assets/rhb/icon_ios/icon-76.png" width="76" height="76" />
+        <icon src="assets/rhb/icon_ios/icon-76@2x.png" width="152" height="152" />
+        <!-- iOS 6.1 -->
+        <!-- Spotlight Icon -->
+        <icon src="assets/rhb/icon_ios/icon-40.png" width="40" height="40" />
+        <icon src="assets/rhb/icon_ios/icon-40@2x.png" width="80" height="80" />
+        <!-- iPhone / iPod Touch -->
+        <icon src="assets/rhb/icon_ios/icon.png" width="57" height="57" />
+        <icon src="assets/rhb/icon_ios/icon@2x.png" width="114" height="114" />
+        <!-- iPad -->
+        <icon src="assets/rhb/icon_ios/icon-72.png" width="72" height="72" />
+        <icon src="assets/rhb/icon_ios/icon-72@2x.png" width="144" height="144" />
+        <!-- iPhone Spotlight and Settings Icon -->
+        <icon src="assets/rhb/icon_ios/icon-small.png" width="29" height="29" />
+        <icon src="assets/rhb/icon_ios/icon-small@2x.png" width="58" height="58" />
+        <!-- iPad Spotlight and Settings Icon -->
+        <icon src="assets/rhb/icon_ios/icon-50.png" width="50" height="50" />
+        <icon src="assets/rhb/icon_ios/icon-50@2x.png" width="100" height="100" />
+
+        <!-- images are determined by width and height. The following are supported -->
+        <splash src="assets/rhb/splash_ios/Default~iphone.png" width="320" height="480"/>
+        <splash src="assets/rhb/splash_ios/Default@2x~iphone.png" width="640" height="960"/>
+        <splash src="assets/rhb/splash_ios/Default-Portrait~ipad.png" width="768" height="1024"/>
+        <splash src="assets/rhb/splash_ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+        <splash src="assets/rhb/splash_ios/Default-Landscape~ipad.png" width="1024" height="768"/>ß
+        <splash src="assets/rhb/splash_ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+        <splash src="assets/rhb/splash_ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+        <splash src="assets/rhb/splash_ios/Default-667h.png" width="750" height="1334"/>
+        <splash src="assets/rhb/splash_ios/Default-736h.png" width="1242" height="2208"/>
+        <splash src="assets/rhb/splash_ios/Default-Landscape-736h.png" width="2208" height="1242"/>
+
+    </platform>
+
+</widget>

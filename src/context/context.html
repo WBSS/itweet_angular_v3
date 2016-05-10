@@ -1,0 +1,20 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader style="{{subheaderStyle}}" class="md-primary md-no-sticky"><span translate>context_subtitle</span>
+		</md-progress-linear>
+	</md-subheader>
+	<md-list>
+		<md-item ng-repeat="context in networkServiceHolder['primary'].getResponseData() track by context.contextToken">
+			<md-item-content>
+				<!-- <div class="md-tile-content">-->
+				<md-button layout-fill role="button" tabIndex="{{$index}}" ng-click="vm.contextSelected(context)" md-highlight="vm.isSContextSelected(context)"
+				layout layout-align="center center">
+					<img ng-show="loaded" ng-src="{{context.urlIconContext}}" alt="{{context.displayname}}" class="contextListItemImage" ng-onload="loaded = true"/>
+					<div ng-hide="loaded"> {{context.displayname}}</div>
+				</md-button>
+			</md-item-content>
+			<md-divider ng-if="!$last"></md-divider>
+		</md-item>
+
+	</md-list>
+</md-content>

@@ -1,0 +1,41 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+    <span translate>Registrieren</span>
+</md-subheader>
+<md-content class="md-padding" flex>
+		<div ng-switch="vm.loaded">
+		<div ng-switch-when="false" layout="row" layout-sm="column" layout-align="center center">
+			<p translate>loading</p>
+		</div>
+      <form ng-switch-default name="inputForm" ng-submit="vm.save()">
+        <p translate>mydata_login</p>
+        <span ng-hide="true" translate>search</span>
+        <md-autocomplete
+          ng-disabled="vm.isDisabled"
+          md-no-cache="vm.noCache"
+          md-selected-item="vm.selectedPerson"
+          md-search-text-change="vm.searchTextChange(vm.searchText)"
+          md-search-text="vm.searchText"
+          md-selected-item-change="vm.selectedItemChange(item)"
+          md-items="person in vm.querySearch(vm.searchText)"
+          md-item-text="vm.getFullPerson(person)"
+          md-min-length="0"
+          placeholder="{{vm.searchPlaceholder}}"
+          md-delay="250">
+        <md-item-template>
+          <span md-highlight-text="vm.searchText">{{person.id+', '+person.firstName+' '+person.lastName+', '+person.department}}</span>
+        </md-item-template>
+        <md-not-found>
+          <span translate>mydata_nomatches</span>{{vm.searchText}}".
+        </md-not-found>
+      </md-autocomplete>
+        <div ng-show="vm.validPerson==false">
+          <div class="error"><p translate>mydata_error</p></div>
+        </div>
+      </form>
+     </div>
+</md-content>
+
+<footer ng-show="vm.loaded">
+	<md-button class="md-primary footer-button" style="{{::footerStyle}}" ng-click="vm.save()"><span translate>personel_button_save</span></md-button>
+</footer>

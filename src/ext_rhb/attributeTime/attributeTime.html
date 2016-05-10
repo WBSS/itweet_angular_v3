@@ -1,0 +1,53 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+		<span translate>attribute_time_subheader</span>
+	</md-subheader>
+    <div class="md-padding">
+    <md-card class="md-padding">
+    <form>
+		<div layout="row">
+			<md-input-container flex="33">
+				<label translate>Tag</label>
+				<md-select ng-model="vm.newSelectDay">
+					<md-option ng-repeat="day in ::vm.timeDays" ng-value="::day"><span ng-bind="day"></span></md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container flex="33">
+				<label translate>Monat</label>
+				<md-select ng-model="vm.newSelectMonth">
+					<md-option ng-repeat="m1 in ::vm.timeMonths" ng-value="::$index"><span ng-bind="m1"></md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container flex="33">
+				<label translate>Jahr</label>
+				<md-select ng-model="vm.newSelectYear">
+					<md-option ng-repeat="year in ::vm.timeYear" ng-value="::year"><span ng-bind="year"></md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+		<div layout="row">
+			<md-input-container flex="33">
+				<label translate>Stunden</label>
+				<md-select ng-model="vm.newSelectHours">
+					<md-option ng-repeat="hours in ::vm.timeHours" ng-value="::$index"><span ng-bind="hours"></md-option>
+				</md-select>
+			</md-input-container>
+			<md-input-container flex="33">
+				<label translate>Minuten</label>
+				<md-select ng-model="vm.newSelectMinutes">
+					<md-option ng-repeat="min in ::vm.timeMinutes" ng-value="::$index"><span ng-bind="min"></span></md-option>
+				</md-select>
+			</md-input-container>
+		</div>
+    </form>
+	<div layout="row" class="error" ng-show="vm.invalidDate"><span translate>attribute_time_invalid_date</span></div>
+    </md-card>
+    </div>
+</md-content>
+
+<footer>
+	<md-button type="submit" ng-click="vm.nextClicked()" class="md-primary footer-button" style="{{::footerStyle}}">
+		<span translate>location_button_next</span>
+	</md-button>
+</footer>

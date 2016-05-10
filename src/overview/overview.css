@@ -1,0 +1,48 @@
+.dark-bg{
+    background: #F3F3F3;
+}
+h3{
+    margin: 8px;
+    font-size: 14px;
+    font-weight: 300;
+    color: rgb(63,81,181)
+}
+.overview-img-right {
+    height: 23px;
+    width: 23px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+.overview-cell-button {
+    min-height: 44px;
+    white-space: normal;
+    padding-right: 30px;
+}
+.overview-cell-button span {
+    line-height: 2rem;
+}
+.md-subheader .md-subheader-content > *{
+    position: relative;
+    z-index: 10;
+}
+.md-subheader-inner{
+    position: relative;
+}
+.subheader-button {
+    float: right;
+    margin-top: -16px!important;
+}
+.overview-subheader {
+    position: relative;;
+}
+.md-button.md-default-theme.padding {
+    padding: 5px 30px 5px 5px;
+}
+md-card{
+    min-height: 100px;
+        position: relative;
+}
+.error, .invalid{
+	color: red;
+}

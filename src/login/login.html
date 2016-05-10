@@ -1,0 +1,43 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content class="md-padding" flex>
+  <section>
+    <md-whiteframe class="md-whiteframe-z1 padded" style="margin-bottom: 15px" layout layout-align="start center">
+      <span ng-hide="storageService.user.token" translate>login_text</span>
+      <!-- needs "ng-if" because otherwise categoryService would Poll the whole time -->
+      <span ng-if="storageService.user.token" ng-bind="categoryService.getResponseData().displayName"></span>
+    </md-whiteframe>
+
+    <form ng-hide="storageService.user.token" name="inputForm" ng-submit="vm.loginClicked()" novalidate>
+
+      <md-input-container>
+        <label translate>login_placeholder_name</label>
+        <input md-maxlength="64" required name="iusername" ng-model="networkServiceHolder['primary'].data.username" type="text">
+        <div ng-messages="inputForm.iusername.$error">
+          <div ng-message="required"><span translate>input_error_mandatory</span></div>
+          <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+        </div>
+      </md-input-container>
+
+      <md-input-container>
+        <label translate>login_placeholder_password</label>
+        <input md-maxlength="64" required name="ipassword" ng-model="networkServiceHolder['primary'].data.password" type="text">
+        <div ng-messages="inputForm.ipassword.$error">
+          <div ng-message="required"><span translate>input_error_mandatory</span></div>
+          <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
+        </div>
+      </md-input-container>
+
+      <md-button type="submit" class="md-primary footer-button" style="{{footerStyle}}">
+        <span translate>login_button_login</span>
+      </md-button>
+      <!-- md-progress-circular md-mode="indeterminate" ng-show="networkServiceHolder['primary'].response.loading"></md-progress-circular -->
+    </form>
+
+    <md-button ng-show="storageService.user.token" class="md-primary footer-button" style="{{footerStyle}}" ng-click="vm.logoutClicked()">
+      <span translate>login_button_logout</span>
+    </md-button>
+
+  </section>
+
+  <!-- md-no-ink -->
+</md-content>

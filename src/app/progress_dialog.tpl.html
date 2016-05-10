@@ -1,0 +1,24 @@
+<md-dialog aria-label="Mango (Fruit)">
+  <md-content class="sticky-container md-padding">
+    <h3> {{data.title | translate}}</h3>
+    <div class="dialog-content">
+          <!--
+          <md-progress-circular md-mode="indeterminate" ng-show="data.progressing">
+          </md-progress-circular>
+          -->
+          <span>{{data.text| translate}} {{data.extension}}</span>
+          <md-progress-linear md-mode="indeterminate" ng-show="data.progressing"></md-progress-linear>
+    </div>
+  </md-content>
+  <div class="md-actions" layout="row">
+    
+    <md-button ng-hide="data.progressing" ng-click="dmv.closeDialog()" class="md-primary">
+      <span translate>general_button_okay</span>
+    </md-button>
+      
+      <md-button ng-show="data.progressing" ng-click="dmv.cancel()" class="md-primary">
+          <span translate>personel_button_cancel</span>
+      </md-button>
+
+  </div>
+</md-dialog>

@@ -1,0 +1,59 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+		<span translate>attribute_train_subheader</span><!--&nbsp;<span translate>lbl_info_file_mandatory_multi</span>-->
+	</md-subheader>
+	<div ng-switch="vm.loaded" class="md-padding">
+		<div ng-switch-when="false" layout="row" layout-sm="column" layout-align="center center">
+			<p translate>loading</p>
+		</div>
+		<form ng-switch-default name="inputForm" ng-submit="vm.save()">
+			<p translate>Zugnummer</p>
+			<md-autocomplete
+				md-selected-item="vm.selectedTrain"
+				md-search-text-change="vm.searchTextChange(vm.searchTrainText)"
+				md-search-text="vm.searchTrainText"
+				md-selected-item-change="vm.selectedTrainChange(train)"
+				md-items="train in vm.querySearch(vm.searchTrainText,vm.trains)"
+				md-item-text="vm.getFullTrain(train)"
+				md-min-length="1"
+				placeholder="{{vm.searchTrainPlaceholder}}">
+				<md-input-container>
+					<input type="tel">
+				</md-input-container>
+				<md-item-template>
+					<span md-highlight-text="vm.searchTrainText">{{vm.getFullTrain(train)}}</span>
+				</md-item-template>
+				<md-not-found>
+					<span translate>mydata_nomatches</span> {{vm.searchTrainText}}".
+				</md-not-found>
+			</md-autocomplete>
+			<p translate>Wagennummer</p>
+			<md-autocomplete
+				md-selected-item="vm.selectedVehicle"
+				md-search-text-change="vm.searchVehicleTextChange(vm.searchVehicleText)"
+				md-search-text="vm.searchVehicleText"
+				md-selected-item-change="vm.selectedVehicleChange(vehicle)"
+				md-items="vehicle in vm.querySearch(vm.searchVehicleText,vm.vehicles)"
+				md-item-text="vm.getFullVehicle(vehicle)"
+				md-min-length="1"
+				placeholder="{{vm.searchVehiclePlaceholder}}">
+				<md-input-container>
+					<input type="tel">
+				</md-input-container>
+				<md-item-template>
+					<span md-highlight-text="vm.searchVehicleText">{{vm.getFullVehicle(vehicle)}}</span>
+				</md-item-template>
+				<md-not-found>
+					<span translate>mydata_nomatches</span>{{vm.searchVehicleText}}".
+				</md-not-found>
+			</md-autocomplete>
+		 </form>
+	</div>
+</md-content>
+
+<footer>
+	<md-button type="submit" ng-click="vm.nextClicked()" class="md-primary footer-button" style="{{::footerStyle}}">
+		<span translate>location_button_next</span>
+	</md-button>
+</footer>
