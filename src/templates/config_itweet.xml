@@ -11,12 +11,30 @@
     <access origin="*" />
     <access origin="cdvfile://*" />
 
+    <!-- iOS only preferences -->
+    <preference name="EnableViewportScale" value="true"/>
+    <preference name="TopActivityIndicator" value="white"/>
+    <preference name="SuppressesIncrementalRendering" value="false"/>
+    <preference name="UIWebViewDecelerationSpeed" value="normal" />
+    <preference name="target-device" value="universal" />
+    <preference name="deployment-target" value="7.0" />
+    <preference name="SuppressesLongPressGesture" value="false" />
+    <preference name="Suppresses3DTouchGesture" value="true" />
+
+    <!-- Android only preferences -->
+    <preference name="KeepRunning" value="false"/>
+    <preference name="LoadUrlTimeoutValue" value="20000"/>
+    <preference name="LogLevel" value="ERROR"/>
+    <preference name="DefaultVolumeStream" value="call" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+
+    <!--
     <preference name="keepRunning" value="false" />
     <preference name="StatusBarBackgroundColor" value="#303F9F" />
     <preference name="DisallowOverscroll" value="true"/>
     <preference name="UIWebViewBounce" value="false" />
     <preference name="BackupWebStorage" value="local"/>
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />-->
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="5000" />
 
@@ -36,11 +54,11 @@
     <plugin name="cordova-plugin-whitelist" spec="1.0.0" />
     <plugin name="org.apache.cordova.camera" spec="0.3.6" />
     <plugin name="org.apache.cordova.device" spec="0.3.0" />
-    <plugin name="org.apache.cordova.geolocation" spec="0.3.12" />
-    <plugin name="org.apache.cordova.globalization" spec="0.3.4" />
-    <plugin name="org.apache.cordova.inappbrowser" spec="0.6.0" />
-    <plugin name="org.apache.cordova.network-information" spec="0.2.15" />
-    <plugin name="org.apache.cordova.splashscreen" spec="1.0.0" />
+    <plugin name="org.apache.cordova.geolocation" spec="2.2.0" />
+    <plugin name="org.apache.cordova.globalization" spec="1.0.3" />
+    <plugin name="org.apache.cordova.inappbrowser" spec="1.2.1" />
+    <plugin name="org.apache.cordova.network-information" spec="1.2.1" />
+    <plugin name="org.apache.cordova.splashscreen" spec="3.2.2" />
     <plugin name="cordova-plugin-app-version" spec="0.1.8" />
 
     <platform name="android">
