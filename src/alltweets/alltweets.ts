@@ -30,7 +30,7 @@ module itweet.alltweets {
         
         startInAppBrowser():void{
              this.$scope.networkServiceHolder['primary'].loading = true;
-                
+
             var url = this.AllTweetsUrl();
             this.inappBrowser = window.open(url , '_blank', 'hidden=yes,location=no,toolbar=no');
             this.timeoutRunner = this.$interval(
