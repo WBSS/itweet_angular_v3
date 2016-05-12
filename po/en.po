@@ -565,6 +565,9 @@ msgstr "(Fill in at least on field*)"
 msgid "lbl_info_file_mandatory"
 msgstr "(Fill in content*)"
 
+msgid "personel_title"
+msgstr "My data"
+
 #~ msgid "location_button_map_style"
 #~ msgstr "Map"
 

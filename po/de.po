@@ -574,6 +574,9 @@ msgstr "(Mindestens ein Feld ausfüllen*)"
 msgid "lbl_info_file_mandatory"
 msgstr "(Feld ausfüllen*)"
 
+msgid "personel_title"
+msgstr "Meine Daten"
+
 #~ msgid "general_title_error"
 #~ msgstr "Fehler"
 
