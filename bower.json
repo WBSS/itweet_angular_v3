@@ -37,6 +37,6 @@
     "ngstorage": "~0.3.10",
     "rusha": "~0.7.7",
     "ui-router-extras": "~0.1.2",
-    "angular": "1.4.10"
+    "angular": "~1.5.0"
   }
 }

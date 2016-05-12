@@ -24,7 +24,8 @@ module itweet.mytweets {
 			$scope.menu_parameters.navigate = 'back';
             
             var orderby = $filter('orderBy');
-            var list = orderby($scope.storageService.allTweets, '-dateAdded', false);
+            //var list = orderby($scope.storageService.allTweets, '-dateAdded', false);
+            var list = null;
             for (var key in list) {
                 if (list.hasOwnProperty(key)) {
                     var element = list[key];
