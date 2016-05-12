@@ -24,7 +24,7 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.cloud',
     itweetURL: 'https://www.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    appVersion: '0.8.3',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -33,7 +33,7 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
     itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    appVersion: '0.8.3',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -42,7 +42,7 @@ var templateconfig = function (config) {
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
     itweetURL: 'https://dev.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    appVersion: '0.8.3',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
