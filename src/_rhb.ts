@@ -33,7 +33,7 @@
 // *** common services *** //
 /// <reference path='model/awesomeFactory.ts' />
 /// <reference path='model/config.ts' />
-/// <reference path='model/storage.ts' />
+/// <reference path='model/storageService.ts' />
 /// <reference path='model/mediaFactory.ts' />
 
 // *** common models *** //
@@ -53,7 +53,7 @@
 /// <reference path='ext_rhb/attributeTrain/attributeTrain.ts' />
 
 // *** rhb services *** //
-/// <reference path='ext_rhb/navigation.ts' />
+/// <reference path='ext_rhb/navigationService.ts' />
 /// <reference path='ext_rhb/model/serviceFactory.ts' />
 /// <reference path='ext_rhb/modules.ts' />
 
