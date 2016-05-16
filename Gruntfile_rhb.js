@@ -106,14 +106,14 @@ module.exports = function (grunt) {
         }
       }
     },
-    clean: {
-      options: {
-        'no-write': false
-      },
-      folder_build: ['build/**'],
-      folder_www: ['www/**/'],
-      contents: ['config.xml']
+  clean: {
+    options: {
+      'no-write': false
     },
+    folder_build: ['build/**'],
+    folder_www: ['www/**/'],
+    contents: ['config.xml']
+  },
     symlink: {
       options: {
         overwrite: true
@@ -123,6 +123,7 @@ module.exports = function (grunt) {
         src: 'src/_rhb.ts'
       }
     },
+    /*
      typescript: {
        base: {
        src: "src/_all.ts",
@@ -134,8 +135,18 @@ module.exports = function (grunt) {
          declaration: false,
          rootDir : "src"
        }
-     }
      },
+     */
+    ts: {
+      default : {
+        src: ["src/_all.ts"],
+        out: "build/ts.js",
+        default: {
+          // specifying tsconfig as a boolean will use the 'tsconfig.json' in same folder as Gruntfile.js
+          tsconfig: true
+        }
+      }
+    },
     // Converting translated .po files into angular-compatible JavaScript files (https://angular-gettext.rocketeer.be/dev-guide/compile/)
     nggettext_compile: {
       all: {
@@ -299,7 +310,8 @@ module.exports = function (grunt) {
 
   // load grunt pluging
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-typescript');
+  //grunt.loadNpmTasks('grunt-typescript');
+  grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-contrib-symlink');
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -322,7 +334,7 @@ module.exports = function (grunt) {
   //------------------//
   // Folder: build (nggettext_compile, ngtemplates, link folder, typescript)
   // Folder: www (bower_concat (creates dist.js, dist.css), concat (creates app.js from folder build, ..), concat_css (creates app.css)
-  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'typescript', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
+  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'ts', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
 
 
   // prepare tasks / compile & optimize for production
