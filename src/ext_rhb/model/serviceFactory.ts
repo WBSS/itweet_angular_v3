@@ -9,9 +9,9 @@ module itweet.model {
             public $timeout: angular.ITimeoutService,
             public $log: angular.ILogService,
             public gettextCatalog) {
-                super($http, config, $q, $window, $rootScope, ItweetStorage, $timeout, $log, gettextCatalog);
-                this.metadataService = new MetadataService(this);
-                this.categoryService = new RHBCategoryService(this);
+            super($http, config, $q, $window, $rootScope, ItweetStorage, $timeout, $log, gettextCatalog);
+            this.metadataService = new MetadataService(this);
+            this.categoryService = new RHBCategoryService(this);
             }
     }
     

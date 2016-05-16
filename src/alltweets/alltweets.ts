@@ -4,13 +4,13 @@ module itweet.alltweets {
 		vm: AlltweetsController;
 	}
 
-	export class AlltweetsController {
+    export class AlltweetsController {
         public static $inject = ['$scope', 'gettextCatalog', '$interval', '$mdDialog', 'ItweetConfig', '$log', '$sce'
 		];
         
         private inappBrowser:any;
         private timeoutRunner:ng.IPromise<any>;
-        
+
         constructor(
             protected $scope:AlltweetsControllerScope,
             protected gettextCatalog,
@@ -19,15 +19,15 @@ module itweet.alltweets {
             protected ItweetConfig:itweet.model.BaseConfig,
             protected $log:ng.ILogService,
             protected $sce:ng.ISCEService){
-                this.$scope.networkServiceHolder['primary'] = {loading:false};
-                $scope.vm = this;
-                $scope.menu_parameters.title = "";
-    			$scope.menu_parameters.icon = 'arrow_back';
-    			$scope.menu_parameters.navigate = 'back';
+            this.$scope.networkServiceHolder['primary'] = {loading:false};
+            $scope.vm = this;
+            $scope.menu_parameters.title = "";
+    		$scope.menu_parameters.icon = 'arrow_back';
+    		$scope.menu_parameters.navigate = 'back';
                 
                 this.startInAppBrowser();
         }
-        
+
         startInAppBrowser():void{
              this.$scope.networkServiceHolder['primary'].loading = true;
 
@@ -70,7 +70,7 @@ module itweet.alltweets {
             this.$interval.cancel(this.timeoutRunner);
             this.$scope.navigationService.previous();
         }
-        
+
         alertUser(message:string):void{
             var alertPromise = this.$mdDialog.confirm({
                 title: this.gettextCatalog.getString('error_html5_container_loading_title'),
@@ -84,8 +84,7 @@ module itweet.alltweets {
                     this.closePage();
                 });
         }
-        
-        //Missplaced
+
         AllTweetsUrl():string{
             var lat = this.$scope.storageService.currentTweet.latDevice;
 			var lng = this.$scope.storageService.currentTweet.lngDevice;
