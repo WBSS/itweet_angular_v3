@@ -37,22 +37,63 @@ module.exports = function (grunt) {
       show_npm_local_packages:{
         cmd: 'npm ls --depth 0'
       },
-      intstall_cordova_version_5_4_1:{
-        cmd: 'sudo npm install -g cordova@5.4.1'
+      //create_doc_itweet:{
+        //cmd: 'typedoc --out ./doc/itweet./temp/**/*.ts --name "iTweet App" --verbose --target ES5 --module amd --excludeExternals'
+      //},
+      //create_doc_rhb:{
+        //cmd: 'typedoc --out ./doc/rhb ./temp/**/*.ts --name "QS-Mobile App" --verbose --target ES5 --module amd --excludeExternals'
+      //}
+    },
+    clean: {
+      options: {
+        'no-write': false
+      },
+      folder_temp: ['temp/**']
+    },
+    symlink: {
+      options: {
+        overwrite: true
+      },
+      link_ts_itweet: {
+        dest: 'src/_all.ts',
+        src: 'src/_itweet.ts'
+      },
+      link_ts_rhb: {
+        dest: 'src/_all.ts',
+        src: 'src/_rhb.ts'
       }
-
+    },
+    copy: {
+      main_itweet: {
+        files: [
+          // includes files&dir within path
+          {expand: true, cwd: 'src/', src: ['**/*.*', '!**/ext_rhb/**'], dest: 'temp/'}
+        ]
+      },
+      main_rhb: {
+        files: [
+          // includes files&dir within path
+          {expand: true, cwd: 'src/', src: ['**/*.*', '!**/ext_itweet/**'], dest: 'temp/'}
+        ]
+      }
     }
-  };
+ };
 
   //  do add grunt configuration
   grunt.initConfig(config);
 
   // load grunt pluging
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Register tasks
   //---------------//
   grunt.registerTask('show_environment', ['exec:show_node_version','exec:show_npm_version','exec:show_bower_version','exec:show_cordova_version']);
+
+  // create doc tasks
+  //---------------//
+  grunt.registerTask('copy_temp_doc_itweet', ['clean:folder_temp','symlink:link_ts_itweet','copy:main_itweet']);
+  grunt.registerTask('copy_temp_doc_rhb', ['clean:folder_temp','symlink:link_ts_rhb','copy:main_rhb']);
 
   return grunt.registerTask('default', ['dev']);
 };
