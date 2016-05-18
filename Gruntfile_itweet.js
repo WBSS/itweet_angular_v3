@@ -115,6 +115,14 @@ module.exports = function (grunt) {
         }
       }
     },
+    clean: {
+      options: {
+        'no-write': false
+      },
+      folder_build: ['build/**'],
+      folder_www: ['www/**/'],
+      contents: ['config.xml']
+    },
     symlink: {
       options: {
         overwrite: true
