@@ -9,12 +9,10 @@ module itweet.attributeTrain {
 		public trains:any;
 		public selectedTrain:any;
 		public searchTrainText: string;
-		public searchTrainId: any;
-		public searchTrainPlaceholder:string;
-		public vehicles:any;
-		public selectedVehicle:any;
-		public searchVehicleText: string;
-		public searchVehiclePlaceholder:string;
+		public wagons:any;
+		public selectedWagon:any;
+		public addedWagons: any = [];
+		public searchWagonText: string;
 		public static $inject = [
 			'$scope', 'gettextCatalog', 'itweetNetwork', 'ItweetStorage', '$mdToast', '$log','$q','$window'
 		];
@@ -30,7 +28,7 @@ module itweet.attributeTrain {
 			private $window
 		) {
 			$scope.vm = this;
-			$scope.menu_parameters.title = gettextCatalog.getString('Objekt');
+			$scope.menu_parameters.title = gettextCatalog.getString('object_title');
 			$scope.menu_parameters.icon = 'arrow_back';
 			$scope.menu_parameters.navigate = 'back';
 			$scope.networkServiceHolder['primary'] = network.metadataService;
@@ -46,14 +44,7 @@ module itweet.attributeTrain {
 				}
 			});
 			$scope.vm.searchTrainText = "";
-			$scope.vm.searchTrainPlaceholder = this.gettextCatalog.getString('Suchen..');
-			$scope.vm.searchVehicleText = "";
-			$scope.vm.searchVehiclePlaceholder = this.gettextCatalog.getString('Suchen..');
-
-			//if(this.$scope.storageService.currentTweet.itemQs.refTrainId) $scope.vm.searchTrainText  = this.$scope.storageService.currentTweet.itemQs.refTrainId;
-			//if(this.$scope.storageService.currentTweet.itemQs.refWagonId) $scope.vm.searchVehicleText  = this.$scope.storageService.currentTweet.itemQs.refWagonId;
-			//if(this.$scope.storageService.currentTweet.itemQs.refTrainId) $scope.vm.searchTrainText  = this.$scope.storageService.currentTweet.itemQs.refTrainName;
-			//if(this.$scope.storageService.currentTweet.itemQs.refWagonId) $scope.vm.searchVehicleText  = this.$scope.storageService.currentTweet.itemQs.refWagonName;
+			$scope.vm.searchWagonText = "";
 
 			if(this.$scope.storageService.currentTweet.itemQs.refTrainId){
 				console.log('set storaged location',this.$scope.storageService.currentTweet.itemQs.refTrainId);
@@ -66,13 +57,18 @@ module itweet.attributeTrain {
 
 				}
 			}
-			if(this.$scope.storageService.currentTweet.itemQs.refWagonId){
-				$scope.vm.searchVehicleText = this.$scope.storageService.currentTweet.itemQs.refWagonName;
-				this.selectedVehicle = {
-					id:this.$scope.storageService.currentTweet.itemQs.refWagonId,
-					wagonNr:this.$scope.storageService.currentTweet.itemQs.refWagonName.split(':')[0],
-					objectName:this.$scope.storageService.currentTweet.itemQs.refWagonName.split(':')[1],
-
+			if (this.$scope.storageService.currentTweet.itemQs.wagonsIds) {
+				let metadata = this.network.metadataService.getResponseData();
+				this.addedWagons = [];
+				for (var i = 0; i < this.$scope.storageService.currentTweet.itemQs.wagonsIds.length; i++) {
+					let wagon = this.getWagonById(this.$scope.storageService.currentTweet.itemQs.wagonsIds[i], metadata);
+					var newWagon = {
+						id: wagon.id,
+						name: wagon.name,
+						objectName: wagon.objectName,
+						wagonNr: wagon.wagonNr
+					}
+					this.addedWagons.push(newWagon);
 				}
 			}
 		}
@@ -82,27 +78,42 @@ module itweet.attributeTrain {
 			if(meta.trains){
 				this.trains = new Array();
 				for (var i=0; i<meta.trains.length;i++){
-					var newTrain = {
-						id: meta.trains[i].id,
-						carrier: meta.trains[i].carrier,
-						route: meta.trains[i].route,
-						trainNr: meta.trains[i].trainNr,
-						query: meta.trains[i].trainNr
+					if (meta.trains[i].enabled) {
+						var newTrain = {
+							id: meta.trains[i].id,
+							carrier: meta.trains[i].carrier,
+							route: meta.trains[i].route,
+							trainNr: meta.trains[i].trainNr,
+							query: meta.trains[i].trainNr
+						}
+						this.trains.push(newTrain);
 					}
-					this.trains.push(newTrain);
 				}
 			}
-			if(meta.wagons){
-				this.vehicles = new Array();
-				for (var i=0; i<meta.wagons.length;i++){
-					var newVehicle = {
-						id: meta.wagons[i].id,
-						name: meta.wagons[i].name,
-						objectName: meta.wagons[i].objectName,
-						wagonNr: meta.wagons[i].wagonNr,
-						query: meta.wagons[i].wagonNr
+			if (meta.wagons){
+				let refCategoryQs = this.network.metadataService.getCategoryQsById(this.$scope.storageService.currentTweet.itemQs.refItemCategoryQsId);
+				let vehicleType = this.getVehicleTypeFromCategoryQs(refCategoryQs, meta);
+				let orgCode = undefined;
+
+				if (vehicleType === "train") {
+					orgCode = "6750";
+				} else if (vehicleType === "road") {
+					orgCode = "6130";
+				}
+
+				this.wagons = [];
+				for (var i = 0; i < meta.wagons.length; i++){
+					if (meta.wagons[i].enabled
+						&& (vehicleType === "all" || (meta.wagons[i].orgCode === orgCode))) {
+						var newWagon = {
+							id: meta.wagons[i].id,
+							name: meta.wagons[i].name,
+							objectName: meta.wagons[i].objectName,
+							wagonNr: meta.wagons[i].wagonNr,
+							query: meta.wagons[i].wagonNr.toLowerCase()
+						}
+						this.wagons.push(newWagon);
 					}
-					this.vehicles.push(newVehicle);
 				}
 			}
 			this.loaded = true;
@@ -123,28 +134,35 @@ module itweet.attributeTrain {
 			};
 		}
 
-		selectedTrainChange(train){
-			console.log('change train',train);
-			if(typeof train != 'undefined'){
-				this.$window.document.activeElement.blur();
-				this.selectedTrain = train;
-			}else this.selectedTrain = null;
-
-		}
-
-		selectedVehicleChange(wagon){
-			if(typeof wagon != 'undefined'){
-				this.$window.document.activeElement.blur();
-				this.selectedVehicle = wagon;
-			}else this.selectedVehicle  = null;
-		}
-
 		getFullTrain(train){
 			return (train.trainNr+' : '+train.carrier+' : '+train.route).toString();
 		}
 
-		getFullVehicle(wagon){
+		getFullWagon(wagon){
 			return (wagon.wagonNr+' : '+wagon.objectName).toString();
+		}
+
+		onSelectedWagon() {
+			this.addWagon(this.selectedWagon);
+			// Resets
+			this.selectedWagon = null;
+			this.searchWagonText = "";
+			this.$window.document.activeElement.blur();
+		}
+
+		addWagon(refWagon: any) {
+			if (refWagon) {
+				for (var i = 0; i < this.addedWagons.length; i++) {
+					if (this.addedWagons[i].id === refWagon.id) {
+						return;
+					}
+				}
+				this.addedWagons.push(refWagon);
+			}
+		}
+
+		removeWagon(i: number) {
+			this.addedWagons.splice(i, 1);
 		}
 
 		nextClicked(){
@@ -158,18 +176,86 @@ module itweet.attributeTrain {
 				this.$scope.storageService.currentTweet.itemQs.refTrainName = null;
 			}
 
-			if(this.selectedVehicle){
-				this.$scope.storageService.currentTweet.itemQs.refWagonId = this.selectedVehicle.id;
-				this.$scope.storageService.currentTweet.itemQs.refWagonName = this.getFullVehicle(this.selectedVehicle);
-			} else
-			{
-				this.$scope.storageService.currentTweet.itemQs.refWagonId = null;
-				this.$scope.storageService.currentTweet.itemQs.refWagonName = null;
+			// Set wagons
+			if (this.addedWagons.length !== 0) {
+				this.$scope.storageService.currentTweet.itemQs.wagonsIds = [];
+				this.$scope.storageService.currentTweet.itemQs.wagonsNames = [];
+				for (var i = 0; i < this.addedWagons.length; i++) {
+					this.$scope.storageService.currentTweet.itemQs.wagonsIds.push(this.addedWagons[i].id);
+					this.$scope.storageService.currentTweet.itemQs.wagonsNames.push(this.getFullWagon(this.addedWagons[i]));
+				}
+			} else {
+				this.$scope.storageService.currentTweet.itemQs.wagonsIds = null;
+				this.$scope.storageService.currentTweet.itemQs.wagonsNames = null;
 			}
-			
+
 			this.$scope.navigationService.next();
 		}
 
+		getWagonById(id: string, metadata: any) {
+			if (!id) return null;
+			for (var i = 0; i < metadata.wagons.length; i++) {
+				if (metadata.wagons[i].id === id) {
+					return metadata.wagons[i];
+				}
+			}
+		}
+
+		/*
+		getCategoryQsById(id: number, metadata: any) {
+			if (!id) return null;
+			for (var i = 0; i < metadata.categoriesQs.length; i++) {
+				if (metadata.categoriesQs[i].id === id) {
+					return metadata.categoriesQs[i];
+				}
+			}
+		}
+
+		getCategoryQsTree(categoryQs: any, metadata: any) {
+			if (!categoryQs) {
+				return null;
+			}
+			var categoryQsTree = [];
+			var categoryQsParent;
+
+			if (categoryQs.parentId) {
+				categoryQsParent = this.getCategoryQsById(categoryQs.parentId, metadata);
+				if (categoryQsParent.parentId) {
+					categoryQsTree[0] = this.getCategoryQsById(categoryQsParent.parentId, metadata);
+					categoryQsTree[1] = categoryQsParent;
+					categoryQsTree[2] = categoryQs;
+				} else {
+					categoryQsTree[0] = categoryQsParent;
+					categoryQsTree[1] = categoryQs;
+					categoryQsTree[2] = null;
+				}
+			} else {
+				categoryQsTree[0] = categoryQs;
+				categoryQsTree[1] = null;
+				categoryQsTree[2] = null;
+			}
+
+			return categoryQsTree;
+		}
+		*/
+
+		getVehicleTypeFromCategoryQs(refCategoryQs: any, metadata: any) {
+			var categoryQsTree = this.network.metadataService.getCategoryQsTree(refCategoryQs);
+
+			if (!categoryQsTree) {
+				return "all";
+			}
+			// Check if is main category "Fahrzeuge"
+			if (categoryQsTree[0].id !== 1 || !categoryQsTree[1]) {
+				return "all";
+			}
+			// Check category "Fahrzeuge"
+			if (categoryQsTree[1].id === 6 || categoryQsTree[1].id === 7 || categoryQsTree[1].id === 9) {
+				return "train";
+			} else {
+				return "road";
+			}
+		}
 	}
 
 	angular.module('itweet.rhb.attributeTrain', ['gettext','ui.router','ngMaterial'])

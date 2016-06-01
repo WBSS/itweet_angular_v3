@@ -11,7 +11,7 @@ module itweet.location {
 		public locationDisabled:boolean=false;
 		public tracks: any;
 		public selectedTrack: any;
-		public currentTrackPosition: any;
+		public currentTrackPosition: number;
 		public searchTrackText:string;
 		public loaded: Boolean = false;
 		public locationElement:any;
@@ -47,7 +47,7 @@ module itweet.location {
 			$scope.vm.searchLocationText = "";
 			$scope.vm.locationDisabled=false;
 			$scope.vm.searchTrackText = "";
-			$scope.vm.currentTrackPosition = new Array("","");
+			$scope.vm.currentTrackPosition = null;
 			
 			if(this.$scope.storageService.currentTweet.itemQs.refLocationId){
 				console.log('set storaged location',this.$scope.storageService.currentTweet.itemQs.refLocationName);
@@ -66,8 +66,7 @@ module itweet.location {
 			}
 			
 			if(this.$scope.storageService.currentTweet.itemQs.trackPosition){
-				let _pos = this.$scope.storageService.currentTweet.itemQs.trackPosition.toString();
-				$scope.vm.currentTrackPosition = _pos.split(".");
+				$scope.vm.currentTrackPosition = this.$scope.storageService.currentTweet.itemQs.trackPosition;
 			}
 			
 			/* RHB FIX: FIXME REFACTOR */
@@ -86,46 +85,33 @@ module itweet.location {
 			if(meta.locations){
 				this.locations = new Array();
 				for (var i=0; i<meta.locations.length;i++){
-					var newLocation = {
-						id: meta.locations[i].id,
-						name: meta.locations[i].name,
-						query: meta.locations[i].name.toLocaleLowerCase()
+					if (meta.locations[i].enabled) {
+						var newLocation = {
+							id: meta.locations[i].id,
+							name: meta.locations[i].name,
+							query: meta.locations[i].name.toLocaleLowerCase()
+						}
+						this.locations.push(newLocation);
 					}
-					this.locations.push(newLocation);
 				}
 				
 			}
-			if(meta.locations){
+			if(meta.tracks){
 				this.loaded = true;
 				this.tracks = new Array();
 				for (var i=0; i<meta.tracks.length;i++){
-					var newTrack = {
-						id: meta.tracks[i].id,
-						name: meta.tracks[i].name,
-						query: meta.tracks[i].name.toLocaleLowerCase()
+					if (meta.tracks[i].enabled) {
+						var newTrack = {
+							id: meta.tracks[i].id,
+							name: meta.tracks[i].name,
+							query: meta.tracks[i].name.toLocaleLowerCase()
+						}
+						this.tracks.push(newTrack);
 					}
-					this.tracks.push(newTrack);
 				}
 			}
 		}
 		
-		selectedLoactionChange(location){
-			console.log('change location');
-			if(typeof location != 'undefined'){
-				this.$window.document.activeElement.blur();
-				this.selectedLoaction = location;
-			} else this.selectedLoaction = null;
-			
-		}
-		
-		selectedTrackChange(track){
-			console.log('change track',track);
-			if(typeof track != 'undefined'){
-				this.selectedTrack = track;
-				this.$window.document.activeElement.blur();
-			} else this.selectedTrack = null;
-		}
-
 		querySearch(query,list){
 			var results = list.filter(this.createFilterFor(query));
 			var t = results.slice(0,12);
@@ -165,10 +151,8 @@ module itweet.location {
 				this.$scope.storageService.currentTweet.itemQs.refTrackName = null;
 			}
 			
-			if(this.currentTrackPosition[0] != "" || this.currentTrackPosition[1] != ""){
-				if(this.currentTrackPosition[1] == "") this.currentTrackPosition[1] ="0"
-				if(this.currentTrackPosition[0] == "") this.currentTrackPosition[0] ="0"
-				this.$scope.storageService.currentTweet.itemQs.trackPosition = +(this.currentTrackPosition[0]+"."+this.currentTrackPosition[1]);
+			if (this.currentTrackPosition) {
+				this.$scope.storageService.currentTweet.itemQs.trackPosition = this.currentTrackPosition;
 			} else this.$scope.storageService.currentTweet.itemQs.trackPosition = null;
 			
 			this.$scope.navigationService.next();

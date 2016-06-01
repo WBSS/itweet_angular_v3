@@ -42,6 +42,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
+    //itweetURL: 'http://192.168.192.37/mvc/mobile/rhb/1/',
     appVersion: '0.8.3',
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
@@ -156,13 +157,13 @@ module.exports = function (grunt) {
       }
     },
     // extract labels to translate
-    //nggettext_extract: {
-      //pot: {
-        //files: {
-          //"po/template.pot": ["src/**/*.html","build/ts.js"]
-        //}
-      //}
-    //},
+    nggettext_extract: {
+      pot: {
+        files: {
+          "po/template.pot": ["src/**/*.html","build/ts.js"]
+        }
+      }
+    },
     // minifying, combining, and automatically caching your HTML templates with $templateCache.
     ngtemplates: {
       templates: {
@@ -214,7 +215,8 @@ module.exports = function (grunt) {
         cmd: 'cordova build --release ios'
       },
       runner_android: {
-        cmd: 'cordova run android --device --debug'
+        // cmd: 'cordova run android --device --debug'
+        cmd: 'cordova run android --debug'
       },
       runner_ios: {
         //cmd: 'cordova run ios --device  --codeSignIdentitiy="iPhone Development" --provisioningProfile="b73af506-6d3b-4461-81a6-d6aea106a3f4'
@@ -353,7 +355,7 @@ module.exports = function (grunt) {
   //-----------------------------------------------//
 
   // autobuild for development on local browser
-  grunt.registerTask('run-on-local-server_dev_ch.wbss.rhbswiss.dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev', '_compile', 'express', 'watch']);
+  grunt.registerTask('run-on-local-server_dev_ch.wbss.rhb.dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev', '_compile', 'express', 'watch']);
 
   // build&deploy local device (USB adapter)
   // run default android

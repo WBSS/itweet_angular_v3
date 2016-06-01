@@ -24,7 +24,7 @@
   "dependencies": {
     "angular-cache": "~4.6.0",
     "angular-gettext": "~2.2.1",
-    "angular-google-maps": "~2.3.2",
+    "angular-google-maps": "2.3.2",
     "angular-i18n": "~1.3.21",
     "angular-material": "0.10.1",
     "angular-material-icons": "~0.7.0",
@@ -37,6 +37,6 @@
     "ngstorage": "~0.3.10",
     "rusha": "~0.7.7",
     "ui-router-extras": "~0.1.2",
-    "angular": "~1.5.0"
+    "angular": "~1.5.5"
   }
 }

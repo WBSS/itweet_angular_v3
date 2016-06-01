@@ -12,7 +12,6 @@ module itweet.attributeInvolvedPersons {
 		public loaded: Boolean = false;
 		public searchText: string;
 		public selectedPerson: any;
-		public searchPlaceholder:string;
 		public errorMessage:string ="";
 
 		public static $inject = [
@@ -47,9 +46,8 @@ module itweet.attributeInvolvedPersons {
 					this.$scope.storageService.currentTweet.contextToken = context.contextToken;
 				}
 			});
-			$scope.vm.searchText = "";
-			$scope.vm.searchPlaceholder = this.gettextCatalog.getString('search');
-			
+			$scope.vm.searchText = undefined;
+
 			this.storedPersons = this.$scope.storageService.currentTweet.itemQs.personsInvolvedIds;
 		}
 
@@ -59,66 +57,48 @@ module itweet.attributeInvolvedPersons {
 				this.loaded = true;
 				this.persons = new Array();
 				for (var i=0; i<meta.persons.length;i++){
-					var newPerson = {
-						id: meta.persons[i].id,
-						firstName: meta.persons[i].firstName,
-						lastName: meta.persons[i].lastName,
-						department: meta.persons[i].department,
-						query: meta.persons[i].firstName.toLowerCase()+' '+meta.persons[i].lastName.toLowerCase(),
-						queryReverse: meta.persons[i].lastName.toLowerCase()+' '+meta.persons[i].firstName.toLowerCase()
+					if (meta.persons[i].enabled) {
+						var newPerson = {
+							id: meta.persons[i].id,
+							firstName: meta.persons[i].firstName,
+							lastName: meta.persons[i].lastName,
+							department: meta.persons[i].department,
+							query: meta.persons[i].firstName.toLowerCase() + ' ' + meta.persons[i].lastName.toLowerCase(),
+							queryReverse: meta.persons[i].lastName.toLowerCase() + ' ' + meta.persons[i].firstName.toLowerCase()
+						}
+						this.persons.push(newPerson);
+						if (this.storedPersons) {
+							for (var j = 0; j < this.storedPersons.length; j++) {
+								if (this.storedPersons[j].toString() == newPerson.id.toString()) this.addPerson(newPerson);
+							}
+						}
 					}
-					this.persons.push(newPerson);
-					if(this.storedPersons){
-						for (var j = 0; j < this.storedPersons.length; j++) {
-						if(this.storedPersons[j].toString()== newPerson.id.toString()) this.addPerson(newPerson);
-					}
-					}
-					
 				}
-				
 			}
 		}
 
-		addPerson(person){
-			console.log('add');
-			this.$scope.vm.errorMessage = "";
-			if(person){
-				this.searchText= null;
+		onSelectedInvolvedPerson() {
+			this.addPerson(this.selectedPerson);
+			// Resets
+			this.selectedPerson = null;
+			this.searchText = "";
+			this.$window.document.activeElement.blur();
+		}
+
+		addPerson(refPerson: any) {
+			if (refPerson) {
 				this.selectedPerson = null;
-				for (var i = 0; i < this.addedPersons.length; i++){
-					if(this.addedPersons[i].id == person.id){
-						console.log('person already added');
-						this.$scope.vm.errorMessage = this.gettextCatalog.getString("attribute_error_user_already_added");
-						
+				for (var i = 0; i < this.addedPersons.length; i++) {
+					if (this.addedPersons[i].id === refPerson.id) {
 						return;
 					}
 				}
-				this.addedPersons.push(person);
-				
-			} else {
-				console.log('no selected person');
-				//this.$scope.vm.errorMessage = this.gettextCatalog.getString("attribute_error_no_valid_person");
+				this.addedPersons.push(refPerson);
 			}
 		}
 
 		removePerson(i){
-			this.$scope.vm.errorMessage = "";
-			var alertPromise = this.$mdDialog.confirm({
-				title: "Entfernen?",
-                content: "Wollen Sie diese Person entfernen?",
-                ok: this.gettextCatalog.getString('general_button_okay'),
-                cancel: this.gettextCatalog.getString('personel_button_cancel')
-            });
-			this.$mdDialog.show( alertPromise )
-			.then(
-                ()=> {
-					console.log('remove',i);
-					this.addedPersons.splice(i, 1);
-				}
-			).finally(function() {
-                    this.$mdDialog.hide(alertPromise);
-                    alertPromise = undefined;
-                });
+			this.addedPersons.splice(i, 1);
 		}
 
 		nextClicked(){
@@ -156,17 +136,6 @@ module itweet.attributeInvolvedPersons {
 				
 				return i;
 			};
-		}
-
-		searchTextChange (textChange){
-			console.log('text change');
-		}
-		selectedPersonChange (item){
-			console.log('person change');
-			if(typeof item != 'undefined'){
-				this.$window.document.activeElement.blur();
-				this.selectedPerson = item;
-			}
 		}
 
 		getFullPerson (person){

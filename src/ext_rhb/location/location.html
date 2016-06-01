@@ -13,20 +13,15 @@
         <md-autocomplete
 			id="searchLocation"
 			md-delay="200"
-			md-select-on-match="true"
 			md-selected-item="vm.selectedLoaction"
 			md-search-text="vm.searchLocationText"
-			md-selected-item-change="vm.selectedLoactionChange(location)"
 			md-items="location in vm.querySearch(vm.searchLocationText,vm.locations)"
 			md-item-text="vm.getFullText(location)"
 			md-min-length="0"
-			placeholder="Suche*...">
+			placeholder="{{'search' | translate}}">
 			<md-item-template>
-				<span md-highlight-text="vm.searchLoactionText">{{vm.getFullText(location)}}</span>
+				<span md-highlight-text="vm.searchLocationText" md-highlight-flags="i">{{vm.getFullText(location)}}</span>
 			</md-item-template>	
-			<md-not-found>
-				<span translate>mydata_nomatches</span> {{vm.searchLoactionText}}".
-			</md-not-found>
 		</md-autocomplete>
 		<p translate>rhblocation_chooseTrack</p>
         <md-autocomplete
@@ -34,31 +29,24 @@
 			md-delay="200"
 			md-selected-item="vm.selectedTrack"
 			md-search-text="vm.searchTrackText"
-			md-selected-item-change="vm.selectedTrackChange(track)"
 			md-items="track in vm.querySearch(vm.searchTrackText,vm.tracks)"
 			md-item-text="vm.getFullText(track)"
 			md-min-length="0"
-			placeholder="Suche*...">
+			placeholder="{{'search' | translate}}">
 			<md-item-template>
-				<span md-highlight-text="vm.searchTrackText">{{vm.getFullText(track)}}</span>
+				<span md-highlight-text="vm.searchTrackText" md-highlight-flags="i">{{vm.getFullText(track)}}</span>
 			</md-item-template>
-			<md-not-found>
-				<span translate>mydata_nomatches</span> {{vm.searchTrackText}}".
-			</md-not-found>
 		</md-autocomplete>
 		<p translate>rhblocation_choosePosition</p>
 		<div layout="row" class="positions">
-		<md-input-container>
-			<input ng-model="vm.currentTrackPosition[0]" maxlength="3" style="text-align:right" type="tel">
-		</md-input-container>.
-		<md-input-container>
-			<input ng-model="vm.currentTrackPosition[1]" maxlength="3" type="tel">
-		</md-input-container>km*
+			<md-input-container>
+				<input ng-model="vm.currentTrackPosition" maxlength="5" style="text-align:right" type="tel">
+			</md-input-container>km
 		</div>
       </form>
      </div>
 	 </div>
 </md-content>
 <footer ng-show="vm.loaded">
-	<md-button class="md-primary footer-button" style="{{::footerStyle}}" ng-click="vm.save()"><span translate>Weiter</span></md-button>
+	<md-button class="md-primary footer-button" style="{{::footerStyle}}" ng-click="vm.save()"><span translate>location_button_next</span></md-button>
 </footer>

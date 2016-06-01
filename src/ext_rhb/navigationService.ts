@@ -19,7 +19,6 @@ module itweet.navigation {
             'context': (n: NavigationService,params) => new State('app.context'),
             'overview': (n: NavigationService,params) => new State('app.overview'),
             'category': (n: NavigationService,params) => new State('app.category'),
-            //'map': (n: NavigationService,params) => new State('app.photo'),
             'app.rhb_location': (n: NavigationService,params) => new State('app.photo'),
             'alltweets': (n: NavigationService,params) => new State('app.alltweets'),
             'app.context': (n: NavigationService,params) => new State('app.category'),
@@ -36,7 +35,7 @@ module itweet.navigation {
             'app.multicategory': (n: NavigationService,params) => {
                 let parentId = n.ItweetStorage.currentTweet.itemQs.refItemCategoryQsId;
                 let items = n.network.metadataService.getResponseData().categoriesQs.filter((c) => c.parentId == parentId)
-                let resp = new State('app.rhb_attribute_time');
+                let resp = new State('app.rhb_attribute_train');
                 let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
                 
                 if (elems.length > 0) {
@@ -47,19 +46,12 @@ module itweet.navigation {
                 }
                 return resp;
             },
-            //'app.rhb_attribute_time': (n: NavigationService,params) => new State('map'),
             'app.rhb_attribute_time': (n: NavigationService,params) => {
                 let parentId = n.ItweetStorage.currentTweet.itemQs.refItemCategoryQsId;
-                //let resp = new State('map');
-                let resp = new State('app.rhb_location');
-                console.log(n.ItweetStorage.currentTweet,n.ItweetStorage.currentTweet.itemQs);
-                if(true) {
-                    resp = new State('app.rhb_attribute_train', { parentId: parentId });
-                }
+                let resp = new State('app.rhb_location', { parentId: parentId });
                 return resp;
             },
-            //'app.rhb_attribute_train': (n: NavigationService,params) => new State('map'),
-            'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_location'),
+            'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_attribute_time'),
             'app.photo': (n: NavigationService,params) => new State('app.text'),
             'app.text': (n: NavigationService,params) => new State('app.audio'),
             'app.audio': (n: NavigationService,params) => new State('app.rhb_attribute_involvedPersons'),

@@ -19,6 +19,10 @@
 				<div ng-show="!storageService.currentTweet.itemQs.refLocationId && !storageService.currentTweet.itemQs.refTrackId && !storageService.currentTweet.itemQs.trackPosition " layout="column" layout-align="center center" class="md-padding">
 					<span class="invalid" translate>overview_label_location_placeholder</span>
 				</div>
+				<div ng-show="!vm.isValidNumber(storageService.currentTweet.itemQs.trackPosition)" layout="column" layout-align="center center"
+					 class="md-padding">
+					<span class="invalid" translate>overview_message_track_position_invalid</span>
+				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
@@ -86,12 +90,17 @@
 					<h3 translate>attribute_title_train</h3>
 				</div>
 				<md-divider></md-divider>
-				<div ng-show="storageService.currentTweet.itemQs.refTrainId || storageService.currentTweet.itemQs.refWagonId" layout="column" layout-align="center center" class="md-padding">
+				<div ng-show="storageService.currentTweet.itemQs.refTrainId || storageService.currentTweet.itemQs.wagonsIds" layout="column" layout-align="center center" class="md-padding">
 					<div ng-show="storageService.currentTweet.itemQs.refTrainId"><span ng-bind="storageService.currentTweet.itemQs.refTrainName"></span></div>
-					<div ng-show="storageService.currentTweet.itemQs.refWagonId"><span ng-bind="storageService.currentTweet.itemQs.refWagonName"></span></div>
+					<div ng-repeat="wagonName in storageService.currentTweet.itemQs.wagonsNames">
+						<div ng-bind="wagonName"></div>
+					</div>
 				</div>
-				<div ng-show="!storageService.currentTweet.itemQs.refTrainId && !storageService.currentTweet.itemQs.refWagonId" layout="column" layout-align="center center" class="md-padding">
+				<div ng-show="!storageService.currentTweet.itemQs.refTrainId && !storageService.currentTweet.itemQs.wagonsIds" layout="column" layout-align="center center" class="md-padding">
 					<span translate>overview_label_train_placeholder</span>
+				</div>
+				<div layout="column" layout-align="center center" class="md-padding">
+					<span ng-show="!vm.isValidVehicle()" class="invalid" translate>overview_message_no_vehicle_data</span>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
