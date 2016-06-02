@@ -10,7 +10,7 @@ module itweet.attributeTime {
 		public timeDays:string[] = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"];
 		public timeMonths:string[] = ["Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember"];
 		public timeYear:string[] =["2013","2014","2015","2016","2017","2018","2019","2020"];
-		public timeHours:string[] = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"];
+		public timeHours:string[] = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"];
 		public timeMinutes:string[] = ["00","05","10","15","20","25","30","35","40","45","50","55"];
 		public newSelectDay:string = "";
 		public newSelectMonth:number = null;
@@ -47,31 +47,23 @@ module itweet.attributeTime {
 
 		setDate(newDate){
 			console.log("setDate",newDate);
-			this.newSelectDay = newDate.getUTCDate().toString();
+			this.newSelectDay = newDate.getDate().toString();
 			this.newSelectMonth = newDate.getMonth();
 			this.newSelectYear = newDate.getFullYear().toString();
-			
 			this.newSelectHours = newDate.getHours();
 			this.newSelectMinutes = parseInt((newDate.getMinutes()/5).toString(),10);
 		}
 
 		nextClicked(){
-			var newDate = new Date();
-			newDate.setUTCDate(+this.newSelectDay);
-			newDate.setUTCMonth(+this.newSelectMonth);
-			newDate.setUTCFullYear(+this.newSelectYear);
-			newDate.setHours(+this.newSelectHours);
-			newDate.setMinutes(+this.timeMinutes[this.newSelectMinutes]);
-			
-			this.invalidDate=false;
-			if(+this.newSelectDay!=newDate.getUTCDate()){
-				this.invalidDate=true;
-			} else{
+			var newDate = new Date(+this.newSelectYear, +this.newSelectMonth, +this.newSelectDay, +this.newSelectHours, +this.timeMinutes[this.newSelectMinutes]);
+
+			this.invalidDate = false;
+			if (+this.newSelectDay !== newDate.getDate()) {
+				this.invalidDate = true;
+			} else {
 				this.$scope.storageService.currentTweet.itemQs.dateEvent = newDate.getTime().toString();
 				this.$scope.navigationService.next();
-				
 			}
-			
 		}
 	}
 
