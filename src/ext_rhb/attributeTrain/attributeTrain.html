@@ -29,11 +29,11 @@
                     md-selected-item="vm.selectedWagon"
                     md-search-text="vm.searchWagonText"
                     md-items="wagon in vm.querySearch(vm.searchWagonText, vm.wagons)"
-                    md-item-text="vm.getFullWagon(wagon)"
+                    md-item-text="wagon.display"
                     md-min-length="0"
                     placeholder="{{'search' | translate}}">
                 <md-item-template>
-                    <span md-highlight-text="vm.searchWagonText" md-highlight-flags="i">{{vm.getFullWagon(wagon)}}</span>
+                    <span md-highlight-text="vm.searchWagonText" md-highlight-flags="i">{{wagon.display}}</span>
                 </md-item-template>
             </md-autocomplete>
 
@@ -41,7 +41,7 @@
                 <md-list>
                     <md-list-item class="md-2-line" ng-repeat="wagonAutocomplete in vm.addedWagons">
                         <div class="md-list-item-text">
-                            <p>{{vm.getFullWagon(wagonAutocomplete)}}</p>
+                            <p>{{wagonAutocomplete.display}}</p>
                         </div>
                         <md-icon ng-click="vm.removeWagon($index)" md-svg-icon="img/icon_remove.svg"></md-icon>
                         <md-divider ng-if="!$last"></md-divider>

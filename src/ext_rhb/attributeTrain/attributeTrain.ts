@@ -62,11 +62,20 @@ module itweet.attributeTrain {
 				this.addedWagons = [];
 				for (var i = 0; i < this.$scope.storageService.currentTweet.itemQs.wagonsIds.length; i++) {
 					let wagon = this.getWagonById(this.$scope.storageService.currentTweet.itemQs.wagonsIds[i], metadata);
+					let wagonDisplay, wagonQuery: string;
+
+					if (wagon.orgCode === "6130") {
+						// Vehicles
+						wagonDisplay = wagon.objectName;
+						wagonQuery = wagon.objectName.toLowerCase();
+					} else {
+						wagonDisplay = wagon.wagonNr + " : " + wagon.objectName;
+						wagonQuery = wagon.wagonNr.toLowerCase();
+					}
 					var newWagon = {
 						id: wagon.id,
-						name: wagon.name,
-						objectName: wagon.objectName,
-						wagonNr: wagon.wagonNr
+						display: wagonDisplay,
+						query: wagonQuery
 					}
 					this.addedWagons.push(newWagon);
 				}
@@ -74,7 +83,7 @@ module itweet.attributeTrain {
 		}
 
 		updateByMeta(meta: itweet.model.MetadataResponse = this.network.metadataService.getResponseData()) {
-			
+
 			if(meta.trains){
 				this.trains = new Array();
 				for (var i=0; i<meta.trains.length;i++){
@@ -94,6 +103,7 @@ module itweet.attributeTrain {
 				let refCategoryQs = this.network.metadataService.getCategoryQsById(this.$scope.storageService.currentTweet.itemQs.refItemCategoryQsId);
 				let vehicleType = this.getVehicleTypeFromCategoryQs(refCategoryQs, meta);
 				let orgCode = undefined;
+				let wagonDisplay, wagonQuery: string;
 
 				if (vehicleType === "train") {
 					orgCode = "6750";
@@ -105,12 +115,19 @@ module itweet.attributeTrain {
 				for (var i = 0; i < meta.wagons.length; i++){
 					if (meta.wagons[i].enabled
 						&& (vehicleType === "all" || (meta.wagons[i].orgCode === orgCode))) {
+
+						if (meta.wagons[i].orgCode === "6130") {
+							// Vehicles
+							wagonDisplay = meta.wagons[i].objectName;
+							wagonQuery = meta.wagons[i].objectName.toLowerCase();
+						} else {
+							wagonDisplay = meta.wagons[i].wagonNr + " : " + meta.wagons[i].objectName;
+							wagonQuery = meta.wagons[i].wagonNr.toLowerCase();
+						}
 						var newWagon = {
 							id: meta.wagons[i].id,
-							name: meta.wagons[i].name,
-							objectName: meta.wagons[i].objectName,
-							wagonNr: meta.wagons[i].wagonNr,
-							query: meta.wagons[i].wagonNr.toLowerCase()
+							display: wagonDisplay,
+							query: wagonQuery
 						}
 						this.wagons.push(newWagon);
 					}
@@ -136,10 +153,6 @@ module itweet.attributeTrain {
 
 		getFullTrain(train){
 			return (train.trainNr+' : '+train.carrier+' : '+train.route).toString();
-		}
-
-		getFullWagon(wagon){
-			return (wagon.wagonNr+' : '+wagon.objectName).toString();
 		}
 
 		onSelectedWagon() {
@@ -182,7 +195,7 @@ module itweet.attributeTrain {
 				this.$scope.storageService.currentTweet.itemQs.wagonsNames = [];
 				for (var i = 0; i < this.addedWagons.length; i++) {
 					this.$scope.storageService.currentTweet.itemQs.wagonsIds.push(this.addedWagons[i].id);
-					this.$scope.storageService.currentTweet.itemQs.wagonsNames.push(this.getFullWagon(this.addedWagons[i]));
+					this.$scope.storageService.currentTweet.itemQs.wagonsNames.push(this.addedWagons[i].display);
 				}
 			} else {
 				this.$scope.storageService.currentTweet.itemQs.wagonsIds = null;
@@ -200,44 +213,6 @@ module itweet.attributeTrain {
 				}
 			}
 		}
-
-		/*
-		getCategoryQsById(id: number, metadata: any) {
-			if (!id) return null;
-			for (var i = 0; i < metadata.categoriesQs.length; i++) {
-				if (metadata.categoriesQs[i].id === id) {
-					return metadata.categoriesQs[i];
-				}
-			}
-		}
-
-		getCategoryQsTree(categoryQs: any, metadata: any) {
-			if (!categoryQs) {
-				return null;
-			}
-			var categoryQsTree = [];
-			var categoryQsParent;
-
-			if (categoryQs.parentId) {
-				categoryQsParent = this.getCategoryQsById(categoryQs.parentId, metadata);
-				if (categoryQsParent.parentId) {
-					categoryQsTree[0] = this.getCategoryQsById(categoryQsParent.parentId, metadata);
-					categoryQsTree[1] = categoryQsParent;
-					categoryQsTree[2] = categoryQs;
-				} else {
-					categoryQsTree[0] = categoryQsParent;
-					categoryQsTree[1] = categoryQs;
-					categoryQsTree[2] = null;
-				}
-			} else {
-				categoryQsTree[0] = categoryQs;
-				categoryQsTree[1] = null;
-				categoryQsTree[2] = null;
-			}
-
-			return categoryQsTree;
-		}
-		*/
 
 		getVehicleTypeFromCategoryQs(refCategoryQs: any, metadata: any) {
 			var categoryQsTree = this.network.metadataService.getCategoryQsTree(refCategoryQs);
