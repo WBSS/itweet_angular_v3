@@ -34,7 +34,7 @@ module itweet.navigation {
             },
             'app.multicategory': (n: NavigationService,params) => {
                 let parentId = n.ItweetStorage.currentTweet.itemQs.refItemCategoryQsId;
-                let items = n.network.metadataService.getResponseData().categoriesQs.filter((c) => c.parentId == parentId)
+                let items = n.network.metadataService.getResponseData().categoriesQs.filter((c) => c.parentId == parentId && c.enabled)
                 let resp = new State('app.rhb_attribute_train');
                 let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
                 

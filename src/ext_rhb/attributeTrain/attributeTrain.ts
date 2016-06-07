@@ -43,8 +43,8 @@ module itweet.attributeTrain {
 					this.$scope.storageService.currentTweet.contextToken = context.contextToken;
 				}
 			});
-			$scope.vm.searchTrainText = "";
-			$scope.vm.searchWagonText = "";
+			$scope.vm.searchTrainText = undefined;
+			$scope.vm.searchWagonText = undefined;
 
 			if(this.$scope.storageService.currentTweet.itemQs.refTrainId){
 				console.log('set storaged location',this.$scope.storageService.currentTweet.itemQs.refTrainId);
@@ -165,6 +165,7 @@ module itweet.attributeTrain {
 
 		addWagon(refWagon: any) {
 			if (refWagon) {
+				this.selectedWagon = null;
 				for (var i = 0; i < this.addedWagons.length; i++) {
 					if (this.addedWagons[i].id === refWagon.id) {
 						return;

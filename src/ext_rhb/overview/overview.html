@@ -47,7 +47,7 @@
 				<md-divider></md-divider>
 				<div layout="row" layout-align="center center" class="md-padding">
 					<div ng-hide="storageService.currentTweet.itemQs.dateEvent" translate>overview_label_time_placeholder</div>
-					<div ng-show="storageService.currentTweet.itemQs.dateEvent">{{storageService.currentTweet.itemQs.dateEvent | date:'dd/MM/yyyy - HH:mm'}}</div>
+					<div ng-show="storageService.currentTweet.itemQs.dateEvent">{{storageService.currentTweet.itemQs.dateEvent | date:'short'}}</div>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>

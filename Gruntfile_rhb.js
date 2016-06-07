@@ -281,7 +281,7 @@ module.exports = function (grunt) {
         dest: 'www/js/de.js'
       },
       en: {
-        src: 'bower_components/angular-i18n/angular-locale_de.js',
+        src: 'bower_components/angular-i18n/angular-locale_en.js',
         dest: 'www/js/en.js'
       },
       it: {
