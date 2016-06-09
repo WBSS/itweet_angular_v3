@@ -1,4 +1,4 @@
-<md-toolbar class="md-primary sm-toolbar" ng-controller="MenuController">
+<md-toolbar class="md-primary sm-toolbar my-header-toolbar" ng-controller="MenuController">
     <div class="md-toolbar-tools md-padding">
 		
     	<md-button ng-show="menu_parameters.icon" ng-click="menuController.menuClicked()" class="md-icon-button" aria-label="Menu">
@@ -10,9 +10,11 @@
 		</md-button>
         
     	<span flex layout layout-align="center center" ng-bind="menu_parameters.title"></span>
+
 		<img class="headerimage" ng-show="loaded && !navigationService.isCurrentStateOverview()"
                 ng-if="brand.getResponseData().urlIconLogo" ng-src="{{::brand.getResponseData().urlIconLogo}}"
                 ng-onload="loaded = true"/>
+
         <md-button ng-show="navigationService.shouldDisplayAllMessages()" ng-click="navigationService.goType('alltweets')" class="md-icon-button" aria-label="All Tweets">
             <ng-md-icon icon='info_outline' style="fill: white"></ng-md-icon>
         </md-button>

@@ -24,7 +24,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '0.8.3'
+    appVersion: '1.0.0'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -33,7 +33,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
     itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '0.8.3'
+    appVersion: '1.0.0'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -43,7 +43,7 @@ var templateconfig = function (config) {
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
     //itweetURL: 'http://192.168.192.37/mvc/mobile/rhb/1/',
-    appVersion: '0.8.3',
+    appVersion: '1.0.0',
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -192,7 +192,10 @@ module.exports = function (grunt) {
     // concat all css file in one
     concat_css: {
       all: {
-        src: ['src/**/*.css'],
+        src: [
+          'src/**/*.css',
+          '!src/ext_itweet/**/*.css']
+        ,
         dest: "www/css/app.css"
       }
     },

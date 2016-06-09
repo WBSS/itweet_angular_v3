@@ -278,7 +278,8 @@ module itweet.model {
         }
 
         getSubheaderStyle() {
-            return "color:" + this.getColor('subheaderColorText') + ";background-color:rgba(226,0,26,216);margin-right:0px;;overflow: hidden;";
+            //return "color:" + this.getColor('subheaderColorText') + ";background-color:rgba(226,0,26,216);margin-right:0px;;overflow: hidden;";
+            return "color:" + this.getColor('subheaderColorText') + ";background-color:"+ this.getColor('subheaderColor') + ";margin-right:0px;overflow: hidden;";
         }
 
         getFooterStyle() {

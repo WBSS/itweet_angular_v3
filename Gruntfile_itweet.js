@@ -200,7 +200,10 @@ module.exports = function (grunt) {
     // concat all css file in one
     concat_css: {
       all: {
-        src: ['src/**/*.css'],
+        src: [
+          'src/**/*.css',
+          '!src/ext_rhb/**/*.css'
+        ],
         dest: "www/css/app.css"
       }
     },
