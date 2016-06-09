@@ -226,7 +226,7 @@ module itweet.attributeTrain {
 				return "all";
 			}
 			// Check category "Fahrzeuge"
-			if (categoryQsTree[1].id === 6 || categoryQsTree[1].id === 7 || categoryQsTree[1].id === 9) {
+			if (categoryQsTree[1].id === 6 || categoryQsTree[1].id === 7 || categoryQsTree[1].id === 8 || categoryQsTree[1].id === 9) {
 				return "train";
 			} else {
 				return "road";
