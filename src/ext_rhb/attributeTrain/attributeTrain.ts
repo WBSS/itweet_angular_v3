@@ -156,16 +156,19 @@ module itweet.attributeTrain {
 		}
 
 		onSelectedWagon() {
+			if (!this.selectedWagon)
+				return;
+
 			this.addWagon(this.selectedWagon);
 			// Resets
+			var wagonACScope: any = angular.element(document.getElementById('wagonAC')).scope();
+			wagonACScope.$mdAutocompleteCtrl.clear();
 			this.selectedWagon = null;
-			this.searchWagonText = "";
 			this.$window.document.activeElement.blur();
 		}
 
 		addWagon(refWagon: any) {
 			if (refWagon) {
-				this.selectedWagon = null;
 				for (var i = 0; i < this.addedWagons.length; i++) {
 					if (this.addedWagons[i].id === refWagon.id) {
 						return;

@@ -78,16 +78,19 @@ module itweet.attributeInvolvedPersons {
 		}
 
 		onSelectedInvolvedPerson() {
+			if (!this.selectedPerson)
+				return;
+
 			this.addPerson(this.selectedPerson);
 			// Resets
+			var personACScope: any = angular.element(document.getElementById('personAC')).scope();
+			personACScope.$mdAutocompleteCtrl.clear();
 			this.selectedPerson = null;
-			this.searchText = "";
 			this.$window.document.activeElement.blur();
 		}
 
 		addPerson(refPerson: any) {
 			if (refPerson) {
-				this.selectedPerson = null;
 				for (var i = 0; i < this.addedPersons.length; i++) {
 					if (this.addedPersons[i].id === refPerson.id) {
 						return;

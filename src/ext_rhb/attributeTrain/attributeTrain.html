@@ -18,14 +18,15 @@
             </md-item-template>
         </md-autocomplete>
         <p translate>train_vehicle_number</p>
-        <md-autocomplete id="myAuto"
+        <md-autocomplete
+                md-input-id="wagonAC"
                 md-selected-item-change="vm.onSelectedWagon()"
                 md-delay="200"
                 md-selected-item="vm.selectedWagon"
                 md-search-text="vm.searchWagonText"
                 md-items="wagon in vm.querySearch(vm.searchWagonText, vm.wagons)"
                 md-item-text="wagon.display"
-                md-min-length="0"
+                md-min-length="1"
                 placeholder="{{'search' | translate}}">
             <md-item-template>
                 <span md-highlight-text="vm.searchWagonText" md-highlight-flags="i">{{wagon.display}}</span>

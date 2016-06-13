@@ -6,6 +6,7 @@
    <div class="md-padding" ng-show="vm.loaded">
 	  <p translate>attribute_involvedPersons_text</p>
         <md-autocomplete
+                md-input-id="personAC"
                 md-selected-item-change="vm.onSelectedInvolvedPerson()"
                 md-delay="200"
                 md-select-on-match="true"
@@ -13,7 +14,7 @@
                 md-search-text="vm.searchText"
                 md-items="person in vm.querySearch(vm.searchText)"
                 md-item-text="vm.getFullPerson(person)"
-                md-min-length="0"
+                md-min-length="1"
                 placeholder="{{'search' | translate}}">
             <md-item-template>
                 <span md-highlight-text="vm.searchText" md-highlight-flags="i">{{vm.getFullPerson(person)}}</span>
