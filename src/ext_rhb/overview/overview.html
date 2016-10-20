@@ -122,21 +122,6 @@
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
-		<div flex>
-			<md-card ng-click='vm.gotoDetail("app.audio")' role="button">
-				<div layout="row" layout-align="start center" layout-fill>
-					<h3 translate>speech_title</h3>
-				</div>
-				<md-divider></md-divider>
-				<div layout="row" layout-align="center center" class="md-padding">
-					<div class="md-button md-icon-button photoButton">
-						<image ng-show="storageService.getAudio()" ng-src="img/microphone_darkgrey_big.png" class="myImg" />
-						<image ng-hide="storageService.getAudio()" ng-src="img/microphone_cleargrey_big.png" class="myImg" />
-					</div>
-				</div>
-				<img src="img/edit.png" class="overview-img-right" />
-			</md-card>
-		</div>
 	</div>
 
 </md-content>

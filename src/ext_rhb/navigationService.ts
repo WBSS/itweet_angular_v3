@@ -53,8 +53,7 @@ module itweet.navigation {
             },
             'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_attribute_time'),
             'app.photo': (n: NavigationService,params) => new State('app.text'),
-            'app.text': (n: NavigationService,params) => new State('app.audio'),
-            'app.audio': (n: NavigationService,params) => new State('app.rhb_attribute_involvedPersons'),
+            'app.text': (n: NavigationService,params) => new State('app.rhb_attribute_involvedPersons'),
             'app.rhb_attribute_involvedPersons': (n: NavigationService) => new State('app.overview')
         };
 

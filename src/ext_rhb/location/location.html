@@ -38,11 +38,14 @@
 			</md-item-template>
 		</md-autocomplete>
 		<p translate>rhblocation_choosePosition</p>
-		<div layout="row" class="positions">
-			<md-input-container>
-				<input ng-model="vm.currentTrackPosition" maxlength="5" style="text-align:right" type="text">
-			</md-input-container>km
-		</div>
+		  <div layout="row" class="positions">
+			  <md-input-container>
+				  <input ng-model="vm.currentTrackPosition[0]" maxlength="3" style="text-align:right" type="tel">
+			  </md-input-container>.
+			  <md-input-container>
+				  <input ng-model="vm.currentTrackPosition[1]" maxlength="3" type="tel">
+			  </md-input-container>km
+		  </div>
       </form>
      </div>
 	 </div>

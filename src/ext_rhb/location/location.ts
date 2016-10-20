@@ -11,7 +11,7 @@ module itweet.location {
 		public locationDisabled:boolean=false;
 		public tracks: any;
 		public selectedTrack: any;
-		public currentTrackPosition: number;
+		public currentTrackPosition: any;
 		public searchTrackText:string;
 		public loaded: Boolean = false;
 		public locationElement:any;
@@ -47,7 +47,7 @@ module itweet.location {
 			$scope.vm.searchLocationText = "";
 			$scope.vm.locationDisabled=false;
 			$scope.vm.searchTrackText = "";
-			$scope.vm.currentTrackPosition = null;
+			$scope.vm.currentTrackPosition = new Array("","");
 			
 			if(this.$scope.storageService.currentTweet.itemQs.refLocationId){
 				console.log('set storaged location',this.$scope.storageService.currentTweet.itemQs.refLocationName);
@@ -66,7 +66,8 @@ module itweet.location {
 			}
 			
 			if(this.$scope.storageService.currentTweet.itemQs.trackPosition){
-				$scope.vm.currentTrackPosition = this.$scope.storageService.currentTweet.itemQs.trackPosition;
+				let _pos = this.$scope.storageService.currentTweet.itemQs.trackPosition.toString();
+				$scope.vm.currentTrackPosition = _pos.split(".");
 			}
 			
 			/* RHB FIX: FIXME REFACTOR */
@@ -150,9 +151,11 @@ module itweet.location {
 				this.$scope.storageService.currentTweet.itemQs.refTrackId = null;
 				this.$scope.storageService.currentTweet.itemQs.refTrackName = null;
 			}
-			
-			if (this.currentTrackPosition) {
-				this.$scope.storageService.currentTweet.itemQs.trackPosition = this.currentTrackPosition;
+
+			if(this.currentTrackPosition[0] != "" || this.currentTrackPosition[1] != ""){
+				if(this.currentTrackPosition[1] == "") this.currentTrackPosition[1] ="0"
+				if(this.currentTrackPosition[0] == "") this.currentTrackPosition[0] ="0"
+				this.$scope.storageService.currentTweet.itemQs.trackPosition = +(this.currentTrackPosition[0]+"."+this.currentTrackPosition[1]);
 			} else this.$scope.storageService.currentTweet.itemQs.trackPosition = null;
 			
 			this.$scope.navigationService.next();
