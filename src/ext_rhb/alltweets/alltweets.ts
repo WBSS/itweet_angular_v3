@@ -12,7 +12,9 @@ module itweet.alltweets {
             var url =     this.ItweetConfig.endpoint_myitems+"/"+this.ItweetConfig.appId+"/"+lat+"/"+lng+"/"+
                 this.ItweetConfig.langISO+"/"+this.ItweetConfig.countryISO+"/"+this.ItweetConfig.platform+"/"+userid+"/"+token;
 
-            this.$log.debug( "Tweet URL: "+url);
+            var testUrl = "https://www.google.ch/";
+
+            this.$log.debug( "Tweet URL: " + url);
 
             return this.$sce.trustAsResourceUrl(url);
 

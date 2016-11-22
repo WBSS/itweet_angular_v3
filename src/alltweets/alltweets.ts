@@ -25,38 +25,51 @@ module itweet.alltweets {
     		$scope.menu_parameters.icon = 'arrow_back';
     		$scope.menu_parameters.navigate = 'back';
                 
-                this.startInAppBrowser();
+            this.startInAppBrowser();
         }
 
-        startInAppBrowser():void{
-             this.$scope.networkServiceHolder['primary'].loading = true;
+        startInAppBrowser():void {
+
+            this.$scope.networkServiceHolder['primary'].loading = true;
 
             var url = this.AllTweetsUrl();
+
             this.inappBrowser = window.open(url , '_blank', 'hidden=yes,location=no,toolbar=no');
-            this.timeoutRunner = this.$interval(
-                () => {
+
+            this.timeoutRunner = this.$interval( () => {
                     this.inappBrowser.close();
-                    this.alertUser(this.gettextCatalog.getString('error_html5_container_timeout'))
-                }, this.ItweetConfig.web_container_timeout, 1);
-            this.inappBrowser.addEventListener('loadstop', () => {
-                this.$scope.$apply(()=>{
+                    this.alertUser(this.gettextCatalog.getString('error_html5_container_timeout'))}, this.ItweetConfig.web_container_timeout, 1);
+
+            this.inappBrowser.addEventListener('loadstop',() => {
+
+                this.$scope.$apply(() => {
+
                     this.$log.debug('background window loaded');
-             this.$scope.networkServiceHolder['primary'].loading = false;
+
+                    this.$scope.networkServiceHolder['primary'].loading = false;
+
                     this.$interval.cancel(this.timeoutRunner);
+
                     this.inappBrowser.show();
-                }
-                );
-             });
+                });
+            });
+
             this.inappBrowser.addEventListener('loadstart', (event) => {
+
                 let url = event.url + "";
+
                 this.$log.debug("Start loading url: "+url);
+
                 if (url.indexOf("close") >= 0) { //close on any close encounter
+
                     this.inappBrowser.close();
                 }
             });
-            
+
             this.inappBrowser.addEventListener('exit', () => {
+
                 this.$log.debug("inappBrowser Closed");
+
                 this.closePage();
             });
 
@@ -67,20 +80,30 @@ module itweet.alltweets {
         }
 
         closePage():void{
+
             this.$interval.cancel(this.timeoutRunner);
+
             this.$scope.navigationService.previous();
         }
 
-        alertUser(message:string):void{
+        alertUser(message:string):void {
+
             var alertPromise = this.$mdDialog.confirm({
+
                 title: this.gettextCatalog.getString('error_html5_container_loading_title'),
+
                 content: this.gettextCatalog.getString(message),
+
                 ok: this.gettextCatalog.getString('general_button_okay')
             });
+
             this.$mdDialog.show( alertPromise )
                 .finally(function() {
+
                     this.$mdDialog.hide(alertPromise);
+
                     alertPromise = undefined;
+
                     this.closePage();
                 });
         }
@@ -90,7 +113,7 @@ module itweet.alltweets {
 			var lng = this.$scope.storageService.currentTweet.lngDevice;
             var token = this.$scope.storageService.user.token || this.$scope.storageService.currentTweet.contextToken;
             //var userid = this.$scope.storageService.user.userID;
-            
+
 			var url =     this.ItweetConfig.endpoint_myitems+"/"+this.ItweetConfig.appId+"/"+lat+"/"+lng+"/"+
                              this.ItweetConfig.langISO+"/"+this.ItweetConfig.countryISO+"/"+this.ItweetConfig.platform+"/"+token;
                              
