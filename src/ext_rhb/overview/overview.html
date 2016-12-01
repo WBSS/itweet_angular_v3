@@ -39,6 +39,8 @@
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
+	</div>
+	<div layout="row" layout-sm="column">
 		<div flex ng-hide="vm.isCatergoryIeadsProposal()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_time")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -63,6 +65,21 @@
 				<div layout="row" layout-align="center center" class="md-padding">
 					<span ng-hide="storageService.currentTweet.txt" class="invalid" translate>overview_label_text_placeholder</span>
 					<span ng-bind="storageService.currentTweet.txt"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.rhb_visibility")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3 translate>visibility_title</h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-show="storageService.currentTweet.refItemVisibilityId === 2"><span translate>visibility_subheader</span>: <span translate>lbl_no</span></span>
+					<span ng-show="storageService.currentTweet.refItemVisibilityId === 3"><span translate>visibility_subheader</span>: <span translate>lbl_yes</span></span>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>

@@ -51,6 +51,7 @@
 /// <reference path='ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.ts' />
 /// <reference path='ext_rhb/attributeTime/attributeTime.ts' />
 /// <reference path='ext_rhb/attributeTrain/attributeTrain.ts' />
+/// <reference path='ext_rhb/visibility/visibility.ts' />
 
 // *** rhb services *** //
 /// <reference path='ext_rhb/navigationService.ts' />

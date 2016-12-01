@@ -1,0 +1,27 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+	<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+		<span translate>visibility_subheader</span>
+	</md-subheader>
+    <div class="md-padding">
+		<md-card class="md-padding">
+			<form>
+				<div layout="row">
+					<md-input-container flex="33">
+						<md-radio-group ng-model="vm.refItemVisibilityId">
+							<md-radio-button ng-repeat="v in vm.refItemVisibilities" ng-value="v.id" class="md-primary">
+								<span ng-bind="v.nameTranslated" />
+							</md-radio-button>
+						</md-radio-group>
+					</md-input-container>
+				</div>
+			</form>
+		</md-card>
+    </div>
+</md-content>
+
+<footer>
+	<md-button type="submit" ng-click="vm.nextClicked()" class="md-primary footer-button" style="{{::footerStyle}}">
+		<span translate>location_button_next</span>
+	</md-button>
+</footer>

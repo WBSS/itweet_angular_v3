@@ -9,7 +9,7 @@
                 md-delay="200"
                 md-selected-item="vm.selectedTrain"
                 md-search-text="vm.searchTrainText"
-                md-items="train in vm.querySearch(vm.searchTrainText,vm.trains)"
+                md-items="train in vm.querySearch('train', vm.searchTrainText,vm.trains)"
                 md-item-text="vm.getFullTrain(train)"
                 md-min-length="0"
                 placeholder="{{'search' | translate}}">
@@ -24,7 +24,7 @@
                 md-delay="200"
                 md-selected-item="vm.selectedWagon"
                 md-search-text="vm.searchWagonText"
-                md-items="wagon in vm.querySearch(vm.searchWagonText, vm.wagons)"
+                md-items="wagon in vm.querySearch('wagon', vm.searchWagonText, vm.wagons)"
                 md-item-text="wagon.display"
                 md-min-length="1"
                 placeholder="{{'search' | translate}}">

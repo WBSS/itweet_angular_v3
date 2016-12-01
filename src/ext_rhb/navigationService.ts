@@ -28,7 +28,7 @@ module itweet.navigation {
                     if (elems.length > 0) {
                         return new State('app.overview');
                     }
-                    return new State('app.photo');
+                    return new State('app.rhb_attribute_time');
                 }
                 return new State('app.multicategory', { parentId: undefined });
             },
@@ -47,6 +47,14 @@ module itweet.navigation {
                 return resp;
             },
             'app.rhb_attribute_time': (n: NavigationService,params) => {
+                if (n.ItweetStorage.currentTweet.refItemCategoryId == 86) { /* rtm demo: hardcoded custom flow */
+                    let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
+                    if (elems.length > 0) {
+                        return new State('app.overview');
+                    }
+                    return new State('app.photo');
+                }
+
                 let parentId = n.ItweetStorage.currentTweet.itemQs.refItemCategoryQsId;
                 let resp = new State('app.rhb_location', { parentId: parentId });
                 return resp;
@@ -54,7 +62,8 @@ module itweet.navigation {
             'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_attribute_time'),
             'app.photo': (n: NavigationService,params) => new State('app.text'),
             'app.text': (n: NavigationService,params) => new State('app.rhb_attribute_involvedPersons'),
-            'app.rhb_attribute_involvedPersons': (n: NavigationService) => new State('app.overview')
+            'app.rhb_attribute_involvedPersons': (n: NavigationService) => new State('app.rhb_visibility'),
+            'app.rhb_visibility': (n: NavigationService) => new State('app.overview')
         };
 
         constructor(

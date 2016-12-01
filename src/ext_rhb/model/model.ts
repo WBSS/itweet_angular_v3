@@ -18,6 +18,7 @@ module itweet.model {
         address: string;
         location: string;
         refItemCategoryId: number;
+        refItemVisibilityId: number;
         txt: string;
         mail: string;
         name: string;
@@ -159,4 +160,8 @@ module itweet.model {
         wagonsNames:string[] = null
     }
 
+    export class RefItemVisibility {
+        id: number;
+        nameTranslated: string;
+    }
 }

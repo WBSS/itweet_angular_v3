@@ -65,12 +65,13 @@ module itweet.attributeTrain {
 					let wagonDisplay, wagonQuery: string;
 
 					if (wagon.orgCode === "6130") {
-						// Vehicles
+						// Road vehicles
 						wagonDisplay = wagon.objectName;
 						wagonQuery = wagon.objectName.toLowerCase();
 					} else {
+						// Train vehicles
 						wagonDisplay = wagon.wagonNr + " : " + wagon.objectName;
-						wagonQuery = wagon.wagonNr.toLowerCase();
+						wagonQuery = wagon.wagonNr.toLowerCase() + " " + wagon.objectName.toLowerCase();
 					}
 					var newWagon = {
 						id: wagon.id,
@@ -117,12 +118,13 @@ module itweet.attributeTrain {
 						&& (vehicleType === "all" || (meta.wagons[i].orgCode === orgCode))) {
 
 						if (meta.wagons[i].orgCode === "6130") {
-							// Vehicles
+							// Road vehicles
 							wagonDisplay = meta.wagons[i].objectName;
 							wagonQuery = meta.wagons[i].objectName.toLowerCase();
 						} else {
+							// Train vehicles
 							wagonDisplay = meta.wagons[i].wagonNr + " : " + meta.wagons[i].objectName;
-							wagonQuery = meta.wagons[i].wagonNr.toLowerCase();
+							wagonQuery = meta.wagons[i].wagonNr.toLowerCase() + " " + meta.wagons[i].objectName.toLowerCase();
 						}
 						var newWagon = {
 							id: meta.wagons[i].id,
@@ -136,17 +138,28 @@ module itweet.attributeTrain {
 			this.loaded = true;
 		}
 
-		querySearch (query,list) {
-			var results = list.filter(this.createFilterFor(query));
-			var t = results.slice(0,12);
-			return t;
+		querySearch(type: string, query: string, list: any) {
+			var results;
+			if (type === "wagon") {
+				results = list.filter(this.createFilterMatchWithin(query));
+			} else {
+				results = list.filter(this.createFilterMatchStart(query));
+			}
+			return results.slice(0, 50);
 		}
 
-		createFilterFor(q) {
-			var query = q.toLowerCase();
-			return function filterFn(item) {
+		createFilterMatchWithin(input: string) {
+			var query = input.toLowerCase();
+			return function filterFn(item: any) {
+				var i = (item.query.indexOf(query) >= 0);
+				return i;
+			};
+		}
+
+		createFilterMatchStart(input: string) {
+			var query = input.toLowerCase();
+			return function filterFn(item: any) {
 				var i = (item.query.indexOf(query) === 0);
-				
 				return i;
 			};
 		}
