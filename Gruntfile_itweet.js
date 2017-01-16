@@ -20,29 +20,31 @@ var templateconfig = function (config) {
 
   // app configuration (array of hash map)
   var platforms = [{
-    appName: 'iTweet_Cloud',
+    appName: 'iTweetNew',
     appID: 'itweet',
-    appPackage: 'ch.wbss.itweet.cloud',
-    itweetURL: 'https://www.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.3',
+    appPackage: 'ch.wbss.itweet',
+    itweetURL: 'https://new.itweet.ch/mvc/mobile/1/',
+    //itweetURL: 'https://rhbapp.itweet.ch//mvc/mobile/1/',
+    appVersion: '1.0.0',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweet_PTA',
+    appName: 'iTweetNewUTA',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
     itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.3',
+    appVersion: '1.0.0',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweet_DEV',
+    appName: 'iTweetNewDEV',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
-    itweetURL: 'https://dev.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.3',
+    itweetURL: 'https://newdev.itweet.ch/mvc/mobile/1/',
+    //itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/1/',
+    appVersion: '1.0.0',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -70,7 +72,6 @@ var templateconfig = function (config) {
       options: {
         data: data
       },
-
       files: template_files
     };
     // add for debugging of dev version
@@ -396,7 +397,7 @@ module.exports = function (grunt) {
   grunt.registerTask('run-android_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_android','_compile-and-run_android']);
   // ios
-  grunt.registerTask('run-ios_prod', ['_clean_build','template:prod_ch.wbss.itweet.cloud','_clean_platform_ios','_compile-and-run_ios']);
+  grunt.registerTask('run-ios_prod', ['_clean_build','template:prod_ch.wbss.itweet','_clean_platform_ios','_compile-and-run_ios']);
   grunt.registerTask('run-ios_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_ios','_compile-and-run_ios']);
   grunt.registerTask('run-ios_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-run_ios']);
 
@@ -420,7 +421,7 @@ module.exports = function (grunt) {
   grunt.registerTask('_compile-and-build_ios_release', ['_prepare', 'exec:builder_ios_release']);
   grunt.registerTask('build_ios_release_prod', ['_clean_build','template:prod_ch.wbss.itweet','_clean_platform_ios','_compile-and-build_ios_release']);
   grunt.registerTask('build_ios_release_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_ios','_compile-and-build_ios_release']);
-  grunt.registerTask('build_ios_release_dev', ['_clean_build','_clean_before_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-build_ios_release']);
+  grunt.registerTask('build_ios_release_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-build_ios_release']);
 
   return grunt.registerTask('default', ['dev']);
 };
