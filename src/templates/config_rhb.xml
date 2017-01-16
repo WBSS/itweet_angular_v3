@@ -17,7 +17,7 @@
     <preference name="SuppressesIncrementalRendering" value="false"/>
     <preference name="UIWebViewDecelerationSpeed" value="normal" />
     <preference name="target-device" value="universal" />
-    <preference name="deployment-target" value="7.0" />
+    <preference name="deployment-target" value="8.0" />
     <preference name="SuppressesLongPressGesture" value="false" />
     <preference name="Suppresses3DTouchGesture" value="true" />
 
