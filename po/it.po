@@ -49,6 +49,12 @@ msgstr "Sei sicuro di voler annullare il trasferimento dati?"
 msgid "personel_title"
 msgstr "Miei dati"
 
+msgid "lbl_map_geo_position"
+msgstr "posizione"
+
+msgid "lbl_map_layer_selection"
+msgstr "carta layer"
+
 msgid "personel_text"
 msgstr "È possibile modificarle in qualsiasi momento."
 

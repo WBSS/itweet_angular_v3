@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.5\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: build/ts.js:384
 msgid "alltweet_item_list_is_loading"
@@ -46,6 +46,15 @@ msgstr "Ereigniszeit"
 #: src/ext_rhb/overview/overview.html:106
 msgid "attribute_title_train"
 msgstr "Zug-/Fahrzeugnummer"
+
+msgid "personel_title"
+msgstr "Registrieren"
+
+msgid "lbl_map_geo_position"
+msgstr "Position"
+
+msgid "lbl_map_layer_selection"
+msgstr "Kartenlayer"
 
 #: src/ext_rhb/attributeTrain/attributeTrain.html:4
 #: src/ext_rhb/location/location.html:4
@@ -619,7 +628,7 @@ msgstr "Vertrauliche Meldung"
 
 #: build/ts.js:3427 src/ext_rhb/overview/overview.html:48
 msgid "visibility_title"
-msgstr "Sichtbarkeit"
+msgstr "Vertraulich"
 
 #~ msgid "alltweet_message_list_is_loaded"
 #~ msgstr "Meldungsliste wird geladen"

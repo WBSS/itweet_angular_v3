@@ -47,6 +47,15 @@ msgstr "Eventtime"
 msgid "attribute_title_train"
 msgstr "Train and Vehicles"
 
+msgid "personel_title"
+msgstr "Register"
+
+msgid "lbl_map_geo_position"
+msgstr "Position"
+
+msgid "lbl_map_layer_selection"
+msgstr "Map layer"
+
 #: src/ext_rhb/attributeTrain/attributeTrain.html:4
 #: src/ext_rhb/location/location.html:4
 msgid "attribute_train_subheader"
@@ -234,7 +243,7 @@ msgstr "Next"
 #: build/ts.js:2331 build/ts.js:2836 src/ext_itweet/overview/overview.html:11
 #: src/ext_rhb/overview/overview.html:11
 msgid "location_title"
-msgstr "Train station / location"
+msgstr "Location"
 
 #: src/login/login.html:31
 msgid "login_button_login"
@@ -610,7 +619,7 @@ msgstr "Confidential message"
 
 #: build/ts.js:3427 src/ext_rhb/overview/overview.html:48
 msgid "visibility_title"
-msgstr "Visibility"
+msgstr "Confidential"
 
 #~ msgid "alltweet_message_list_is_loaded"
 #~ msgstr "The message list is loading"

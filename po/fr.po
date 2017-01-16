@@ -49,6 +49,12 @@ msgstr "Voulez-vous vraiment annuler le téléchargement?"
 msgid "personel_title"
 msgstr "Mes données"
 
+msgid "lbl_map_geo_position"
+msgstr "Position"
+
+msgid "lbl_map_layer_selection"
+msgstr "carte layer"
+
 msgid "personel_text"
 msgstr "Vous pouvez les modifier à tout moment."
 
