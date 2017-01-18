@@ -46,6 +46,7 @@
 /// <reference path='ext_itweet/map/map.ts' />
 /// <reference path='ext_itweet/navigationService.ts' />
 /// <reference path='ext_itweet/register/register.ts' />
+/// <reference path='ext_itweet/overview/overview.ts' />
 /// <reference path='ext_itweet/modules.ts' />
 
 // *** itweet extra models *** //

@@ -103,10 +103,15 @@ module itweet.alltweets {
             var lat = this.$scope.storageService.currentTweet.latDevice;
             var lng = this.$scope.storageService.currentTweet.lngDevice;
             var token = this.$scope.storageService.user.token || this.$scope.storageService.currentTweet.contextToken;
+            var isLogon = this.$scope.storageService.user.token ? true : false;
             //var userid = this.$scope.storageService.user.userID;
 
-            var url = this.ItweetConfig.endpoint_myitems + "/" + this.ItweetConfig.appId + "/" + lat + "/" + lng + "/" +
+            var url = this.ItweetConfig.endpoint_myitems + this.ItweetConfig.appId + "/" + lat + "/" + lng + "/" +
                 this.ItweetConfig.langISO + "/" + this.ItweetConfig.countryISO + "/" + this.ItweetConfig.platform + "/" + token;
+
+            if (this.ItweetConfig.appId === "itweet") {
+                url += "/" + isLogon;
+            }
 
             this.$log.debug("Tweet URL: " + url);
 
