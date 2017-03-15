@@ -28,17 +28,17 @@ msgstr ""
 msgid "attribute_time_subheader"
 msgstr ""
 
-#: build/ts.js:2988
-#: src/ext_rhb/overview/overview.html:91
+#: build/ts.js:2990
+#: src/ext_rhb/overview/overview.html:92
 msgid "attribute_title_involvedPersons"
 msgstr ""
 
-#: build/ts.js:3139
-#: src/ext_rhb/overview/overview.html:61
+#: build/ts.js:3141
+#: src/ext_rhb/overview/overview.html:47
 msgid "attribute_title_time"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:106
+#: src/ext_rhb/overview/overview.html:107
 msgid "attribute_title_train"
 msgstr ""
 
@@ -47,8 +47,8 @@ msgstr ""
 msgid "attribute_train_subheader"
 msgstr ""
 
-#: build/ts.js:2562
-#: build/ts.js:743
+#: build/ts.js:2564
+#: build/ts.js:745
 #: src/ext_itweet/overview/overview.html:27
 #: src/ext_rhb/overview/overview.html:32
 msgid "category_title"
@@ -58,7 +58,7 @@ msgstr ""
 msgid "context_subtitle"
 msgstr ""
 
-#: build/ts.js:676
+#: build/ts.js:678
 msgid "context_title"
 msgstr ""
 
@@ -79,52 +79,52 @@ msgid "disclaimer_title"
 msgstr ""
 
 #: build/ts.js:231
-#: build/ts.js:430
+#: build/ts.js:428
 msgid "error_html5_container_loading_title"
 msgstr ""
 
-#: build/ts.js:401
+#: build/ts.js:388
 msgid "error_html5_container_timeout"
 msgstr ""
 
-#: build/ts.js:1068
-#: build/ts.js:1088
-#: build/ts.js:1106
-#: build/ts.js:1122
+#: build/ts.js:1070
+#: build/ts.js:1090
+#: build/ts.js:1108
+#: build/ts.js:1124
 #: build/ts.js:250
 #: build/ts.js:267
-#: build/ts.js:3559
-#: build/ts.js:3652
-#: build/ts.js:432
+#: build/ts.js:3580
+#: build/ts.js:3673
+#: build/ts.js:430
 #: src/app/progress_dialog.tpl.html:16
 msgid "general_button_okay"
 msgstr ""
 
-#: build/ts.js:1152
+#: build/ts.js:1154
 msgid "general_info_created_failed_message"
 msgstr ""
 
-#: build/ts.js:1144
+#: build/ts.js:1146
 msgid "general_info_created_message"
 msgstr ""
 
-#: build/ts.js:1541
+#: build/ts.js:1543
 msgid "general_info_high_ping_message"
 msgstr ""
 
-#: build/ts.js:1540
+#: build/ts.js:1542
 msgid "general_info_high_ping_title"
 msgstr ""
 
-#: build/ts.js:1149
+#: build/ts.js:1151
 msgid "general_info_send_canceled"
 msgstr ""
 
-#: build/ts.js:1105
+#: build/ts.js:1107
 msgid "general_info_send_message"
 msgstr ""
 
-#: build/ts.js:1104
+#: build/ts.js:1106
 msgid "general_info_send_title"
 msgstr ""
 
@@ -151,20 +151,20 @@ msgstr ""
 msgid "input_error_too_short"
 msgstr ""
 
-#: build/ts.js:492
+#: build/ts.js:494
 msgid "item_delete_text"
 msgstr ""
 
-#: build/ts.js:491
+#: build/ts.js:493
 msgid "item_delete_title"
 msgstr ""
 
-#: build/ts.js:1087
+#: build/ts.js:1089
 msgid "item_save_text"
 msgstr ""
 
-#: build/ts.js:1086
-#: build/ts.js:471
+#: build/ts.js:1088
+#: build/ts.js:473
 msgid "item_save_title"
 msgstr ""
 
@@ -180,13 +180,21 @@ msgstr ""
 msgid "lbl_info_file_mandatory_multi"
 msgstr ""
 
-#: build/ts.js:3442
-#: src/ext_rhb/overview/overview.html:52
+#: src/ext_itweet/map/map.html:49
+msgid "lbl_map_geo_position"
+msgstr ""
+
+#: src/ext_itweet/map/map.html:53
+msgid "lbl_map_layer_selection"
+msgstr ""
+
+#: build/ts.js:3456
+#: src/ext_rhb/overview/overview.html:81
 msgid "lbl_no"
 msgstr ""
 
-#: build/ts.js:3446
-#: src/ext_rhb/overview/overview.html:53
+#: build/ts.js:3460
+#: src/ext_rhb/overview/overview.html:82
 msgid "lbl_yes"
 msgstr ""
 
@@ -198,19 +206,20 @@ msgid "loading"
 msgstr ""
 
 #: src/audio/audio.html:47
-#: src/ext_itweet/map/map.html:57
+#: src/ext_itweet/map/map.html:59
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:43
 #: src/ext_rhb/attributeTime/attributeTime.html:51
 #: src/ext_rhb/attributeTrain/attributeTrain.html:54
 #: src/ext_rhb/location/location.html:54
+#: src/ext_rhb/map/map.html:59
 #: src/ext_rhb/visibility/visibility.html:25
 #: src/photo/photo.html:20
 #: src/text/text.html:23
 msgid "location_button_next"
 msgstr ""
 
-#: build/ts.js:2331
-#: build/ts.js:2836
+#: build/ts.js:2333
+#: build/ts.js:2838
 #: src/ext_itweet/overview/overview.html:11
 #: src/ext_rhb/overview/overview.html:11
 msgid "location_title"
@@ -224,7 +233,7 @@ msgstr ""
 msgid "login_button_logout"
 msgstr ""
 
-#: build/ts.js:3558
+#: build/ts.js:3579
 msgid "login_message_create_not_allowed"
 msgstr ""
 
@@ -240,11 +249,11 @@ msgstr ""
 msgid "login_text"
 msgstr ""
 
-#: build/ts.js:3557
+#: build/ts.js:3578
 msgid "login_title_create_not_allowed"
 msgstr ""
 
-#: build/ts.js:542
+#: build/ts.js:544
 msgid "login_title_logedin"
 msgstr ""
 
@@ -260,9 +269,9 @@ msgstr ""
 msgid "message_subtitle"
 msgstr ""
 
-#: build/ts.js:793
+#: build/ts.js:795
 #: src/ext_itweet/overview/overview.html:42
-#: src/ext_rhb/overview/overview.html:76
+#: src/ext_rhb/overview/overview.html:62
 msgid "message_title"
 msgstr ""
 
@@ -278,33 +287,33 @@ msgstr ""
 msgid "mydata_login"
 msgstr ""
 
-#: build/ts.js:2692
+#: build/ts.js:2694
 msgid "mydata_title"
 msgstr ""
 
-#: build/ts.js:3208
+#: build/ts.js:3210
 msgid "object_title"
 msgstr ""
 
-#: build/ts.js:1107
-#: build/ts.js:494
+#: build/ts.js:1109
+#: build/ts.js:496
 msgid "option_button_no"
 msgstr ""
 
-#: build/ts.js:493
+#: build/ts.js:495
 msgid "option_button_yes"
 msgstr ""
 
-#: build/ts.js:1121
+#: build/ts.js:1123
 msgid "overview_alert_mandatory"
 msgstr ""
 
-#: build/ts.js:1120
+#: build/ts.js:1122
 msgid "overview_alert_mandatory_title"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:98
-#: src/ext_rhb/overview/overview.html:154
+#: src/ext_rhb/overview/overview.html:155
 msgid "overview_button_delete"
 msgstr ""
 
@@ -314,42 +323,42 @@ msgid "overview_button_new"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:94
-#: src/ext_rhb/overview/overview.html:150
+#: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_save"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:96
-#: src/ext_rhb/overview/overview.html:152
+#: src/ext_rhb/overview/overview.html:153
 msgid "overview_button_send"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:94
-#: src/ext_rhb/overview/overview.html:150
+#: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_store"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:100
-#: src/ext_rhb/overview/overview.html:156
+#: src/ext_rhb/overview/overview.html:157
 msgid "overview_button_update"
 msgstr ""
 
-#: build/ts.js:3651
+#: build/ts.js:3672
 msgid "overview_cancel_option_message"
 msgstr ""
 
-#: build/ts.js:3650
+#: build/ts.js:3671
 msgid "overview_cancel_option_title"
 msgstr ""
 
-#: build/ts.js:1067
+#: build/ts.js:1069
 msgid "overview_delete_option_message"
 msgstr ""
 
-#: build/ts.js:1066
+#: build/ts.js:1068
 msgid "overview_delete_option_title"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:95
+#: src/ext_rhb/overview/overview.html:96
 msgid "overview_label_involvedPersons_placeholder"
 msgstr ""
 
@@ -359,19 +368,19 @@ msgid "overview_label_location_placeholder"
 msgstr ""
 
 #: src/ext_itweet/overview/overview.html:46
-#: src/ext_rhb/overview/overview.html:80
+#: src/ext_rhb/overview/overview.html:66
 msgid "overview_label_text_placeholder"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:65
+#: src/ext_rhb/overview/overview.html:51
 msgid "overview_label_time_placeholder"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:116
+#: src/ext_rhb/overview/overview.html:117
 msgid "overview_label_train_placeholder"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:119
+#: src/ext_rhb/overview/overview.html:120
 msgid "overview_message_no_vehicle_data"
 msgstr ""
 
@@ -384,13 +393,13 @@ msgstr ""
 msgid "overview_subtitle"
 msgstr ""
 
-#: build/ts.js:1058
+#: build/ts.js:1060
 msgid "overview_title"
 msgstr ""
 
-#: build/ts.js:1069
+#: build/ts.js:1071
 #: build/ts.js:251
-#: build/ts.js:3653
+#: build/ts.js:3674
 #: src/app/progress_dialog.tpl.html:20
 #: src/ext_itweet/register/register.html:32
 msgid "personel_button_cancel"
@@ -421,26 +430,26 @@ msgstr ""
 msgid "personel_register"
 msgstr ""
 
-#: build/ts.js:860
-#: build/ts.js:866
+#: build/ts.js:862
+#: build/ts.js:868
 msgid "photo_action_sheet_button_1"
 msgstr ""
 
-#: build/ts.js:861
-#: build/ts.js:867
+#: build/ts.js:863
+#: build/ts.js:869
 msgid "photo_action_sheet_button_2"
 msgstr ""
 
-#: build/ts.js:863
-#: build/ts.js:868
+#: build/ts.js:865
+#: build/ts.js:870
 msgid "photo_action_sheet_button_cancel"
 msgstr ""
 
-#: build/ts.js:862
+#: build/ts.js:864
 msgid "photo_action_sheet_button_delete"
 msgstr ""
 
-#: build/ts.js:884
+#: build/ts.js:886
 msgid "photo_action_sheet_title"
 msgstr ""
 
@@ -452,9 +461,9 @@ msgstr ""
 msgid "photo_subtitle"
 msgstr ""
 
-#: build/ts.js:853
+#: build/ts.js:855
 #: src/ext_itweet/overview/overview.html:58
-#: src/ext_rhb/overview/overview.html:129
+#: src/ext_rhb/overview/overview.html:130
 msgid "photo_title"
 msgstr ""
 
@@ -546,7 +555,7 @@ msgstr ""
 msgid "speech_subtitle"
 msgstr ""
 
-#: build/ts.js:1001
+#: build/ts.js:1003
 #: src/ext_itweet/overview/overview.html:73
 msgid "speech_title"
 msgstr ""
@@ -579,36 +588,36 @@ msgstr ""
 msgid "train_vehicle_number"
 msgstr ""
 
-#: build/ts.js:1537
+#: build/ts.js:1539
 msgid "upload_status_connect"
 msgstr ""
 
-#: build/ts.js:1549
+#: build/ts.js:1551
 msgid "upload_status_image"
 msgstr ""
 
-#: build/ts.js:1549
+#: build/ts.js:1551
 msgid "upload_status_speech"
 msgstr ""
 
-#: build/ts.js:1130
-#: build/ts.js:1548
-#: build/ts.js:1560
+#: build/ts.js:1132
+#: build/ts.js:1550
+#: build/ts.js:1562
 msgid "upload_status_title"
 msgstr ""
 
-#: build/ts.js:1130
-#: build/ts.js:1561
+#: build/ts.js:1132
+#: build/ts.js:1563
 msgid "upload_status_tweet"
 msgstr ""
 
-#: src/ext_rhb/overview/overview.html:52
-#: src/ext_rhb/overview/overview.html:53
+#: src/ext_rhb/overview/overview.html:81
+#: src/ext_rhb/overview/overview.html:82
 #: src/ext_rhb/visibility/visibility.html:4
 msgid "visibility_subheader"
 msgstr ""
 
-#: build/ts.js:3427
-#: src/ext_rhb/overview/overview.html:48
+#: build/ts.js:3441
+#: src/ext_rhb/overview/overview.html:77
 msgid "visibility_title"
 msgstr ""
