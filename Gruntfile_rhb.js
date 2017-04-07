@@ -24,7 +24,7 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.0.2'
+    appVersion: '1.1.2'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -32,8 +32,8 @@ var templateconfig = function (config) {
     appName: 'QUALIUTA',
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
-    itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '1.0.2'
+    itweetURL: 'https://rhbapputa.itweet.ch/mvc/mobile/rhb/1/',
+    appVersion: '1.1.2'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -42,8 +42,8 @@ var templateconfig = function (config) {
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
-    //itweetURL: 'http://192.168.192.37/mvc/mobile/rhb/1/',
-    appVersion: '1.0.2',
+    //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
+    appVersion: '1.1.2',
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -69,7 +69,7 @@ var templateconfig = function (config) {
     data = _({}).extend(elem, {
       js_dist: 'js/dist.js'
     });
-    // dev template
+    // uta template
     resp['uta_' + elem.appPackage] = {
       options: {
         data: data

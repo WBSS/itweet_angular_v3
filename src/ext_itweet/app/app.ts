@@ -73,22 +73,19 @@ module itweet {
 				}
 			])
 		.run(function ($rootScope, $cordovaGeolocation) {
-			var watchOptions = {enableHighAccuracy: false // may cause errors if true
-			};
+			var watchOptions = {enableHighAccuracy: true }; // may cause errors if true
 			// start watch (module ngCordova, http://ngcordova.com/docs/plugins/geolocation/)
 			var watchGeoPosition = $cordovaGeolocation.watchPosition(watchOptions);
 			// do watch position change
 			watchGeoPosition.then(
 				null,
 				function (err) {
-					console.log('geo position: error: ' + err.message);
 					$rootScope.errorGeoLocation = "location errror";
-
+					console.log('geo position: error: ' + err.message);
 				},
 				function (position) {
 					$rootScope.position = position;
 					console.log('geo position: start watch');
 				});
-		});
-
+		})
 }

@@ -5,7 +5,7 @@ module itweet.alltweets {
     }
 
     export class AlltweetsController {
-        public static $inject = ['$scope', 'gettextCatalog', '$interval', '$mdDialog', 'ItweetConfig', '$log', '$sce'
+        public static $inject = ['$scope', 'gettextCatalog', '$interval', '$mdDialog', 'ItweetConfig', '$log', '$sce', '$window'
         ];
 
         private inappBrowser: any;
@@ -17,7 +17,9 @@ module itweet.alltweets {
                     protected $mdDialog,
                     protected ItweetConfig: itweet.model.BaseConfig,
                     protected $log: ng.ILogService,
-                    protected $sce: ng.ISCEService) {
+                    protected $sce: ng.ISCEService,
+                    protected $window: angular.IWindowService)
+        {
             this.$scope.networkServiceHolder['primary'] = {loading: false};
             $scope.vm = this;
             $scope.menu_parameters.title = "";
@@ -26,7 +28,7 @@ module itweet.alltweets {
 
             this.startInAppBrowser();
         }
-
+        /*
         showProgressDialog() {
             this.$mdDialog.show({
                 template:   '<md-dialog>' +
@@ -36,40 +38,55 @@ module itweet.alltweets {
                             '  </md-dialog-content>' +
                             '</md-dialog>'
             });
-        }
+        }*/
 
         startInAppBrowser(): void {
             this.$scope.networkServiceHolder['primary'].loading = true;
             var url = this.AllTweetsUrl();
 
-            this.showProgressDialog();
-            this.inappBrowser = window.open(url, '_blank', 'hidden=yes,location=no,toolbar=no');
+            //this.showProgressDialog();
+            this.$mdDialog.show({template: this.gettextCatalog.getString("alltweet_item_list_is_loading") + '...'});
+            this.inappBrowser = cordova.InAppBrowser.open(url, '_blank', 'hidden=yes,location=no,toolbar=no');
+            //this.inappBrowser = window.open(url, '_blank', '');
 
             this.timeoutRunner = this.$interval(() => {
                 this.inappBrowser.close();
                 this.alertUser(this.gettextCatalog.getString('error_html5_container_timeout'))
             }, this.ItweetConfig.web_container_timeout, 1);
 
-            this.inappBrowser.addEventListener('loadstop', () => {
-                this.$scope.$apply(() => {
-                    this.$log.debug('background window loaded');
-                    this.$scope.networkServiceHolder['primary'].loading = false;
-                    this.$interval.cancel(this.timeoutRunner);
-                    this.$mdDialog.hide();
-                    this.inappBrowser.show();
-                });
-            });
-
+            // start load page
             this.inappBrowser.addEventListener('loadstart', (event) => {
                 let url = event.url + "";
-                this.$log.debug("Start loading url: " + url);
+
+                this.$log.debug("request url: " + url);
                 if (url.indexOf("close") >= 0) { //close on any close encounter
+                    this.$log.debug("close inappBrowser");
                     this.inappBrowser.close();
                 }
+                else {
+                    this.$log.debug("start load page");
+                }
+            });
+            // finish load page
+            this.inappBrowser.addEventListener('loadstop', (event) => {
+                let url = event.url + "";
+
+                this.$log.debug("done loading url: " + url);
+                if (url.indexOf("close") == -1) {
+                    this.$scope.$apply(() => {
+                        this.$log.debug('show page');
+                        this.$scope.networkServiceHolder['primary'].loading = false;
+                        this.$interval.cancel(this.timeoutRunner);
+                        this.$mdDialog.hide();
+                        this.inappBrowser.show();
+                    });
+                }
+                else { this.$log.debug("no page, close request");}
             });
 
+
             this.inappBrowser.addEventListener('exit', () => {
-                this.$log.debug("inappBrowser Closed");
+                this.$log.debug("cleanup + navigationService.previous");
                 this.closePage();
             });
 
@@ -107,7 +124,7 @@ module itweet.alltweets {
             //var userid = this.$scope.storageService.user.userID;
 
             var url = this.ItweetConfig.endpoint_myitems + this.ItweetConfig.appId + "/" + lat + "/" + lng + "/" +
-                this.ItweetConfig.langISO + "/" + this.ItweetConfig.countryISO + "/" + this.ItweetConfig.platform + "/" + token;
+               this.ItweetConfig.langISO + "/" + this.ItweetConfig.countryISO + "/" + this.ItweetConfig.platform + "/" + token;
 
             if (this.ItweetConfig.appId === "itweet") {
                 url += "/" + isLogon;

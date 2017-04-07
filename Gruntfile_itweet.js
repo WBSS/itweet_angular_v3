@@ -20,31 +20,31 @@ var templateconfig = function (config) {
 
   // app configuration (array of hash map)
   var platforms = [{
-    appName: 'iTweetNew',
+    appName: 'iTweet',
     appID: 'itweet',
-    appPackage: 'ch.wbss.itweet',
+    appPackage: 'ch.wbss.itweet.prod',
     itweetURL: 'https://new.itweet.ch/mvc/mobile/1/',
     //itweetURL: 'https://rhbapp.itweet.ch//mvc/mobile/1/',
-    appVersion: '1.0.0',
+    appVersion: '1.0.2',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweetNewUTA',
+    appName: 'iTweeUTA',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
-    itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.0',
+    itweetURL: 'https://newuta.itweet.ch/mvc/mobile/1/',
+    appVersion: '1.0.2',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweetNewDEV',
+    appName: 'iTweeDEV',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
     itweetURL: 'https://newdev.itweet.ch/mvc/mobile/1/',
     //itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.0',
+    appVersion: '1.0.2',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
