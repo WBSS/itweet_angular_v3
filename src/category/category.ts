@@ -36,6 +36,7 @@ module itweet.category {
 
 		selectCategory(category: any){
 			this.$scope.storageService.currentTweet.refItemCategoryId = category.id;
+			this.$scope.storageService.currentTweet.refItemCategory = category;
 			this.$scope.navigationService.next();
 		}
 

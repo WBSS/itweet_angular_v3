@@ -85,7 +85,7 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column" ng-hide="vm.isCatergoryIeadsProposal()">
+	<div layout="row" layout-sm="column">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_involvedPersons")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -101,7 +101,7 @@
 				</div>
 			</md-card>
 		</div>
-		<div flex>
+		<div flex ng-hide="vm.isCatergoryIeadsProposal() || vm.isCatergoryComplaint()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_train")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
 					<h3 translate>attribute_title_train</h3>

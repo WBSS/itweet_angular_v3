@@ -23,7 +23,7 @@ module itweet.navigation {
             'alltweets': (n: NavigationService,params) => new State('app.alltweets'),
             'app.context': (n: NavigationService,params) => new State('app.category'),
             'app.category': (n: NavigationService,params) => {
-                if (n.ItweetStorage.currentTweet.refItemCategoryId == 86) { /* rtm demo: hardcoded custom flow */
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS" || n.ItweetStorage.currentTweet.refItemCategory.short_ === "COMPLAINT") {
                     let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
                     if (elems.length > 0) {
                         return new State('app.overview');
@@ -47,7 +47,7 @@ module itweet.navigation {
                 return resp;
             },
             'app.rhb_attribute_time': (n: NavigationService,params) => {
-                if (n.ItweetStorage.currentTweet.refItemCategoryId == 86) { /* rtm demo: hardcoded custom flow */
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS") {
                     let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
                     if (elems.length > 0) {
                         return new State('app.overview');

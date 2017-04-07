@@ -23,7 +23,9 @@ module itweet.overview {
             }
         }
 
-        isCatergoryIeadsProposal() {if(this.$scope.storageService.currentTweet.refItemCategoryId==this.config.CATEGORY_IDEAS_PROPOSAL) return true; else return false;}
+        isCatergoryIeadsProposal() {if(this.$scope.storageService.currentTweet.refItemCategory.short_ === "IDEAS") return true; else return false;}
+
+        isCatergoryComplaint() {if(this.$scope.storageService.currentTweet.refItemCategory.short_ === "COMPLAINT") return true; else return false;}
         
         gotoDetail(destination:string){
         	if(destination === 'app.category'){

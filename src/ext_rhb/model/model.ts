@@ -18,6 +18,7 @@ module itweet.model {
         address: string;
         location: string;
         refItemCategoryId: number;
+        refItemCategory: any;
         refItemVisibilityId: number;
         txt: string;
         mail: string;

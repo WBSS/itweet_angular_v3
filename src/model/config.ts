@@ -10,8 +10,6 @@ module itweet.model {
         base_url: string;
         domain: string;
         default_referer = "http://ch.wbss.itweet";
-        // rhb category iades&proposal
-        CATEGORY_IDEAS_PROPOSAL: number = 86;
 
         endpoint_itweet: string;
         endpoint_myitems: string;
