@@ -90,6 +90,9 @@ module itweet.model {
         }
 
         saveImage(fileSystemUri: string, index: number) {
+            if (fileSystemUri.indexOf("file://") === -1) {
+                fileSystemUri = "file://" + fileSystemUri;
+            }
             return this.runner.saveFile(fileSystemUri).then((internalUri) => {
                 this.runner.$timeout(() => {
                     this.runner.ItweetStorage.setImage(index, internalUri);

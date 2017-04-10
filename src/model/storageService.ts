@@ -10,6 +10,7 @@ module  itweet.model {
             '$localStorage', 'ItweetConfig', '$q','$log'
         ];
 
+        private itweetConfig;
         public user:User;
         public currentTweet:Tweet;
         public contextStore;
@@ -29,6 +30,7 @@ module  itweet.model {
             if(!this.user.deviceid){
                 this.user.deviceid = StorageService.guid();
             }
+            this.itweetConfig = ItweetConfig;
 
             $localStorage.user = this.user;
             $localStorage.allTweets = this.allTweets;
@@ -37,9 +39,12 @@ module  itweet.model {
             $localStorage.contextStore = this.contextStore;
             $localStorage.brandStore = this.brandStore;
             Tweet.updateWithConfig(this.currentTweet, ItweetConfig, this.user);
-       
-            
-            this.cleanupFiles();
+
+            /* The file system deletes generates problems within the gallery (grey boxes) on Android */
+            if (this.itweetConfig.platform === itweet.model.Platform.ios) {
+                this.cleanupFiles();
+            }
+
         }
 
 
@@ -77,11 +82,14 @@ module  itweet.model {
         deleteHash(realindex) {
             return new this.$q((resolve, reject) => {
                 if (this.currentTweet.mediaStore[realindex]) {
-                    var media = this.currentTweet.mediaStore[realindex];
-                    window.resolveLocalFileSystemURL(media.url, (fileEntry) => {
-                        fileEntry.remove();
-                        resolve();
-                    }, reject);
+                    /* The file system deletes generates problems within the gallery (grey boxes) on Android */
+                    if (this.itweetConfig.platform === itweet.model.Platform.ios) {
+                        var media = this.currentTweet.mediaStore[realindex];
+                        window.resolveLocalFileSystemURL(media.url, (fileEntry) => {
+                            fileEntry.remove();
+                            resolve();
+                        }, reject);
+                    }
                     delete this.currentTweet.mediaStore[realindex];
                 } else {
                     resolve();
