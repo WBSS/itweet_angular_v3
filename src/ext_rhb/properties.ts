@@ -33,6 +33,7 @@ app.angular_modules = ['gettext', 'ui.router', 'ngMaterial',
     'itweet.rhb.attributeTime',
     'itweet.rhb.attributeTrain',
     'itweet.rhb.visibility',
+    'itweet.rhb.qrInventory',
     'ngIOS9UIWebViewPatch'
 ];
 app.default_route = '/app/mydatarhbdata';

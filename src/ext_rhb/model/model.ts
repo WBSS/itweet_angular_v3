@@ -165,4 +165,18 @@ module itweet.model {
         id: number;
         nameTranslated: string;
     }
+
+    export class WebServiceFilter {
+        interfaceShort: string;
+        objectId: string;
+    }
+
+    export class Record {
+        properties: Property[];
+    }
+
+    export class Property {
+        name: string;
+        value: string;
+    }
 }

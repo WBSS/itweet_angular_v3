@@ -15,6 +15,7 @@ module itweet.model {
         public retryableRequest: BasicService<any>[] = [];
         public online: boolean;
         public foreground: boolean = true;
+        public preventResume: boolean = false;
 
         CACHE_NAME = "request_cache";
         CACHE_CAPACITY = 20;
@@ -71,15 +72,20 @@ module itweet.model {
                 });
             }, false);
             document.addEventListener("resume", () => {
-                $rootScope.$apply(() => {
-                    this.foreground = true;
-                    this.online = $window.navigator.onLine;
-                    if (this.online) {
-                        this.runAll();
-                        this.contextService.runAll();
-                    }
-                    $rootScope.$broadcast("resume");
-                });
+                if (!this.preventResume) {
+                    this.$log.debug("Resume");
+                    $rootScope.$apply(() => {
+                        this.foreground = true;
+                        this.online = $window.navigator.onLine;
+                        if (this.online) {
+                            this.$log.debug("Reload data");
+                            this.runAll();
+                            this.contextService.runAll();
+                        }
+                    });
+                } else {
+                    this.$log.debug("Prevent from resume")
+                }
             }, false);
 
             this.loginService = new LoginService(this);

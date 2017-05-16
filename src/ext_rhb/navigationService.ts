@@ -30,6 +30,13 @@ module itweet.navigation {
                     }
                     return new State('app.rhb_attribute_time');
                 }
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "QRINV") {
+                    let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
+                    if (elems.length > 0) {
+                        return new State('app.overview');
+                    }
+                    return new State('app.rhb_qr_inventory');
+                }
                 return new State('app.multicategory', { parentId: undefined });
             },
             'app.multicategory': (n: NavigationService,params) => {

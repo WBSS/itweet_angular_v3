@@ -1,0 +1,81 @@
+<ng-include src="'app/menu.html'"></ng-include>
+<md-content flex>
+
+    <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-autoselect>
+        <md-tab>
+            <md-tab-label><span translate>QR-Daten</span></md-tab-label>
+        </md-tab>
+
+        <md-tab ng-click="vm.getObjectData()" ng-disabled="!vm.qrObject.interfaceShort || !vm.qrObject.objectId">
+            <md-tab-label><span translate>Objekt-Daten</span></md-tab-label>
+        </md-tab>
+    </md-tabs>
+
+    <!-- QR-Data -->
+    <section ng-if="selectedIndex === 0">
+
+        <md-button type="submit" ng-click="vm.scanQrCode()" class="md-primary footer-button" style="margin-top: 1em">
+            <span translate>Scan QR Code</span>
+        </md-button>
+
+        <md-list style="margin-top: 1em">
+            <md-list-item class="md-2-line" style="min-height: 0.7em">
+                <div class="md-list-item-text" layout="column" style="padding: 0">
+                    <p layout="row">
+                        <span flex-sm="40" flex-md="30" flex-lg="15" flex-gt-lg="10" style="margin-top: 7px"><span translate>Interface Short</span>:</span>
+                        <span flex>
+                                <md-input-container>
+                                    <input ng-model="vm.qrObject.interfaceShort" type="text">
+                                </md-input-container>
+                        </span>
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item class="md-2-line" style="min-height: 0.7em">
+                <div class="md-list-item-text" layout="column" style="padding: 0">
+                    <p layout="row">
+                        <span flex-sm="40" flex-md="30" flex-lg="15" flex-gt-lg="10" style="margin-top: 7px"><span translate>Object Id</span>:</span>
+                        <span flex>
+                                <md-input-container>
+                                    <input ng-model="vm.qrObject.objectId" type="text">
+                                </md-input-container>
+                        </span>
+                    </p>
+                </div>
+            </md-list-item>
+            <md-list-item ng-repeat="(key, value) in vm.qrObject" ng-if="key !== 'interfaceShort' && key !== 'objectId'" class="md-2-line" style="min-height: 0.7em">
+                <div class="md-list-item-text" layout="column" style="padding: 0">
+                    <p layout="row">
+                        <span flex-sm="40" flex-md="30" flex-lg="15" flex-gt-lg="10"><span translate>{{ key }}</span>:</span>
+                        <span flex>{{ value }}</span>
+                    </p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </section>
+
+    <!-- Object-Data -->
+    <section ng-if="selectedIndex === 1">
+
+        <div layout="row" layout-sm="column" layout-align="center space-around" ng-show="vm.loading" style="margin: 3em 1em">
+            <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+        </div>
+
+        <div ng-show="!vm.loading">
+            <div ng-show="vm.error" style="margin: 3em 1em">
+                <span>Fehler: {{ vm.error.data.message }}</span>
+            </div>
+            <md-list style="margin-top: 1em">
+                <md-list-item ng-repeat="prop in vm.record.properties" class="md-2-line" style="min-height: 1.5em">
+                    <div class="md-list-item-text" layout="column" style="padding: 0">
+                        <p layout="row">
+                            <span flex-sm="50" flex-md="40" flex-lg="20" flex-gt-lg="15"><span translate>{{ prop.name }}</span>:</span>
+                            <span flex>{{ prop.value }}</span>
+                        </p>
+                    </div>
+                </md-list-item>
+            </md-list>
+        </div>
+    </section>
+
+</md-content>
