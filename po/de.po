@@ -629,5 +629,32 @@ msgstr "Vertrauliche Meldung"
 msgid "visibility_title"
 msgstr "Vertraulich"
 
-#~ msgid "personel_title"
-#~ msgstr "Registrieren"
+msgid "Was"
+msgstr "Was"
+
+msgid "Wer"
+msgstr "Wer"
+
+msgid "Warum"
+msgstr "Warum"
+
+msgid "Wie"
+msgstr "Wie"
+
+msgid "Was ist die Idee bzw. die Verbesserung?"
+msgstr "Was ist die Idee bzw. die Verbesserung?"
+
+msgid "Wer profitiert von der Idee?"
+msgstr "Wer profitiert von der Idee?"
+
+msgid "Wer ist der Kunde?"
+msgstr "Wer ist der Kunde?"
+
+msgid "Weshalb soll die RhB diese Idee umsetzen?"
+msgstr "Weshalb soll die RhB diese Idee umsetzen?"
+
+msgid "Nutzen?"
+msgstr "Nutzen?"
+
+msgid "Welche Idee hast du zur allfälligen Umsetzung?"
+msgstr "Welche Idee hast du zur allfälligen Umsetzung"

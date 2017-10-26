@@ -620,5 +620,32 @@ msgstr "Confidential message"
 msgid "visibility_title"
 msgstr "Visibility"
 
-#~ msgid "personel_title"
-#~ msgstr "Register"
+msgid "Was"
+msgstr "What"
+
+msgid "Wer"
+msgstr "Who"
+
+msgid "Warum"
+msgstr "Why"
+
+msgid "Wie"
+msgstr "How"
+
+msgid "Was ist die Idee bzw. die Verbesserung?"
+msgstr "What is the idea or improvement?"
+
+msgid "Wer profitiert von der Idee?"
+msgstr "Who benefits from the idea?"
+
+msgid "Wer ist der Kunde?"
+msgstr "Who is the customer?"
+
+msgid "Weshalb soll die RhB diese Idee umsetzen?"
+msgstr "Why should the RhB implement this idea?"
+
+msgid "Nutzen?"
+msgstr "Benefit?"
+
+msgid "Welche Idee hast du zur allfälligen Umsetzung?"
+msgstr "What is your idea for any implementation?"

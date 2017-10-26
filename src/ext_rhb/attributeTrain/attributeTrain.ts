@@ -67,10 +67,18 @@ module itweet.attributeTrain {
 					if (wagon.orgCode === "6130") {
 						// Road vehicles
 						wagonDisplay = wagon.objectName;
+						// Add owner if available
+						if (wagon.owner) {
+							wagonDisplay +=  " : " + wagon.owner;
+						}
 						wagonQuery = wagon.objectName.toLowerCase();
 					} else {
 						// Train vehicles
 						wagonDisplay = wagon.wagonNr + " : " + wagon.objectName;
+						// Add owner if available
+						if (wagon.owner) {
+							wagonDisplay +=  " : " + wagon.owner;
+						}
 						wagonQuery = wagon.wagonNr.toLowerCase() + " " + wagon.objectName.toLowerCase();
 					}
 					var newWagon = {
@@ -120,10 +128,18 @@ module itweet.attributeTrain {
 						if (meta.wagons[i].orgCode === "6130") {
 							// Road vehicles
 							wagonDisplay = meta.wagons[i].objectName;
+							// Add owner if available
+							if (meta.wagons[i].owner) {
+								wagonDisplay +=  " : " + meta.wagons[i].owner;
+							}
 							wagonQuery = meta.wagons[i].objectName.toLowerCase();
 						} else {
 							// Train vehicles
 							wagonDisplay = meta.wagons[i].wagonNr + " : " + meta.wagons[i].objectName;
+							// Add owner if available
+							if (meta.wagons[i].owner) {
+								wagonDisplay +=  " : " + meta.wagons[i].owner;
+							}
 							wagonQuery = meta.wagons[i].wagonNr.toLowerCase() + " " + meta.wagons[i].objectName.toLowerCase();
 						}
 						var newWagon = {

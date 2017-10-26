@@ -28,6 +28,11 @@ module itweet.model {
         loginToken: string;
         contextToken: string;
         guid: string;
+        // Idea texts
+        textIdeaWhat: string;
+        textIdeaWho: string;
+        textIdeaWhy: string;
+        textIdeaHow: string;
         
         sent: boolean;
         save: boolean;
@@ -119,6 +124,7 @@ module itweet.model {
         objectName: string
         name: string
         orgCode: string
+        owner: string
         enabled: boolean
     }
     export interface Location {

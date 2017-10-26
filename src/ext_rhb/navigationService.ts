@@ -23,7 +23,14 @@ module itweet.navigation {
             'alltweets': (n: NavigationService,params) => new State('app.alltweets'),
             'app.context': (n: NavigationService,params) => new State('app.category'),
             'app.category': (n: NavigationService,params) => {
-                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS" || n.ItweetStorage.currentTweet.refItemCategory.short_ === "COMPLAINT") {
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS") {
+                    let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
+                    if (elems.length > 0) {
+                        return new State('app.overview');
+                    }
+                    return new State('app.text_idea_what');
+                }
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "COMPLAINT") {
                     let elems = this._stateStack.filter((elem) => angular.equals(elem, this.defaultStateOrder['overview'](this,{})));
                     if (elems.length > 0) {
                         return new State('app.overview');
@@ -67,8 +74,17 @@ module itweet.navigation {
                 return resp;
             },
             'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_attribute_time'),
-            'app.photo': (n: NavigationService,params) => new State('app.text'),
+            'app.photo': (n: NavigationService,params) => {
+                if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS") {
+                    return new State('app.overview');
+                }
+                return new State('app.text');
+            },
             'app.text': (n: NavigationService,params) => new State('app.rhb_attribute_involvedPersons'),
+            'app.text_idea_what': (n: NavigationService,params) => new State('app.text_idea_who'),
+            'app.text_idea_who': (n: NavigationService,params) => new State('app.text_idea_why'),
+            'app.text_idea_why': (n: NavigationService,params) => new State('app.text_idea_how'),
+            'app.text_idea_how': (n: NavigationService,params) => new State('app.photo'),
             'app.rhb_attribute_involvedPersons': (n: NavigationService) => new State('app.rhb_visibility'),
             'app.rhb_visibility': (n: NavigationService) => new State('app.overview')
         };

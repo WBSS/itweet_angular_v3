@@ -25,8 +25,8 @@ module itweet.model {
         ping_threshold = 3000;
         web_container_timeout = 30000;
         min_upload_time = 2000;
-        image_width = 640;
-        image_height = 640;
+        image_width = 900;
+        image_height = 900;
         audio_max_length = 45;
         assets_storage_folder = "itweetAssets";
 

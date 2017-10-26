@@ -22,7 +22,6 @@
 /// <reference path='app/menu.ts' />
 /// <reference path="context/context.ts" />
 /// <reference path="category/category.ts" />
-/// <reference path="text/text.ts" />
 /// <reference path="photo/photo.ts" />
 /// <reference path="audio/audio.ts" />
 /// <reference path="overview/overview.ts" />
@@ -53,6 +52,7 @@
 /// <reference path='ext_rhb/attributeTrain/attributeTrain.ts' />
 /// <reference path='ext_rhb/visibility/visibility.ts' />
 /// <reference path='ext_rhb/qrInventory/qrInventory.ts' />
+/// <reference path="ext_rhb/text/text.ts" />
 
 // *** rhb services *** //
 /// <reference path='ext_rhb/navigationService.ts' />

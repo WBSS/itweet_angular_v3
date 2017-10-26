@@ -6,7 +6,7 @@ module itweet.overview {
 
         validateTweet(currentTweet){
             if (this.isCatergoryIeadsProposal()) {
-                if (currentTweet.txt) {
+                if (currentTweet.textIdeaWhat && currentTweet.textIdeaWho && currentTweet.textIdeaWhy && currentTweet.textIdeaHow) {
                     return true;
                 }
                 return false;
@@ -52,6 +52,42 @@ module itweet.overview {
                 return true;
             }
             return isFinite(Number(nr));
+        }
+
+        sendTweet() {
+            if (this.$scope.storageService.currentTweet.refItemCategory.short_ === "IDEAS") {
+                // Set fields for idea category
+                this.$scope.storageService.currentTweet.itemQs.dateEvent = new Date().getTime().toString();
+                // Visibility is "internal"
+                this.$scope.storageService.currentTweet.refItemVisibilityId = 2;
+                this.$scope.storageService.currentTweet.txt = this.getItemTextFromTextIdeas();
+            }
+            super.sendTweet();
+        }
+
+        getItemTextFromTextIdeas(): string {
+            var itemText: string = "";
+            itemText = "WAS:\n";
+            itemText += this.cleanText(this.$scope.storageService.currentTweet.textIdeaWhat) + "\n" + "\n";
+            itemText += "WER:\n";
+            itemText += this.cleanText(this.$scope.storageService.currentTweet.textIdeaWho) + "\n" + "\n";
+            itemText += "WARUM:\n";
+            itemText += this.cleanText(this.$scope.storageService.currentTweet.textIdeaWhy) + "\n" + "\n";
+            itemText += "WIE:\n";
+            itemText += this.cleanText(this.$scope.storageService.currentTweet.textIdeaHow);
+
+            return itemText;
+        }
+
+        cleanText(text: string): string {
+            // Replace double new lines
+            text = text.replace(/\n\n/, "\n");
+            text = text.replace(/\n\n\n/, "\n");
+            // Replace new lines at the end
+            for (var i = 0; i < 5; i++) {
+                text = text.replace(/\n$/, "");
+            }
+            return text.trim();
         }
     }
 }

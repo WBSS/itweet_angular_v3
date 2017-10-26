@@ -55,7 +55,7 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column">
+	<div ng-hide="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.text")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -70,7 +70,69 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column">
+	<!-- Idea texts -->
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_what")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Was</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWhat" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWhat"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_who")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Wer</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWho" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWho"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_why")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Warum</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWhy" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWhy"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_how")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Wie</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaHow" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaHow"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+
+	<div ng-hide="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.rhb_visibility")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -86,7 +148,7 @@
 		</div>
 	</div>
 	<div layout="row" layout-sm="column">
-		<div flex>
+		<div flex ng-hide="vm.isCatergoryIeadsProposal()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_involvedPersons")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
 					<h3 translate>attribute_title_involvedPersons</h3>

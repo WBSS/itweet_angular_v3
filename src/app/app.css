@@ -40,3 +40,17 @@ md-toolbar md-progress-linear .md-container{
     top: 0px;
 }
 /*.md-button.md-icon-button*/
+
+/* Idea */
+.ideaInfo {
+    background-color: #e1e1e1;
+    padding: 10px;
+}
+.ideaInfo h3 {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.ideaInfoText {
+    margin-left: 9px;
+    font-size: 14px;
+}
