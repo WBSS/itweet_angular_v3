@@ -58,8 +58,6 @@ module itweet.overview {
             if (this.$scope.storageService.currentTweet.refItemCategory.short_ === "IDEAS") {
                 // Set fields for idea category
                 this.$scope.storageService.currentTweet.itemQs.dateEvent = new Date().getTime().toString();
-                // Visibility is "internal"
-                this.$scope.storageService.currentTweet.refItemVisibilityId = 2;
                 this.$scope.storageService.currentTweet.txt = this.getItemTextFromTextIdeas();
             }
             super.sendTweet();

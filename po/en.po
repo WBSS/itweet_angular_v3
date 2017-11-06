@@ -644,8 +644,11 @@ msgstr "Who is the customer?"
 msgid "Weshalb soll die RhB diese Idee umsetzen?"
 msgstr "Why should the RhB implement this idea?"
 
-msgid "Nutzen?"
-msgstr "Benefit?"
+msgid "Welchen Nutzen hat die Idee?"
+msgstr "What benefit does the idea have?"
 
-msgid "Welche Idee hast du zur allfälligen Umsetzung?"
-msgstr "What is your idea for any implementation?"
+msgid "Wie kann die Idee umgesetzt werden?"
+msgstr "How can the idea be implemented?"
+
+msgid "Welche Umsetzungshinweise/-Vorschläge gibt es?"
+msgstr "Which implementation hints/suggestions are there?"

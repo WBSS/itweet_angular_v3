@@ -76,7 +76,7 @@ module itweet.navigation {
             'app.rhb_attribute_train': (n: NavigationService,params) => new State('app.rhb_attribute_time'),
             'app.photo': (n: NavigationService,params) => {
                 if (n.ItweetStorage.currentTweet.refItemCategory.short_ === "IDEAS") {
-                    return new State('app.overview');
+                    return new State('app.rhb_visibility');
                 }
                 return new State('app.text');
             },

@@ -653,8 +653,11 @@ msgstr "Wer ist der Kunde?"
 msgid "Weshalb soll die RhB diese Idee umsetzen?"
 msgstr "Weshalb soll die RhB diese Idee umsetzen?"
 
-msgid "Nutzen?"
-msgstr "Nutzen?"
+msgid "Welchen Nutzen hat die Idee?"
+msgstr "Welchen Nutzen hat die Idee?"
 
-msgid "Welche Idee hast du zur allfälligen Umsetzung?"
-msgstr "Welche Idee hast du zur allfälligen Umsetzung"
+msgid "Wie kann die Idee umgesetzt werden?"
+msgstr "Wie kann die Idee umgesetzt werden?"
+
+msgid "Welche Umsetzungshinweise/-Vorschläge gibt es?"
+msgstr "Welche Umsetzungshinweise/-Vorschläge gibt es?"
