@@ -46,7 +46,7 @@ module itweet.alltweets {
 
             //this.showProgressDialog();
             this.$mdDialog.show({template: this.gettextCatalog.getString("alltweet_item_list_is_loading") + '...'});
-            this.inappBrowser = cordova.InAppBrowser.open(url, '_blank', 'hidden=yes,location=no,toolbar=no');
+            this.inappBrowser = cordova.InAppBrowser.open(url, '_blank', 'hidden=yes,location=no,toolbar=yes');
             //this.inappBrowser = window.open(url, '_blank', '');
 
             this.timeoutRunner = this.$interval(() => {

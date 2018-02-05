@@ -22,10 +22,10 @@ var templateconfig = function (config) {
   var platforms = [{
     appName: 'iTweet',
     appID: 'itweet',
-    appPackage: 'ch.wbss.itweet.prod',
-    itweetURL: 'https://new.itweet.ch/mvc/mobile/1/',
-    //itweetURL: 'https://rhbapp.itweet.ch//mvc/mobile/1/',
-    appVersion: '1.0.2',
+    appPackage: 'ch.wbss.itweet',
+    itweetURL: 'https://www.itweet.ch/mvc/mobile/1/',
+    //appVersion: '1.0.5', // Google play store
+    appVersion: '1.3.1', // Apple App stoer
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -33,8 +33,8 @@ var templateconfig = function (config) {
     appName: 'iTweeUTA',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
-    itweetURL: 'https://newuta.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.2',
+    itweetURL: 'https://uta.itweet.ch/mvc/mobile/1/',
+    appVersion: '1.0.5',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -42,9 +42,8 @@ var templateconfig = function (config) {
     appName: 'iTweeDEV',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
-    itweetURL: 'https://newdev.itweet.ch/mvc/mobile/1/',
-    //itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/1/',
-    appVersion: '1.0.2',
+    itweetURL: 'https://dev.itweet.ch/mvc/mobile/1/',
+    appVersion: '1.0.5',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -161,7 +160,7 @@ module.exports = function (grunt) {
     nggettext_compile: {
       all: {
         files: {
-          "build/translations.js": ["po/*.po"]
+          "build/translations.js": ["po_itweet/*.po"]
         }
       }
     },

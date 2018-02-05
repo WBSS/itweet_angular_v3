@@ -25,8 +25,9 @@ module itweet.navigation {
              'app.context': (n: NavigationService) => new State('app.category'),
              'app.category':(n: NavigationService) => new State('app.photo'),
              'app.photo': (n: NavigationService) => new State('app.text'),
-             'app.text': (n: NavigationService) => new State('app.audio'),
-             'app.audio': (n: NavigationService) => new State('app.overview')
+             //'app.text': (n: NavigationService) => new State('app.audio'),
+             //'app.audio': (n: NavigationService) => new State('app.overview')
+             'app.text': (n: NavigationService) => new State('app.overview')
          };
 
 

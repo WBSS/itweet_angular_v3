@@ -311,8 +311,8 @@ module itweet.map {
 				}
 			]).config(function(uiGmapGoogleMapApiProvider) {
 		uiGmapGoogleMapApiProvider.configure({
-
-			v: '3.23',
+			key: 'AIzaSyCn8zzN0dwWB22iImBpQYowkDscrK8pgXk',
+			v: '3.26',
 			libraries: 'places',
 			language:document.lang
 		});

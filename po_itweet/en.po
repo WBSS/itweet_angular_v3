@@ -5,65 +5,65 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.12\n"
 
-#: build/ts.js:384
+#: build/ts.js:390
 msgid "alltweet_item_list_is_loading"
-msgstr "Meldungsliste wird geladen"
+msgstr "The message list is loaded"
 
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:44
 msgid "attribute_involvedPersons_button_skip"
-msgstr "Beteiligte Personen überspringen"
+msgstr "Skip involved persons"
 
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:4
 msgid "attribute_involvedPersons_subtitle"
-msgstr "Personen erfassen"
+msgstr "Add persons"
 
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:7
 msgid "attribute_involvedPersons_text"
-msgstr "Personen-ID oder Name eingeben"
+msgstr "Enter person-id or name"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:44
 msgid "attribute_time_invalid_date"
-msgstr "Ereignisdatum/Zeit nicht gültig"
+msgstr "Invalid Date/Time"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:4
 msgid "attribute_time_subheader"
-msgstr "Erfassen Ereignisdatum/Zeit"
+msgstr "Set eventtime date/time"
 
-#: build/ts.js:3002 src/ext_rhb/overview/overview.html:92
+#: src/ext_rhb/overview/overview.html:92
 msgid "attribute_title_involvedPersons"
-msgstr "Beteiligte"
+msgstr "Involved"
 
-#: build/ts.js:3153 src/ext_rhb/overview/overview.html:47
+#: src/ext_rhb/overview/overview.html:47
 msgid "attribute_title_time"
-msgstr "Ereigniszeit"
+msgstr "Eventtime"
 
 #: src/ext_rhb/overview/overview.html:107
 msgid "attribute_title_train"
-msgstr "Zug-/Fahrzeugnummer"
+msgstr "Train and Vehicles"
 
 #: src/ext_rhb/attributeTrain/attributeTrain.html:4
 #: src/ext_rhb/location/location.html:4
 msgid "attribute_train_subheader"
-msgstr "Erfassen"
+msgstr "Choose"
 
-#: build/ts.js:2572 build/ts.js:745 src/ext_itweet/overview/overview.html:27
+#: build/ts.js:751 src/ext_itweet/overview/overview.html:27
 #: src/ext_rhb/overview/overview.html:32
 msgid "category_title"
-msgstr "Kategorie"
+msgstr "Category"
 
 #: src/context/context.html:3
 msgid "context_subtitle"
-msgstr "Meldung erstellen zum Thema"
+msgstr "Create a message to the topic"
 
-#: build/ts.js:678
+#: build/ts.js:684
 msgid "context_title"
-msgstr "Thema"
+msgstr "Topic"
 
 #: src/settings/disclaimer.html:4
 msgid "disclaimer_subtitle"
@@ -72,144 +72,140 @@ msgstr "Disclaimer"
 #: src/settings/disclaimer.html:8
 msgid "disclaimer_text"
 msgstr ""
-"Rechte an Inhalten\n"
+"Content rights\n"
 "\n"
-"Die im Internet verwendeten Informationsmittel (wie Texte, Illustrationen, "
-"Logos, Fotos, Videos, Tondokumente, Grafiken sowie das Layout) sind "
-"immaterialgüterrechtlich und insbesondere urheberrechtlich geschützt, soweit "
-"sie nicht (wie z. B. Gesetzestexte und Gerichtsurteile) durch einschlägige "
-"Rechtsnormen ausdrücklich vom Schutz ausgenommen werden.\n"
+"The information resources used on the Internet (such as texts, "
+"illustrations, logos, photos, videos, audios, graphics and layout) are "
+"protected by intellectual property rights and in particular copyrighted, as "
+"far as they are not expressly excluded (such as legal texts and court "
+"rulings) by means of the relevant legislation.\n"
 "\n"
-"Die auf der iTweet Internetseite zur Verfügung gestellten Informationen "
-"dürfen deshalb nur angesehen, zum Eigengebrauch heruntergeladen und "
-"ausgedruckt werden. Damit werden jedoch keine weiteren Rechte bezüglich der "
-"Inhalte übertragen.\n"
+"The information provided on the iTweet Internet site may therefore only be "
+"viewed, downloaded and printed for personal use. Therewith, no further "
+"rights are conferred regarding the contents.\n"
 "\n"
-"Jede weitere Verwendung von Inhalten aus www.itweet.ch/eu, und insbesondere "
-"das Einbinden (über Frames oder Inline-Links) in andere Seiten, ist nur mit "
-"Einverständnis der Rechtsinhabenden gestattet. \n"
+"Any other use of content from www.itweet.ch/eu and in particular its "
+"incorporation (via frames or inline links) to other pages is only permitted "
+"with the consent of the intellectual property rights holders.\n"
 "\n"
 "\n"
-"Pflichten des Nutzers\n"
+"User's obligations\n"
 "\n"
-"Der Nutzer darf folgende Inhalte nicht auf www.itweet.ch/eu posten oder "
-"betreiben:\n"
+"The user is not allowed to post or run the following content on www.itweet."
+"ch/eu:\n"
+"        \n"
+"§ Commercial communications not authorized by iTweet (in particular spam)\n"
+"§ Pyramid schemes and other unlawful distribution\n"
+"§ Viruses\n"
+"§ Contents that contain hate speeches, that are threatening or pornographic, "
+"incite violence or contain nudity or violence.\n"
+"§ Content that is alcohol- or dating-related, or other mature content "
+"(including advertisements) without appropriate age-based restrictions\n"
+"§ Unlawful, misleading, malicious, or discriminatory acts\n"
+"§ Acts, which could impair the proper functioning and appearance of www."
+"itweet.ch/eu\n"
+"§ Contents and actions that violate the rights of any other person\n"
 "\n"
-"§ von iTweet nicht genehmigte Werbekommunikationen (insbesondere Spam)\n"
-"§ Schneeballsysteme und andere rechtswidrige Vertriebe \n"
-"§ Viren\n"
-"§ Inhalte, die Hassreden enthalten, bedrohlich oder pornografisch sind, zu "
-"Gewalt auffordern oder Nacktheit sowie Gewalt enthalten\n"
-"§ Inhalte alkoholischer Natur, auf Dating bezogene oder andere, für "
-"Minderjährige ungeeignete Inhalte (einschliesslich Werbeanzeigen),ohne die "
-"entsprechenden Altersbeschränkungen zu beachten \n"
-"§ rechtswidrige, irreführende, bösartige oder diskriminierende Handlungen\n"
-"§ Handlungen, welche das einwandfreie Funktionieren bzw. das "
-"Erscheinungsbild von www.itweet.ch/eu beeinträchtigen können\n"
-"§ Inhalte und Handlungen, welche die Rechte einer anderen Person verletzen\n"
-"\n"
-"Im Falle der Widerhandlung ist iTweet berechtigt, den fehlbaren Nutzer ohne "
-"vorgängige Verwarnung von der Nutzung von www.itweet.ch/eu auszuschliessen."
+"In case of violation, iTweet is entitled to exclude the non-compliant user "
+"from any utilization of www.itweet.ch/eu without prior warning."
 
 #: src/settings/disclaimer.html:7
 msgid "disclaimer_text_title"
-msgstr "Allgemeine Bedingungen für die Nutzung der Internetseiten von iTweet"
+msgstr "General conditions for the use of the Internet pages of iTweet"
 
-#: build/ts.js:337
+#: build/ts.js:343
 msgid "disclaimer_title"
-msgstr "Bedingungen"
+msgstr "Conditions"
 
-#: build/ts.js:231 build/ts.js:428
+#: build/ts.js:237 build/ts.js:434
 msgid "error_html5_container_loading_title"
-msgstr "Meldungsliste"
+msgstr "Message list"
 
-#: build/ts.js:388
+#: build/ts.js:394
 msgid "error_html5_container_timeout"
-msgstr "Meldungsliste kann momentan nicht abgerufen werden"
+msgstr "Timeout"
 
-#: build/ts.js:1071 build/ts.js:1091 build/ts.js:1109 build/ts.js:1125
-#: build/ts.js:250 build/ts.js:267 build/ts.js:3592 build/ts.js:3685
-#: build/ts.js:430 src/app/progress_dialog.tpl.html:16
+#: build/ts.js:1076 build/ts.js:1096 build/ts.js:1114 build/ts.js:1130
+#: build/ts.js:256 build/ts.js:2674 build/ts.js:273 build/ts.js:2764
+#: build/ts.js:436 src/app/progress_dialog.tpl.html:16
 msgid "general_button_okay"
 msgstr "Okay"
 
-#: build/ts.js:1155
+#: build/ts.js:1160 build/ts.js:2381
 msgid "general_info_created_failed_message"
-msgstr "Senden fehlgeschlagen"
+msgstr "Sending failed"
 
-#: build/ts.js:1147
+#: build/ts.js:1152 build/ts.js:2373
 msgid "general_info_created_message"
-msgstr "Senden erfolgreich"
+msgstr "Sending successful"
 
-#: build/ts.js:1544
+#: build/ts.js:2101
 msgid "general_info_high_ping_message"
-msgstr ""
-"Ihr Meldung wurde nicht gesendet.\n"
-"Bitte versuchen Sie es später noch einmal."
+msgstr "Your message was not delivered. Please try again later."
 
-#: build/ts.js:1543
+#: build/ts.js:2100
 msgid "general_info_high_ping_title"
-msgstr "Schlechte Verbindung"
+msgstr "Bad connection"
 
-#: build/ts.js:1152
+#: build/ts.js:1157 build/ts.js:2378
 msgid "general_info_send_canceled"
-msgstr "Die Anfrage wurde abgebrochen"
+msgstr "The request was aborted"
 
-#: build/ts.js:1108
+#: build/ts.js:1113
 msgid "general_info_send_message"
-msgstr "Möchten Sie die Meldung nun senden?"
+msgstr "Do you like to send the message?"
 
-#: build/ts.js:1107
+#: build/ts.js:1112
 msgid "general_info_send_title"
-msgstr "Meldung senden?"
+msgstr "Send message?"
 
-#: build/ts.js:306
+#: build/ts.js:312
 msgid "help_title"
-msgstr "Hilfe"
+msgstr "Help"
 
 #: src/ext_itweet/register/register.html:11 src/login/login.html:16
 #: src/login/login.html:25
 msgid "input_error_mandatory"
-msgstr "Pflichteingabe Feld"
+msgstr "Mandatory Entry"
 
 #: src/ext_itweet/register/register.html:12
 #: src/ext_itweet/register/register.html:19
 #: src/ext_itweet/register/register.html:28 src/login/login.html:17
 #: src/login/login.html:26 src/text/text.html:14
 msgid "input_error_too_long"
-msgstr "Eingabe ist zu lange"
+msgstr "Input is too long"
 
 #: src/ext_itweet/register/register.html:20
 msgid "input_error_too_short"
-msgstr "Eingabe ist zu kurz"
+msgstr "Input is too short"
 
-#: build/ts.js:494
+#: build/ts.js:500
 msgid "item_delete_text"
-msgstr "Gespeicherte Nachricht löschen."
+msgstr "Delete saved message."
 
-#: build/ts.js:493
+#: build/ts.js:499
 msgid "item_delete_title"
-msgstr "Löschen"
+msgstr "Delete"
 
-#: build/ts.js:1090
+#: build/ts.js:1095
 msgid "item_save_text"
-msgstr "Die Meldung wurde erfolgreich gespeichert."
+msgstr "The message was saved successfully."
 
-#: build/ts.js:1089 build/ts.js:473
+#: build/ts.js:1094 build/ts.js:479
 msgid "item_save_title"
-msgstr "Meine Meldungen"
+msgstr "My Messages"
 
 #: src/mytweets/mytweets.html:5
 msgid "item_saved_subtitle"
-msgstr "Nicht gesendete Meldungen"
+msgstr "Messages not sent"
 
 #: src/text/text.html:4
 msgid "lbl_info_file_mandatory"
-msgstr "(Feld ausfüllen*)"
+msgstr "(Fill in content*)"
 
 #: src/ext_rhb/location/location.html:4
 msgid "lbl_info_file_mandatory_multi"
-msgstr "(Mindestens ein Feld ausfüllen*)"
+msgstr "(Fill in at least on field*)"
 
 #: src/ext_itweet/map/map.html:49
 msgid "lbl_map_geo_position"
@@ -217,21 +213,21 @@ msgstr "Position"
 
 #: src/ext_itweet/map/map.html:53
 msgid "lbl_map_layer_selection"
-msgstr "Kartenlayer"
+msgstr "Map layer"
 
-#: build/ts.js:3468 src/ext_rhb/overview/overview.html:81
+#: src/ext_rhb/overview/overview.html:81
 msgid "lbl_no"
-msgstr "Nein"
+msgstr "No"
 
-#: build/ts.js:3472 src/ext_rhb/overview/overview.html:82
+#: src/ext_rhb/overview/overview.html:82
 msgid "lbl_yes"
-msgstr "Ja"
+msgstr "Yes"
 
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:25
 #: src/ext_rhb/attributeTrain/attributeTrain.html:37
 #: src/ext_rhb/location/location.html:9 src/ext_rhb/mydata/mydata.html:8
 msgid "loading"
-msgstr "loading"
+msgstr "Loading…"
 
 #: src/audio/audio.html:47 src/ext_itweet/map/map.html:59
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:43
@@ -241,54 +237,53 @@ msgstr "loading"
 #: src/ext_rhb/visibility/visibility.html:25 src/photo/photo.html:20
 #: src/text/text.html:23
 msgid "location_button_next"
-msgstr "Weiter"
+msgstr "Next"
 
-#: build/ts.js:2341 build/ts.js:2850 src/ext_itweet/overview/overview.html:11
+#: build/ts.js:2411 src/ext_itweet/overview/overview.html:11
 #: src/ext_rhb/overview/overview.html:11
 msgid "location_title"
-msgstr "Ort"
+msgstr "Location"
 
 #: src/login/login.html:31
 msgid "login_button_login"
-msgstr "Anmelden"
+msgstr "Login"
 
 #: src/login/login.html:37
 msgid "login_button_logout"
-msgstr "Abmelden"
+msgstr "Logout"
 
-#: build/ts.js:3591
+#: build/ts.js:2673
 msgid "login_message_create_not_allowed"
-msgstr "Sie sind nicht berechtigt Meldungen zu erstellen."
+msgstr "You are not authorized to create messages."
 
 #: src/login/login.html:13
 msgid "login_placeholder_name"
-msgstr "Benutzername"
+msgstr "User name"
 
 #: src/login/login.html:22
 msgid "login_placeholder_password"
-msgstr "Passwort"
+msgstr "Password"
 
-#: build/ts.js:569
+#: build/ts.js:575
 msgid "login_status_fail"
-msgstr "Login nicht erfolgreich, Benutzername oder Passwort falsch."
+msgstr "Login not successful, username or password incorrect."
 
 #: src/login/login.html:5
 msgid "login_text"
 msgstr ""
-"Eingabe Benutzername und Passwort. Diese Daten werden nicht auf dem "
-"Smartphone gespeichert."
+"Enter your username and password. This data is not stored on the smartphone."
 
-#: build/ts.js:3590
+#: build/ts.js:2672
 msgid "login_title_create_not_allowed"
-msgstr "Keine Berechtigung"
+msgstr "No authorization"
 
-#: build/ts.js:544
+#: build/ts.js:550
 msgid "login_title_logedin"
 msgstr "Login"
 
 #: src/text/text.html:24
 msgid "message_button_skip"
-msgstr "Weiter ohne Text"
+msgstr "Next without text"
 
 #: src/text/text.html:10
 msgid "message_placeholder"
@@ -296,207 +291,201 @@ msgstr "Text*..."
 
 #: src/text/text.html:4
 msgid "message_subtitle"
-msgstr "Schreiben"
+msgstr "Writing"
 
-#: build/ts.js:796 src/ext_itweet/overview/overview.html:42
+#: build/ts.js:801 src/ext_itweet/overview/overview.html:42
 #: src/ext_rhb/overview/overview.html:62
 msgid "message_title"
 msgstr "Text"
 
 #: src/ext_rhb/multicategory/multicategory.html:23
 msgid "multicategory_button_skip"
-msgstr "Überspringen"
+msgstr "Skip"
 
 #: src/ext_rhb/mydata/mydata.html:26
 msgid "mydata_error"
-msgstr "Bitte wählen Sie eine Person aus."
+msgstr "Please select a Person"
 
 #: src/ext_rhb/mydata/mydata.html:11
 msgid "mydata_login"
-msgstr "Personen-ID oder Name eingeben"
+msgstr "Enter person-id or name"
 
-#: build/ts.js:2706
-msgid "mydata_title"
-msgstr "Meine Daten"
-
-#: build/ts.js:3222
-msgid "object_title"
-msgstr "Objekt"
-
-#: build/ts.js:1110 build/ts.js:496
+#: build/ts.js:1115 build/ts.js:502
 msgid "option_button_no"
-msgstr "Nein"
+msgstr "No"
 
-#: build/ts.js:495
+#: build/ts.js:501
 msgid "option_button_yes"
-msgstr "Ja"
+msgstr "Yes"
 
-#: build/ts.js:1124
+#: build/ts.js:1129
 msgid "overview_alert_mandatory"
-msgstr ""
-"Meldung nicht gesendet! Alle rot markierten Pflichtfelder müssen zwingend "
-"erfasst sein."
+msgstr "Couldn’t send message. Please fill in the required fields"
 
-#: build/ts.js:1123
+#: build/ts.js:1128
 msgid "overview_alert_mandatory_title"
-msgstr "Pflichtfelder erfassen"
+msgstr "Required fields"
 
 #: src/ext_itweet/overview/overview.html:98
 #: src/ext_rhb/overview/overview.html:155
 msgid "overview_button_delete"
-msgstr "Gesendete Meldung löschen"
+msgstr "Undo send"
 
 #: src/ext_itweet/overview/overview.html:5 src/ext_rhb/overview/overview.html:5
 msgid "overview_button_new"
-msgstr "Neue Meldung"
+msgstr "New message"
 
 #: src/ext_itweet/overview/overview.html:94
 #: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_save"
-msgstr "Änderungen speichern"
+msgstr "Save changes"
 
 #: src/ext_itweet/overview/overview.html:96
 #: src/ext_rhb/overview/overview.html:153
 msgid "overview_button_send"
-msgstr "Senden"
+msgstr "Send"
 
 #: src/ext_itweet/overview/overview.html:94
 #: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_store"
-msgstr "Speichern"
+msgstr "Save"
 
 #: src/ext_itweet/overview/overview.html:100
 #: src/ext_rhb/overview/overview.html:157
 msgid "overview_button_update"
-msgstr "Änderungen senden"
+msgstr "Send update"
 
-#: build/ts.js:3684
+#: build/ts.js:2763
 msgid "overview_cancel_option_message"
-msgstr "Aktuelle Meldung verwerfen?"
+msgstr "Do you want to delete the message?"
 
-#: build/ts.js:3683
+#: build/ts.js:2762
 msgid "overview_cancel_option_title"
-msgstr "Meldung nicht gesendet!"
+msgstr "Message not sent!"
 
-#: build/ts.js:1070
+#: build/ts.js:1075
 msgid "overview_delete_option_message"
-msgstr "Wollen Sie das Senden der Meldung wirklich rückgänig machen?"
+msgstr "Do you want to make sending the message really undo?"
 
-#: build/ts.js:1069
+#: build/ts.js:1074
 msgid "overview_delete_option_title"
-msgstr "Warnung"
+msgstr "Warning"
 
 #: src/ext_rhb/overview/overview.html:96
 msgid "overview_label_involvedPersons_placeholder"
-msgstr "Es sind keine beteiligten Personen zugewiesen."
+msgstr "There are no other people involved."
 
 #: src/ext_itweet/overview/overview.html:19
 #: src/ext_rhb/overview/overview.html:20
 msgid "overview_label_location_placeholder"
-msgstr "Kein Ort gefunden."
+msgstr "No place found."
 
 #: src/ext_itweet/overview/overview.html:46
 #: src/ext_rhb/overview/overview.html:66
 msgid "overview_label_text_placeholder"
-msgstr "Text erfassen"
+msgstr "You have not entered any text yet."
 
 #: src/ext_rhb/overview/overview.html:51
 msgid "overview_label_time_placeholder"
-msgstr "Sie haben noch kein Ereigniszeit festgelegt"
+msgstr "You have not set an eventtime."
 
 #: src/ext_rhb/overview/overview.html:117
 msgid "overview_label_train_placeholder"
-msgstr "Es sind keine Objektdaten (Zug-/Fahrzeugnummer) zugewiesen."
+msgstr "You have not set a train or vehicle"
 
 #: src/ext_rhb/overview/overview.html:120
 msgid "overview_message_no_vehicle_data"
-msgstr "Sie haben noch keine Fahrzeugdaten eingegeben"
+msgstr "You have not entered any vehicle data yet"
 
 #: src/ext_rhb/overview/overview.html:24
 msgid "overview_message_track_position_invalid"
-msgstr "Streckenkilometer ist ungültig"
+msgstr "Track position is invalid"
 
 #: src/ext_itweet/overview/overview.html:4 src/ext_rhb/overview/overview.html:4
 msgid "overview_subtitle"
-msgstr "Editieren"
+msgstr "Editing"
 
-#: build/ts.js:1061
+#: build/ts.js:1066
 msgid "overview_title"
-msgstr "Übersicht"
+msgstr "Overview"
 
-#: build/ts.js:1072 build/ts.js:251 build/ts.js:3686
+#: build/ts.js:1077 build/ts.js:257 build/ts.js:2765
 #: src/app/progress_dialog.tpl.html:20 src/ext_itweet/register/register.html:32
 msgid "personel_button_cancel"
-msgstr "Abbrechen"
+msgstr "Cancel"
 
 #: src/ext_itweet/register/register.html:31 src/ext_rhb/mydata/mydata.html:33
 msgid "personel_button_save"
-msgstr "Speichern"
+msgstr "Save"
 
 #: src/ext_itweet/register/register.html:21
 msgid "personel_error_name"
-msgstr "Ihr Name muss mindestens 3 Zeichen lang sein"
+msgstr "Your name must be at least 3 characters long"
 
 #: src/ext_itweet/register/register.html:8
 msgid "personel_placeholder_email"
-msgstr "E-Mail"
+msgstr "E-mail"
 
 #: src/ext_itweet/register/register.html:16
 msgid "personel_placeholder_name"
-msgstr "Vorname Name (optional)"
+msgstr "First name last name (optional)"
 
 #: src/ext_itweet/register/register.html:25
 msgid "personel_placeholder_phone"
-msgstr "Telefon (optional)"
+msgstr "Phone (optional)"
 
 #: src/ext_rhb/mydata/mydata.html:3
 msgid "personel_register"
-msgstr "Registrieren"
+msgstr "Register"
 
-#: build/ts.js:863 build/ts.js:869
+#: build/ts.js:2820
+msgid "personel_title"
+msgstr "Register"
+
+#: build/ts.js:868 build/ts.js:874
 msgid "photo_action_sheet_button_1"
 msgstr "Album"
 
-#: build/ts.js:864 build/ts.js:870
+#: build/ts.js:869 build/ts.js:875
 msgid "photo_action_sheet_button_2"
-msgstr "Kamera"
+msgstr "Camera"
 
-#: build/ts.js:866 build/ts.js:871
+#: build/ts.js:871 build/ts.js:876
 msgid "photo_action_sheet_button_cancel"
-msgstr "Abbrechen"
+msgstr "Stop"
 
-#: build/ts.js:865
+#: build/ts.js:870
 msgid "photo_action_sheet_button_delete"
-msgstr "Löschen"
+msgstr "Delete"
 
-#: build/ts.js:887
+#: build/ts.js:892
 msgid "photo_action_sheet_title"
-msgstr "Herkunft wählen"
+msgstr "Choose source"
 
 #: src/photo/photo.html:21
 msgid "photo_button_skip"
-msgstr "Weiter ohne Foto"
+msgstr "Next without photo"
 
 #: src/photo/photo.html:4
 msgid "photo_subtitle"
-msgstr "Erstellen oder aus Album auswählen"
+msgstr "Create or select from album"
 
-#: build/ts.js:856 src/ext_itweet/overview/overview.html:58
+#: build/ts.js:861 src/ext_itweet/overview/overview.html:58
 #: src/ext_rhb/overview/overview.html:130
 msgid "photo_title"
-msgstr "Fotos"
+msgstr "Photos"
 
 #: src/ext_rhb/location/location.html:12
 msgid "rhblocation_chooseLocation"
-msgstr "Bahnhof / Ort"
+msgstr "Location"
 
 #: src/ext_rhb/location/location.html:40
 msgid "rhblocation_choosePosition"
-msgstr "Streckenkilometer"
+msgstr "Track position"
 
 #: src/ext_rhb/location/location.html:26
 msgid "rhblocation_chooseTrack"
-msgstr "Strecke"
+msgstr "Track"
 
 #: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:18
 #: src/ext_rhb/attributeTrain/attributeTrain.html:15
@@ -504,63 +493,63 @@ msgstr "Strecke"
 #: src/ext_rhb/location/location.html:21 src/ext_rhb/location/location.html:35
 #: src/ext_rhb/mydata/mydata.html:12 src/ext_rhb/mydata/mydata.html:20
 msgid "search"
-msgstr "Suche…"
+msgstr "Search…"
 
-#: build/ts.js:266
+#: build/ts.js:272
 msgid "settings_message_cache_message"
-msgstr "Der App Cache wurde geleert."
+msgstr "The App cache has been cleared."
 
-#: build/ts.js:249
+#: build/ts.js:255
 msgid "settings_message_cache_question"
-msgstr "Möchten Sie den App Cache wirklich leeren?"
+msgstr "Do you really want to empty the App cache?"
 
-#: build/ts.js:248 build/ts.js:265
+#: build/ts.js:254 build/ts.js:271
 msgid "settings_message_cache_title"
 msgstr "App Cache"
 
-#: build/ts.js:218
+#: build/ts.js:224
 msgid "settings_title"
-msgstr "Einstellungen"
+msgstr "Settings"
+
+#: build/ts.js:240
+msgid "settings_title_clear_cache"
+msgstr "Empty the App cache"
+
+#: build/ts.js:239
+msgid "settings_title_demands"
+msgstr "Conditions"
+
+#: build/ts.js:238
+msgid "settings_title_help"
+msgstr "Help"
+
+#: build/ts.js:235
+msgid "settings_title_login"
+msgstr "Login"
+
+#: build/ts.js:236
+msgid "settings_title_my_items"
+msgstr "Messages not sent"
 
 #: build/ts.js:234
-msgid "settings_title_clear_cache"
-msgstr "App Cache leeren"
-
-#: build/ts.js:233
-msgid "settings_title_demands"
-msgstr "Voraussetzungen"
-
-#: build/ts.js:232
-msgid "settings_title_help"
-msgstr "Hilfe"
-
-#: build/ts.js:229
-msgid "settings_title_login"
-msgstr "Admin Login"
-
-#: build/ts.js:230
-msgid "settings_title_my_items"
-msgstr "Nicht gesendete Meldungen"
-
-#: build/ts.js:228
 msgid "settings_title_profil"
-msgstr "Meine Daten"
+msgstr "My data"
 
 #: src/audio/audio.html:38
 msgid "speech_button_delete"
-msgstr "Löschen"
+msgstr "Delete"
 
 #: src/audio/audio.html:33
 msgid "speech_button_listen"
-msgstr "Abspielen"
+msgstr "Play"
 
 #: src/audio/audio.html:46
 msgid "speech_button_skip"
-msgstr "Weiter ohne Aufnahme"
+msgstr "Next without record"
 
 #: src/audio/audio.html:21
 msgid "speech_button_start"
-msgstr "Aufnahme starten"
+msgstr "Start record"
 
 #: src/audio/audio.html:24 src/audio/audio.html:34
 msgid "speech_button_stop"
@@ -568,98 +557,71 @@ msgstr "Stop"
 
 #: src/audio/audio.html:4
 msgid "speech_subtitle"
-msgstr "Aufnehmen"
+msgstr "Record"
 
-#: build/ts.js:1004
+#: build/ts.js:1009
 msgid "speech_title"
-msgstr "Sprache"
+msgstr "Language"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:11
 msgid "time_day"
-msgstr "Tag"
+msgstr "Day"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:31
 msgid "time_hours"
-msgstr "Stunden"
+msgstr "Hours"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:37
 msgid "time_minutes"
-msgstr "Minuten"
+msgstr "Minutes"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:17
 msgid "time_month"
-msgstr "Monat"
+msgstr "Month"
 
 #: src/ext_rhb/attributeTime/attributeTime.html:23
 msgid "time_year"
-msgstr "Jahr"
+msgstr "Year"
 
 #: src/ext_rhb/attributeTrain/attributeTrain.html:7
 msgid "train_train_number"
-msgstr "Zugnummer"
+msgstr "Train number"
 
 #: src/ext_rhb/attributeTrain/attributeTrain.html:20
 msgid "train_vehicle_number"
-msgstr "Fahrzeugnummer"
+msgstr "Vehicle number"
 
-#: build/ts.js:1540
+#: build/ts.js:2097
 msgid "upload_status_connect"
-msgstr "Verbinden..."
+msgstr "Connect…"
 
-#: build/ts.js:1552
+#: build/ts.js:2109
 msgid "upload_status_image"
-msgstr "Bild"
+msgstr "Image"
 
-#: build/ts.js:1552
+#: build/ts.js:2109
 msgid "upload_status_speech"
-msgstr "Sprache"
+msgstr "Language"
 
-#: build/ts.js:1133 build/ts.js:1551 build/ts.js:1563
+#: build/ts.js:1138 build/ts.js:2108 build/ts.js:2120 build/ts.js:2359
 msgid "upload_status_title"
 msgstr "Upload"
 
-#: build/ts.js:1133 build/ts.js:1564
+#: build/ts.js:1138 build/ts.js:2121 build/ts.js:2359
 msgid "upload_status_tweet"
 msgstr "Information"
 
 #: src/ext_rhb/overview/overview.html:81 src/ext_rhb/overview/overview.html:82
 #: src/ext_rhb/visibility/visibility.html:4
 msgid "visibility_subheader"
-msgstr "Vertrauliche Meldung"
+msgstr "Confidential message"
 
-#: build/ts.js:3453 src/ext_rhb/overview/overview.html:77
+#: src/ext_rhb/overview/overview.html:77
 msgid "visibility_title"
-msgstr "Vertraulich"
+msgstr "Visibility"
 
-msgid "Was"
-msgstr "Was"
+#~ msgid "mydata_title"
+#~ msgstr "My Data"
 
-msgid "Wer"
-msgstr "Wer"
-
-msgid "Warum"
-msgstr "Warum"
-
-msgid "Wie"
-msgstr "Wie"
-
-msgid "Was ist die Idee bzw. die Verbesserung?"
-msgstr "Was ist die Idee bzw. die Verbesserung?"
-
-msgid "Wer profitiert von der Idee?"
-msgstr "Wer profitiert von der Idee?"
-
-msgid "Wer ist der Kunde?"
-msgstr "Wer ist der Kunde?"
-
-msgid "Weshalb soll die RhB diese Idee umsetzen?"
-msgstr "Weshalb soll die RhB diese Idee umsetzen?"
-
-msgid "Welchen Nutzen hat die Idee?"
-msgstr "Welchen Nutzen hat die Idee?"
-
-msgid "Wie kann die Idee umgesetzt werden?"
-msgstr "Wie kann die Idee umgesetzt werden?"
-
-msgid "Welche Umsetzungshinweise/-Vorschläge gibt es?"
-msgstr "Welche Umsetzungshinweise/-Vorschläge gibt es?"
+#~ msgid "object_title"
+#~ msgstr "Object"

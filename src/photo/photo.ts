@@ -131,7 +131,7 @@ module itweet.photo {
 		        	destinationType: Camera.DestinationType.FILE_URI,
 		        	sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
 					encodingType: Camera.EncodingType.JPEG,
-					targetWith: this.config.image_width,
+					//targetWith: this.config.image_width,
 					targetHeight: this.config.image_height,
 					correctOrientation: true
 				}
