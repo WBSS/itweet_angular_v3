@@ -1,1 +1,0 @@
-"/Users/administrator/WebstormProjects/itweet_angular_v3/src/_all.ts" --sourcemap --removeComments --target ES5 --out build/ts.js
