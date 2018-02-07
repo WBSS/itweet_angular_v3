@@ -22,8 +22,10 @@ var templateconfig = function (config) {
   var platforms = [{
     appName: 'QUALITAS',
     appID: 'rhbswiss',
-    // iOS appPackage: 'ch.wbss.rhb.qs.ad',
-    appPackage: 'ch.wbss.rhb.qs.ad',
+    // iOS appPackage:
+    appPackage:'ch.wbss.rhb.qs',
+    // Android (1.1.7 rework, revert next release)
+    // appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
     appVersion: '1.1.7'
     //splash: 'rhb_splash_logo.png',
@@ -372,7 +374,7 @@ module.exports = function (grunt) {
   // build&deploy on local device (USB adapter)
   //---------------------------------------------//
   // android
-  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.an','_clean_platform_android','_compile-and-run_android']);
+  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.ad','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_uta', ['_clean_build','template:uta_ch.wbss.rhb.qs.uta','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev','_clean_platform_android','_compile-and-run_android']);
   // ios
