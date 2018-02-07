@@ -14,7 +14,7 @@ module itweet {
 		brand: itweet.model.BasicService<any>;
 		subheaderStyle: string;
 		footerStyle: string;
-		startWatchGeoPosition: any;
+		//watchGeoPosition: any;
 	}
 	export class AppController {
 
@@ -53,7 +53,7 @@ module itweet {
 			})
 
 			//watch geo position
-			$scope.startWatchGeoPosition();
+			//$scope.startWatchGeoPosition();
 
 		}
 	}
@@ -72,28 +72,20 @@ module itweet {
 
 				}
 			])
-		.run(function($rootScope, $cordovaGeolocation) {
-				$rootScope.startWatchGeoPosition = function() {
-
-					var watchOptions = {
-					 timeout : 30000,
-					 enableHighAccuracy: true // may cause errors if true
-					 };
-					 var watch = $cordovaGeolocation.watchPosition(watchOptions);
-					 watch.then(
-					 null,
-					 function(err) {
-						 console.log('geo position: error: ' + err.message);
-						 $rootScope.errorGeoLocation = err.message;
-
-					 },
-					 function(position) {
-					 $rootScope.position = position
-					 });
-					 console.log('geo position: start watch');
-				}
-
-
+		.run(function ($rootScope, $cordovaGeolocation) {
+			var watchOptions = {enableHighAccuracy: true }; // may cause errors if true
+			// start watch (module ngCordova, http://ngcordova.com/docs/plugins/geolocation/)
+			var watchGeoPosition = $cordovaGeolocation.watchPosition(watchOptions);
+			// do watch position change
+			watchGeoPosition.then(
+				null,
+				function (err) {
+					$rootScope.errorGeoLocation = "location errror";
+					console.log('geo position: error: ' + err.message);
+				},
+				function (position) {
+					$rootScope.position = position;
+					console.log('geo position: start watch');
 				});
-
+		})
 }

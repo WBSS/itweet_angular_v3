@@ -5,45 +5,36 @@
 	</md-subheader>
    <div class="md-padding" ng-show="vm.loaded">
 	  <p translate>attribute_involvedPersons_text</p>
-    <form>
-    <md-autocomplete
-          md-no-cache="vm.noCache"
-          md-selected-item="vm.selectedPerson"
-          md-search-text-change="vm.searchTextChange(vm.searchText)"
-          md-search-text="vm.searchText"
-          md-selected-item-change="vm.selectedItemChange(item)"
-          md-items="person in vm.querySearch(vm.searchText)"
-          md-item-text="vm.getFullPerson(person)"
-          md-min-length="0"
-          md-autoselect = "true"
-          placeholder="{{vm.searchPlaceholder}}">
-        <md-item-template>
-          <span md-highlight-text="vm.searchText">{{person.id+', '+person.firstName+' '+person.lastName+', '+person.department}}</span>
-        </md-item-template>
-        <md-not-found>
-          <span translate>mydata_nomatches</span>{{vm.searchText}}".
-        </md-not-found>
-      </md-autocomplete>
-      <div layout="row" layout-align="space-between center">
-        <div class="error">{{vm.errorMessage}}</div>
-        <md-button class="md-raised" style="margin-top:20px" ng-click="vm.addPerson(vm.selectedPerson)"><span translate>Hinzufügen</span></md-button>
-      </div>
-      </form>
+        <md-autocomplete
+                md-input-id="personAC"
+                md-selected-item-change="vm.onSelectedInvolvedPerson()"
+                md-delay="200"
+                md-select-on-match="true"
+                md-selected-item="vm.selectedPerson"
+                md-search-text="vm.searchText"
+                md-items="person in vm.querySearch(vm.searchText)"
+                md-item-text="vm.getFullPerson(person)"
+                md-min-length="1"
+                placeholder="{{'search' | translate}}">
+            <md-item-template>
+                <span md-highlight-text="vm.searchText" md-highlight-flags="i">{{vm.getFullPerson(person)}}</span>
+            </md-item-template>
+        </md-autocomplete>
     </div>
     <div class="md-padding" ng-show="vm.loaded==false" layout="row" layout-sm="column" layout-align="center center">
       <p translate>loading</p>
     </div>
-    <md-card ng-show="vm.addedPersons.length!=0">
-    <md-list>
-      <md-list-item class="md-2-line" ng-repeat="item in vm.addedPersons">
-        <div class="md-list-item-text">
-          <h3>{{item.firstName}} {{item.lastName}} ({{item.id}})</h3>
-          <p>{{item.department}}</p>
-        </div>
-        <md-icon ng-click="vm.removePerson($index)" md-svg-icon="img/icon_remove.svg"></md-icon>
-        <md-divider ng-if="!$last"></md-divider>
-      </md-list-item>
-    </md-list>
+    <md-card ng-show="vm.addedPersons.length !== 0">
+        <md-list>
+          <md-list-item class="md-2-line" ng-repeat="item in vm.addedPersons">
+            <div class="md-list-item-text">
+              <h3>{{item.firstName}} {{item.lastName}} ({{item.id}})</h3>
+              <p>{{item.department}}</p>
+            </div>
+            <md-icon ng-click="vm.removePerson($index)" md-svg-icon="img/icon_remove.svg"></md-icon>
+            <md-divider ng-if="!$last"></md-divider>
+          </md-list-item>
+        </md-list>
     </md-card>
 </md-content>
 

@@ -14,12 +14,12 @@ module.exports = function (grunt) {
       // create icon android
       //--------------------------------//
       helper_icon_android: {
-        cmd: 'phantomjs assets/rhb/util/android_icon_creator.js assets/rhb/icon_android/ assets/rhb/source/rhb_icon_logo.png assets/rhb/source/rhb_train_splash_768x1024.png'
+        cmd: 'phantomjs assets/rhb/util/android_icon_creator.js assets/rhb/icon_android/ assets/rhb/source/rhb_qm_icon_android.png assets/rhb/source/rhb_train_splash_768x1024.png'
       },
       // create icon ios
       //--------------------------------//
       helper_icon_ios: {
-        cmd: 'phantomjs assets/rhb/util/ios_icon_creator.js assets/rhb/icon_ios/ assets/rhb/source/rhb_splash_logo.png assets/rhb_splash_logo.png assets/rhb_train_splash_1536x2048.png'
+        cmd: 'phantomjs assets/rhb/util/ios_icon_creator.js assets/rhb/icon_ios/ assets/rhb/source/rhb_qm_icon_android.png assets/rhb_icon_android.png assets/rhb_train_splash_1536x2048.png'
       },
       // create splash android
       //--------------------------------//

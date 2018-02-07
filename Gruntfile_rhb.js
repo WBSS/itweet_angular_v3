@@ -20,29 +20,33 @@ var templateconfig = function (config) {
 
   // app configuration (array of hash map)
   var platforms = [{
-    appName: 'RhB',
+    appName: 'QUALITAS',
     appID: 'rhbswiss',
-    appPackage: 'ch.wbss.rhb.qs',
+    // iOS appPackage:
+    appPackage:'ch.wbss.rhb.qs',
+    // Android (1.1.7 rework, revert next release)
+    // appPackage: 'ch.wbss.rhb.qs.ad',
     itweetURL: 'https://rhbapp.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '0.8.2'
+    appVersion: '1.1.7'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
   }, {
-    appName: 'RhB_UTA',
+    appName: 'QUALIUTA',
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.uta',
-    itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '0.8.2'
+    itweetURL: 'https://rhbapputa.itweet.ch/mvc/mobile/rhb/1/',
+    appVersion: '1.1.7'
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
   }, {
-    appName: 'RhB_DEV',
+    appName: 'QUALIDEV',
     appID: 'rhbswiss',
     appPackage: 'ch.wbss.rhb.qs.dev',
     itweetURL: 'https://rhbappdev.itweet.ch/mvc/mobile/rhb/1/',
-    appVersion: '0.8.2',
+    //itweetURL: 'http://192.168.1.10:8080/mvc/mobile/rhb/1/',
+    appVersion: '1.1.7',
     //splash: 'rhb_splash_logo.png',
     //icon: 'icon_android.png',
     //bgcolor: 'e6041b'
@@ -68,7 +72,7 @@ var templateconfig = function (config) {
     data = _({}).extend(elem, {
       js_dist: 'js/dist.js'
     });
-    // dev template
+    // uta template
     resp['uta_' + elem.appPackage] = {
       options: {
         data: data
@@ -106,14 +110,14 @@ module.exports = function (grunt) {
         }
       }
     },
-    clean: {
-      options: {
-        'no-write': false
-      },
-      folder_build: ['build/**'],
-      folder_www: ['www/**/'],
-      contents: ['config.xml']
+  clean: {
+    options: {
+      'no-write': false
     },
+    folder_build: ['build/**'],
+    folder_www: ['www/**/'],
+    contents: ['config.xml']
+  },
     symlink: {
       options: {
         overwrite: true
@@ -123,6 +127,7 @@ module.exports = function (grunt) {
         src: 'src/_rhb.ts'
       }
     },
+    /*
      typescript: {
        base: {
        src: "src/_all.ts",
@@ -134,24 +139,34 @@ module.exports = function (grunt) {
          declaration: false,
          rootDir : "src"
        }
-     }
      },
+     */
+    ts: {
+      default : {
+        src: ["src/_all.ts"],
+        out: "build/ts.js",
+        default: {
+          // specifying tsconfig as a boolean will use the 'tsconfig.json' in same folder as Gruntfile.js
+          tsconfig: true
+        }
+      }
+    },
     // Converting translated .po files into angular-compatible JavaScript files (https://angular-gettext.rocketeer.be/dev-guide/compile/)
     nggettext_compile: {
       all: {
         files: {
-          "build/translations.js": ["po/*.po"]
+          "build/translations.js": ["po_rhb/*.po"]
         }
       }
     },
     // extract labels to translate
-    //nggettext_extract: {
-      //pot: {
-        //files: {
-          //"po/template.pot": ["src/**/*.html","build/ts.js"]
-        //}
-      //}
-    //},
+    nggettext_extract: {
+      pot: {
+        files: {
+          "po/template.pot": ["src/**/*.html","build/ts.js"]
+        }
+      }
+    },
     // minifying, combining, and automatically caching your HTML templates with $templateCache.
     ngtemplates: {
       templates: {
@@ -180,7 +195,10 @@ module.exports = function (grunt) {
     // concat all css file in one
     concat_css: {
       all: {
-        src: ['src/**/*.css'],
+        src: [
+          'src/**/*.css',
+          '!src/ext_itweet/**/*.css']
+        ,
         dest: "www/css/app.css"
       }
     },
@@ -203,7 +221,8 @@ module.exports = function (grunt) {
         cmd: 'cordova build --release ios'
       },
       runner_android: {
-        cmd: 'cordova run android --device --debug'
+        // cmd: 'cordova run android --device --debug'
+        cmd: 'cordova run android --debug'
       },
       runner_ios: {
         //cmd: 'cordova run ios --device  --codeSignIdentitiy="iPhone Development" --provisioningProfile="b73af506-6d3b-4461-81a6-d6aea106a3f4'
@@ -219,9 +238,9 @@ module.exports = function (grunt) {
         cmd: 'ls -l **'
       },
       signer_android: {
-        cmd: 'cd platforms/android/build/outputs/apk/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
-        '-keystore ../../../../../publish/wbss_mobileapps.keystore android-armv7-release-unsigned.apk wbss_mobileapps && ' +
-        android_sign_zipalign + ' -v 4 android-armv7-release-unsigned.apk  android.apk '
+        cmd: 'cd platforms/android/build/outputs/apk/release/ && echo itweet | jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 ' +
+        '-keystore ../../../../../../publish/wbss_mobileapps.keystore android-release-unsigned.apk wbss_mobileapps && ' +
+        android_sign_zipalign + ' -v 4 android-release-unsigned.apk  android.apk '
       },
       mediagen: {
         cmd: 'mediagen'
@@ -268,7 +287,7 @@ module.exports = function (grunt) {
         dest: 'www/js/de.js'
       },
       en: {
-        src: 'bower_components/angular-i18n/angular-locale_de.js',
+        src: 'bower_components/angular-i18n/angular-locale_en.js',
         dest: 'www/js/en.js'
       },
       it: {
@@ -299,7 +318,8 @@ module.exports = function (grunt) {
 
   // load grunt pluging
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-typescript');
+  //grunt.loadNpmTasks('grunt-typescript');
+  grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-contrib-symlink');
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
@@ -322,7 +342,7 @@ module.exports = function (grunt) {
   //------------------//
   // Folder: build (nggettext_compile, ngtemplates, link folder, typescript)
   // Folder: www (bower_concat (creates dist.js, dist.css), concat (creates app.js from folder build, ..), concat_css (creates app.css)
-  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'typescript', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
+  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'ts', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
 
 
   // prepare tasks / compile & optimize for production
@@ -341,7 +361,7 @@ module.exports = function (grunt) {
   //-----------------------------------------------//
 
   // autobuild for development on local browser
-  grunt.registerTask('run-on-local-server_dev_ch.wbss.rhbswiss.dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev', '_compile', 'express', 'watch']);
+  grunt.registerTask('run-on-local-server_dev_ch.wbss.rhb.dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev', '_compile', 'express', 'watch']);
 
   // build&deploy local device (USB adapter)
   // run default android
@@ -354,7 +374,7 @@ module.exports = function (grunt) {
   // build&deploy on local device (USB adapter)
   //---------------------------------------------//
   // android
-  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs','_clean_platform_android','_compile-and-run_android']);
+  grunt.registerTask('run-android_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.ad','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_uta', ['_clean_build','template:uta_ch.wbss.rhb.qs.uta','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev','_clean_platform_android','_compile-and-run_android']);
   // ios
@@ -373,7 +393,7 @@ module.exports = function (grunt) {
   // sign android apk
   grunt.registerTask('sig_android_apk-file', ['exec:signer_android']);
   // build&sign to folder platform (cordova android)
-  grunt.registerTask('build_sign-android_release_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs','_clean_platform_android','_compile-and-sign_android_release']);
+  grunt.registerTask('build_sign-android_release_prod', ['_clean_build','template:prod_ch.wbss.rhb.qs.ad','_clean_platform_android','_compile-and-sign_android_release']);
   grunt.registerTask('build_sign-android_release_uta', ['_clean_build','template:uta_ch.wbss.rhb.qs.uta','_clean_platform_android', '_compile-and-sign_android_release']);
   grunt.registerTask('build_sign-android_release_dev', ['_clean_build','template:dev_ch.wbss.rhb.qs.dev','_clean_platform_android','_compile-and-sign_android_release']);
 

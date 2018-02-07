@@ -20,29 +20,30 @@ var templateconfig = function (config) {
 
   // app configuration (array of hash map)
   var platforms = [{
-    appName: 'iTweet_Cloud',
+    appName: 'iTweet',
     appID: 'itweet',
-    appPackage: 'ch.wbss.itweet.cloud',
+    appPackage: 'ch.wbss.itweet',
     itweetURL: 'https://www.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    //appVersion: '1.0.5', // Google play store
+    appVersion: '1.3.1', // Apple App stoer
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweet_PTA',
+    appName: 'iTweeUTA',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.uta',
-    itweetURL: 'https://sandbox.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    itweetURL: 'https://uta.itweet.ch/mvc/mobile/1/',
+    appVersion: '1.0.5',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
   }, {
-    appName: 'iTweet_DEV',
+    appName: 'iTweeDEV',
     appID: 'itweet',
     appPackage: 'ch.wbss.itweet.dev',
     itweetURL: 'https://dev.itweet.ch/mvc/mobile/1/',
-    appVersion: '0.8.2',
+    appVersion: '1.0.5',
     //splash: 'launch_image_2208_1242.png',
     //icon: 'app_icon_180.png',
     //bgcolor: '93ddf8'
@@ -70,7 +71,6 @@ var templateconfig = function (config) {
       options: {
         data: data
       },
-
       files: template_files
     };
     // add for debugging of dev version
@@ -132,16 +132,27 @@ module.exports = function (grunt) {
         src: 'src/_itweet.ts'
       }
     },
-    typescript: {
-      base: {
-        src: "src/_all.ts",
-        dest: "build/ts.js",
-        options: {
-          module: 'amd', //or commonjs
-          target: 'es5', //or es3,
-          sourceMap: false,
-          declaration: false,
-          rootDir : "src"
+    /*
+     typescript: {
+     base: {
+     src: "src/_all.ts",
+     dest: "build/ts.js",
+     options: {
+     module: 'amd', //or commonjs
+     target: 'es5', //or es3,
+     sourceMap: false,
+     declaration: false,
+     rootDir : "src"
+     }
+     },
+     */
+    ts: {
+      default : {
+        src: ["src/_all.ts"],
+        out: "build/ts.js",
+        default: {
+          // specifying tsconfig as a boolean will use the 'tsconfig.json' in same folder as Gruntfile.js
+          tsconfig: true
         }
       }
     },
@@ -149,7 +160,7 @@ module.exports = function (grunt) {
     nggettext_compile: {
       all: {
         files: {
-          "build/translations.js": ["po/*.po"]
+          "build/translations.js": ["po_itweet/*.po"]
         }
       }
     },
@@ -189,7 +200,10 @@ module.exports = function (grunt) {
     // concat all css file in one
     concat_css: {
       all: {
-        src: ['src/**/*.css'],
+        src: [
+          'src/**/*.css',
+          '!src/ext_rhb/**/*.css'
+        ],
         dest: "www/css/app.css"
       }
     },
@@ -325,13 +339,13 @@ module.exports = function (grunt) {
 
   // load grunt pluging
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-typescript');
+  //grunt.loadNpmTasks('grunt-typescript
+  grunt.loadNpmTasks("grunt-ts");
   grunt.loadNpmTasks('grunt-contrib-symlink');
   grunt.loadNpmTasks('grunt-bower-concat');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-angular-templates');
-
 
   // register tasks -------------------------------//
   //-----------------------------------------------//
@@ -348,7 +362,7 @@ module.exports = function (grunt) {
   //------------------//
   // Folder: build (nggettext_compile, ngtemplates, link folder, typescript)
   // Folder: www (bower_concat (creates dist.js, dist.css), concat (creates app.js from folder build, ..), concat_css (creates app.css)
-  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'typescript', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
+  grunt.registerTask('_compile', ['nggettext_compile', 'ngtemplates', 'symlink:link_ts', 'ts', 'bower_concat', 'concat', 'concat_css', '_add_assets_files']);
 
   // prepare tasks / compile & optimize for production
   //----------------//
@@ -382,7 +396,7 @@ module.exports = function (grunt) {
   grunt.registerTask('run-android_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_android','_compile-and-run_android']);
   grunt.registerTask('run-android_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_android','_compile-and-run_android']);
   // ios
-  grunt.registerTask('run-ios_prod', ['_clean_build','template:prod_ch.wbss.itweet.cloud','_clean_platform_ios','_compile-and-run_ios']);
+  grunt.registerTask('run-ios_prod', ['_clean_build','template:prod_ch.wbss.itweet','_clean_platform_ios','_compile-and-run_ios']);
   grunt.registerTask('run-ios_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_ios','_compile-and-run_ios']);
   grunt.registerTask('run-ios_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-run_ios']);
 
@@ -406,7 +420,7 @@ module.exports = function (grunt) {
   grunt.registerTask('_compile-and-build_ios_release', ['_prepare', 'exec:builder_ios_release']);
   grunt.registerTask('build_ios_release_prod', ['_clean_build','template:prod_ch.wbss.itweet','_clean_platform_ios','_compile-and-build_ios_release']);
   grunt.registerTask('build_ios_release_uta', ['_clean_build','template:uta_ch.wbss.itweet.uta','_clean_platform_ios','_compile-and-build_ios_release']);
-  grunt.registerTask('build_ios_release_dev', ['_clean_build','_clean_before_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-build_ios_release']);
+  grunt.registerTask('build_ios_release_dev', ['_clean_build','template:dev_ch.wbss.itweet.dev','_clean_platform_ios','_compile-and-build_ios_release']);
 
   return grunt.registerTask('default', ['dev']);
 };

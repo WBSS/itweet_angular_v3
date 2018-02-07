@@ -9,82 +9,51 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.12\n"
 
-#: src/rhb/attributeTime/attributeTime.html:30
-msgid "H"
-msgstr "H"
+#: build/ts.js:384
+msgid "alltweet_item_list_is_loading"
+msgstr "The message list is loaded"
 
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:28
-msgid "Hinzufügen"
-msgstr "Add"
-
-#: src/rhb/attributeTime/attributeTime.html:22
-msgid "J"
-msgstr "Y"
-
-#: src/rhb/attributeTime/attributeTime.html:16
-msgid "M"
-msgstr "M"
-
-#: src/rhb/attributeTime/attributeTime.html:36
-msgid "Min"
-msgstr "Min"
-
-#: src/rhb/attributeTime/attributeTime.html:10
-msgid "T"
-msgstr "D"
-
-#: src/register/register.html:22
-msgid "This does not work"
-msgstr ""
-
-#: src/rhb/location/location.html:63
-msgid "Weiter"
-msgstr "Continue"
-
-#: build/ts.js:3597
-msgid "attribute_error_user_already_added"
-msgstr "This user is already added"
-
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:53
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:44
 msgid "attribute_involvedPersons_button_skip"
 msgstr "Skip involved persons"
 
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:3
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:4
 msgid "attribute_involvedPersons_subtitle"
 msgstr "Add persons"
 
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:6
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:7
 msgid "attribute_involvedPersons_text"
 msgstr "Enter person-id or name"
 
-#: src/rhb/attributeTime/attributeTime.html:43
+#: src/ext_rhb/attributeTime/attributeTime.html:44
 msgid "attribute_time_invalid_date"
 msgstr "Invalid Date/Time"
 
-#: src/rhb/attributeTime/attributeTime.html:3
+#: src/ext_rhb/attributeTime/attributeTime.html:4
 msgid "attribute_time_subheader"
 msgstr "Set eventtime date/time"
 
-#: build/ts.js:3546 src/overview/overview.html:73
+#: build/ts.js:3002 src/ext_rhb/overview/overview.html:92
 msgid "attribute_title_involvedPersons"
 msgstr "Involved"
 
-#: build/ts.js:3721 src/overview/overview.html:41
+#: build/ts.js:3153 src/ext_rhb/overview/overview.html:47
 msgid "attribute_title_time"
 msgstr "Eventtime"
 
-#: build/ts.js:3795 src/overview/overview.html:88
+#: src/ext_rhb/overview/overview.html:107
 msgid "attribute_title_train"
-msgstr "Train and Wagons"
+msgstr "Train and Vehicles"
 
-#: src/rhb/attributeTrain/attributeTrain.html:3
-#: src/rhb/location/location.html:4
+#: src/ext_rhb/attributeTrain/attributeTrain.html:4
+#: src/ext_rhb/location/location.html:4
 msgid "attribute_train_subheader"
 msgstr "Choose"
 
-#: build/ts.js:1354 build/ts.js:3157 src/overview/overview.html:28
+#: build/ts.js:2572 build/ts.js:745 src/ext_itweet/overview/overview.html:27
+#: src/ext_rhb/overview/overview.html:32
 msgid "category_title"
 msgstr "Category"
 
@@ -92,15 +61,15 @@ msgstr "Category"
 msgid "context_subtitle"
 msgstr "Create a message to the topic"
 
-#: build/ts.js:1284
+#: build/ts.js:678
 msgid "context_title"
 msgstr "Topic"
 
-#: src/settings/disclaimer.html:3
+#: src/settings/disclaimer.html:4
 msgid "disclaimer_subtitle"
 msgstr "Disclaimer"
 
-#: src/settings/disclaimer.html:7
+#: src/settings/disclaimer.html:8
 msgid "disclaimer_text"
 msgstr ""
 "Content rights\n"
@@ -140,84 +109,89 @@ msgstr ""
 "In case of violation, iTweet is entitled to exclude the non-compliant user "
 "from any utilization of www.itweet.ch/eu without prior warning."
 
-#: src/settings/disclaimer.html:6
+#: src/settings/disclaimer.html:7
 msgid "disclaimer_text_title"
 msgstr "General conditions for the use of the Internet pages of iTweet"
 
-#: build/ts.js:219
+#: build/ts.js:337
 msgid "disclaimer_title"
 msgstr "Conditions"
 
-#: build/ts.js:112 build/ts.js:300
+#: build/ts.js:231 build/ts.js:428
 msgid "error_html5_container_loading_title"
 msgstr "Message list"
 
-#: build/ts.js:268
+#: build/ts.js:388
 msgid "error_html5_container_timeout"
 msgstr "Timeout"
 
-#: build/ts.js:131 build/ts.js:149 build/ts.js:1694 build/ts.js:1714
-#: build/ts.js:1737 build/ts.js:1753 build/ts.js:302 build/ts.js:3613
-#: build/ts.js:732 build/ts.js:824 src/app/progress_dialog.tpl.html:16
+#: build/ts.js:1071 build/ts.js:1091 build/ts.js:1109 build/ts.js:1125
+#: build/ts.js:250 build/ts.js:267 build/ts.js:3592 build/ts.js:3685
+#: build/ts.js:430 src/app/progress_dialog.tpl.html:16
 msgid "general_button_okay"
 msgstr "Okay"
 
-#: build/ts.js:1785
+#: build/ts.js:1155
 msgid "general_info_created_failed_message"
 msgstr "Sending failed"
 
-#: build/ts.js:1776
+#: build/ts.js:1147
 msgid "general_info_created_message"
 msgstr "Sending successful"
 
-#: build/ts.js:2552
+#: build/ts.js:1544
 msgid "general_info_high_ping_message"
 msgstr "Your message was not delivered. Please try again later."
 
-#: build/ts.js:2551
+#: build/ts.js:1543
 msgid "general_info_high_ping_title"
 msgstr "Bad connection"
 
-#: build/ts.js:1782
+#: build/ts.js:1152
 msgid "general_info_send_canceled"
 msgstr "The request was aborted"
 
-#: build/ts.js:1736
+#: build/ts.js:1108
 msgid "general_info_send_message"
 msgstr "Do you like to send the message?"
 
-#: build/ts.js:1735
+#: build/ts.js:1107
 msgid "general_info_send_title"
 msgstr "Send message?"
 
-#: build/ts.js:188
+#: build/ts.js:306
 msgid "help_title"
 msgstr "Help"
 
-#: src/login/login.html:15 src/login/login.html:24
-#: src/register/register.html:12
+#: src/ext_itweet/register/register.html:11 src/login/login.html:16
+#: src/login/login.html:25
 msgid "input_error_mandatory"
 msgstr "Mandatory Entry"
 
-#: src/login/login.html:16 src/login/login.html:25
-#: src/register/register.html:13 src/register/register.html:21
-#: src/register/register.html:31 src/text/text.html:13
+#: src/ext_itweet/register/register.html:12
+#: src/ext_itweet/register/register.html:19
+#: src/ext_itweet/register/register.html:28 src/login/login.html:17
+#: src/login/login.html:26 src/text/text.html:14
 msgid "input_error_too_long"
 msgstr "Input is too long"
 
-#: build/ts.js:377
+#: src/ext_itweet/register/register.html:20
+msgid "input_error_too_short"
+msgstr "Input is too short"
+
+#: build/ts.js:494
 msgid "item_delete_text"
 msgstr "Delete saved message."
 
-#: build/ts.js:376
+#: build/ts.js:493
 msgid "item_delete_title"
 msgstr "Delete"
 
-#: build/ts.js:1713
+#: build/ts.js:1090
 msgid "item_save_text"
 msgstr "The message was saved successfully."
 
-#: build/ts.js:1712 build/ts.js:355
+#: build/ts.js:1089 build/ts.js:473
 msgid "item_save_title"
 msgstr "My Messages"
 
@@ -225,24 +199,52 @@ msgstr "My Messages"
 msgid "item_saved_subtitle"
 msgstr "Messages not sent"
 
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:33
-#: src/rhb/attributeTrain/attributeTrain.html:7
-#: src/rhb/location/location.html:9 src/rhb/mydata/mydata.html:4
+#: src/text/text.html:4
+msgid "lbl_info_file_mandatory"
+msgstr "(Fill in content*)"
+
+#: src/ext_rhb/location/location.html:4
+msgid "lbl_info_file_mandatory_multi"
+msgstr "(Fill in at least on field*)"
+
+#: src/ext_itweet/map/map.html:49
+msgid "lbl_map_geo_position"
+msgstr "Position"
+
+#: src/ext_itweet/map/map.html:53
+msgid "lbl_map_layer_selection"
+msgstr "Map layer"
+
+#: build/ts.js:3468 src/ext_rhb/overview/overview.html:81
+msgid "lbl_no"
+msgstr "No"
+
+#: build/ts.js:3472 src/ext_rhb/overview/overview.html:82
+msgid "lbl_yes"
+msgstr "Yes"
+
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:25
+#: src/ext_rhb/attributeTrain/attributeTrain.html:37
+#: src/ext_rhb/location/location.html:9 src/ext_rhb/mydata/mydata.html:8
 msgid "loading"
 msgstr "Loading…"
 
-#: src/audio/audio.html:46 src/map/map.html:53 src/photo/photo.html:21
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:52
-#: src/rhb/attributeTime/attributeTime.html:50
-#: src/rhb/attributeTrain/attributeTrain.html:50 src/text/text.html:22
+#: src/audio/audio.html:47 src/ext_itweet/map/map.html:59
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:43
+#: src/ext_rhb/attributeTime/attributeTime.html:51
+#: src/ext_rhb/attributeTrain/attributeTrain.html:54
+#: src/ext_rhb/location/location.html:54 src/ext_rhb/map/map.html:59
+#: src/ext_rhb/visibility/visibility.html:25 src/photo/photo.html:20
+#: src/text/text.html:23
 msgid "location_button_next"
 msgstr "Next"
 
-#: build/ts.js:3382 build/ts.js:956 src/overview/overview.html:11
+#: build/ts.js:2341 build/ts.js:2850 src/ext_itweet/overview/overview.html:11
+#: src/ext_rhb/overview/overview.html:11
 msgid "location_title"
-msgstr "Train station / location"
+msgstr "Location"
 
-#: src/login/login.html:30
+#: src/login/login.html:31
 msgid "login_button_login"
 msgstr "Login"
 
@@ -250,488 +252,407 @@ msgstr "Login"
 msgid "login_button_logout"
 msgstr "Logout"
 
-#: build/ts.js:731
+#: build/ts.js:3591
 msgid "login_message_create_not_allowed"
 msgstr "You are not authorized to create messages."
 
-#: src/login/login.html:12
+#: src/login/login.html:13
 msgid "login_placeholder_name"
 msgstr "User name"
 
-#: src/login/login.html:21
+#: src/login/login.html:22
 msgid "login_placeholder_password"
 msgstr "Password"
 
-#: src/login/login.html:4
+#: build/ts.js:569
+msgid "login_status_fail"
+msgstr "Login not successful, username or password incorrect."
+
+#: src/login/login.html:5
 msgid "login_text"
 msgstr ""
 "Enter your username and password. This data is not stored on the smartphone."
 
-#: build/ts.js:730
+#: build/ts.js:3590
 msgid "login_title_create_not_allowed"
 msgstr "No authorization"
 
-#: build/ts.js:430
+#: build/ts.js:544
 msgid "login_title_logedin"
 msgstr "Login"
 
-#: src/text/text.html:23
+#: src/text/text.html:24
 msgid "message_button_skip"
 msgstr "Next without text"
 
-#: src/text/text.html:3 src/text/text.html:9
-msgid "message_subtitle"
-msgstr "Writing"
-
+#: src/text/text.html:10
 msgid "message_placeholder"
 msgstr "Text*..."
 
-#: build/ts.js:1408 src/overview/overview.html:57
+#: src/text/text.html:4
+msgid "message_subtitle"
+msgstr "Writing"
+
+#: build/ts.js:796 src/ext_itweet/overview/overview.html:42
+#: src/ext_rhb/overview/overview.html:62
 msgid "message_title"
 msgstr "Text"
 
-#: src/rhb/multicategory/multicategory.html:22
+#: src/ext_rhb/multicategory/multicategory.html:23
 msgid "multicategory_button_skip"
 msgstr "Skip"
 
-#: src/rhb/mydata/mydata.html:31
+#: src/ext_rhb/mydata/mydata.html:26
 msgid "mydata_error"
 msgstr "Please select a Person"
 
-#: src/rhb/mydata/mydata.html:7
+#: src/ext_rhb/mydata/mydata.html:11
 msgid "mydata_login"
 msgstr "Enter person-id or name"
 
-#: src/rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:23
-#: src/rhb/attributeTrain/attributeTrain.html:24
-#: src/rhb/attributeTrain/attributeTrain.html:41
-#: src/rhb/location/location.html:28 src/rhb/location/location.html:46
-#: src/rhb/mydata/mydata.html:27
-msgid "mydata_nomatches"
-msgstr "No person found:"
-
-#: build/ts.js:3234
+#: build/ts.js:2706
 msgid "mydata_title"
 msgstr "My Data"
 
-#: build/ts.js:1738 build/ts.js:379
+#: build/ts.js:3222
+msgid "object_title"
+msgstr "Object"
+
+#: build/ts.js:1110 build/ts.js:496
 msgid "option_button_no"
 msgstr "No"
 
-#: build/ts.js:378
+#: build/ts.js:495
 msgid "option_button_yes"
 msgstr "Yes"
 
-#: build/ts.js:1752
+#: build/ts.js:1124
 msgid "overview_alert_mandatory"
 msgstr "Couldn’t send message. Please fill in the required fields"
 
-#: build/ts.js:1751
+#: build/ts.js:1123
 msgid "overview_alert_mandatory_title"
 msgstr "Required fields"
 
-#: src/overview/overview.1.html:138 src/overview/overview.html:146
+#: src/ext_itweet/overview/overview.html:98
+#: src/ext_rhb/overview/overview.html:155
 msgid "overview_button_delete"
 msgstr "Undo send"
 
-#: src/overview/overview.1.html:5 src/overview/overview.html:5
+#: src/ext_itweet/overview/overview.html:5 src/ext_rhb/overview/overview.html:5
 msgid "overview_button_new"
 msgstr "New message"
 
-#: src/overview/overview.1.html:134 src/overview/overview.html:142
+#: src/ext_itweet/overview/overview.html:94
+#: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_save"
 msgstr "Save changes"
 
-#: src/overview/overview.1.html:136 src/overview/overview.html:144
+#: src/ext_itweet/overview/overview.html:96
+#: src/ext_rhb/overview/overview.html:153
 msgid "overview_button_send"
 msgstr "Send"
 
-#: src/overview/overview.1.html:134 src/overview/overview.html:142
+#: src/ext_itweet/overview/overview.html:94
+#: src/ext_rhb/overview/overview.html:151
 msgid "overview_button_store"
 msgstr "Save"
 
-#: src/overview/overview.1.html:140 src/overview/overview.html:148
+#: src/ext_itweet/overview/overview.html:100
+#: src/ext_rhb/overview/overview.html:157
 msgid "overview_button_update"
 msgstr "Send update"
 
-#: build/ts.js:823
+#: build/ts.js:3684
 msgid "overview_cancel_option_message"
 msgstr "Do you want to delete the message?"
 
-#: build/ts.js:822
+#: build/ts.js:3683
 msgid "overview_cancel_option_title"
 msgstr "Message not sent!"
 
-#: build/ts.js:1693
+#: build/ts.js:1070
 msgid "overview_delete_option_message"
 msgstr "Do you want to make sending the message really undo?"
 
-#: build/ts.js:1692
+#: build/ts.js:1069
 msgid "overview_delete_option_title"
 msgstr "Warning"
 
-#: src/overview/overview.1.html:65 src/overview/overview.html:77
+#: src/ext_rhb/overview/overview.html:96
 msgid "overview_label_involvedPersons_placeholder"
 msgstr "There are no other people involved."
 
-#: src/overview/overview.html:20
+#: src/ext_itweet/overview/overview.html:19
+#: src/ext_rhb/overview/overview.html:20
 msgid "overview_label_location_placeholder"
-msgstr "Enter Location / Track / Trackkilometers<br>At least one value"
+msgstr "No place found."
 
-#: src/overview/overview.1.html:53 src/overview/overview.html:61
+#: src/ext_itweet/overview/overview.html:46
+#: src/ext_rhb/overview/overview.html:66
 msgid "overview_label_text_placeholder"
 msgstr "You have not entered any text yet."
 
-#: src/overview/overview.1.html:41 src/overview/overview.html:45
+#: src/ext_rhb/overview/overview.html:51
 msgid "overview_label_time_placeholder"
 msgstr "You have not set an eventtime."
 
-#: src/overview/overview.1.html:79 src/overview/overview.html:92
+#: src/ext_rhb/overview/overview.html:117
 msgid "overview_label_train_placeholder"
-msgstr "You have not set a train or wagon"
+msgstr "You have not set a train or vehicle"
 
-#: src/overview/overview.1.html:4 src/overview/overview.html:4
+#: src/ext_rhb/overview/overview.html:120
+msgid "overview_message_no_vehicle_data"
+msgstr "You have not entered any vehicle data yet"
+
+#: src/ext_rhb/overview/overview.html:24
+msgid "overview_message_track_position_invalid"
+msgstr "Track position is invalid"
+
+#: src/ext_itweet/overview/overview.html:4 src/ext_rhb/overview/overview.html:4
 msgid "overview_subtitle"
 msgstr "Editing"
 
-#: build/ts.js:1681
+#: build/ts.js:1061
 msgid "overview_title"
 msgstr "Overview"
 
-#: build/ts.js:132 build/ts.js:1695 build/ts.js:3614 build/ts.js:825
-#: src/app/progress_dialog.tpl.html:20 src/register/register.html:46
+#: build/ts.js:1072 build/ts.js:251 build/ts.js:3686
+#: src/app/progress_dialog.tpl.html:20 src/ext_itweet/register/register.html:32
 msgid "personel_button_cancel"
 msgstr "Cancel"
 
-#: src/register/register.html:35 src/rhb/mydata/mydata.html:37
+#: src/ext_itweet/register/register.html:31 src/ext_rhb/mydata/mydata.html:33
 msgid "personel_button_save"
 msgstr "Save"
 
-#: src/register/register.html:23
+#: src/ext_itweet/register/register.html:21
 msgid "personel_error_name"
 msgstr "Your name must be at least 3 characters long"
 
-#: src/register/register.html:9
+#: src/ext_itweet/register/register.html:8
 msgid "personel_placeholder_email"
 msgstr "E-mail"
 
-#: src/register/register.html:18
+#: src/ext_itweet/register/register.html:16
 msgid "personel_placeholder_name"
 msgstr "First name last name (optional)"
 
-#: src/register/register.html:28
+#: src/ext_itweet/register/register.html:25
 msgid "personel_placeholder_phone"
 msgstr "Phone (optional)"
 
-#: build/ts.js:1478 build/ts.js:1484
+#: src/ext_rhb/mydata/mydata.html:3
+msgid "personel_register"
+msgstr "Register"
+
+#: build/ts.js:863 build/ts.js:869
 msgid "photo_action_sheet_button_1"
 msgstr "Album"
 
-#: build/ts.js:1479 build/ts.js:1485
+#: build/ts.js:864 build/ts.js:870
 msgid "photo_action_sheet_button_2"
 msgstr "Camera"
 
-#: build/ts.js:1481 build/ts.js:1486
+#: build/ts.js:866 build/ts.js:871
 msgid "photo_action_sheet_button_cancel"
 msgstr "Stop"
 
-#: build/ts.js:1480
+#: build/ts.js:865
 msgid "photo_action_sheet_button_delete"
 msgstr "Delete"
 
-#: build/ts.js:1502
+#: build/ts.js:887
 msgid "photo_action_sheet_title"
 msgstr "Choose source"
 
-#: src/photo/photo.html:22
+#: src/photo/photo.html:21
 msgid "photo_button_skip"
 msgstr "Next without photo"
 
-#: src/photo/photo.html:3
+#: src/photo/photo.html:4
 msgid "photo_subtitle"
 msgstr "Create or select from album"
 
-#: build/ts.js:1471 src/overview/overview.html:105
+#: build/ts.js:856 src/ext_itweet/overview/overview.html:58
+#: src/ext_rhb/overview/overview.html:130
 msgid "photo_title"
 msgstr "Photos"
 
-#: src/rhb/location/location.html:12
+#: src/ext_rhb/location/location.html:12
 msgid "rhblocation_chooseLocation"
 msgstr "Location"
 
-#: src/rhb/location/location.html:31
-msgid "rhblocation_chooseTrack"
-msgstr "Track"
-
+#: src/ext_rhb/location/location.html:40
 msgid "rhblocation_choosePosition"
 msgstr "Track position"
 
-#: build/ts.js:3255 build/ts.js:3561 build/ts.js:3810 build/ts.js:3812
-#: src/rhb/mydata/mydata.html:9
+#: src/ext_rhb/location/location.html:26
+msgid "rhblocation_chooseTrack"
+msgstr "Track"
+
+#: src/ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.html:18
+#: src/ext_rhb/attributeTrain/attributeTrain.html:15
+#: src/ext_rhb/attributeTrain/attributeTrain.html:30
+#: src/ext_rhb/location/location.html:21 src/ext_rhb/location/location.html:35
+#: src/ext_rhb/mydata/mydata.html:12 src/ext_rhb/mydata/mydata.html:20
 msgid "search"
 msgstr "Search…"
 
-#: build/ts.js:148
+#: build/ts.js:266
 msgid "settings_message_cache_message"
 msgstr "The App cache has been cleared."
 
-#: build/ts.js:130
+#: build/ts.js:249
 msgid "settings_message_cache_question"
 msgstr "Do you really want to empty the App cache?"
 
-#: build/ts.js:129 build/ts.js:147
+#: build/ts.js:248 build/ts.js:265
 msgid "settings_message_cache_title"
 msgstr "App Cache"
 
-#: build/ts.js:99
+#: build/ts.js:218
 msgid "settings_title"
 msgstr "Settings"
 
-#: build/ts.js:115
+#: build/ts.js:234
 msgid "settings_title_clear_cache"
 msgstr "Empty the App cache"
 
-#: build/ts.js:114
+#: build/ts.js:233
 msgid "settings_title_demands"
 msgstr "Conditions"
 
-#: build/ts.js:113
+#: build/ts.js:232
 msgid "settings_title_help"
 msgstr "Help"
 
-#: build/ts.js:110
+#: build/ts.js:229
 msgid "settings_title_login"
-msgstr "Login"
+msgstr "Admin Login"
 
-#: build/ts.js:111
+#: build/ts.js:230
 msgid "settings_title_my_items"
 msgstr "Messages not sent"
 
-#: build/ts.js:109
+#: build/ts.js:228
 msgid "settings_title_profil"
 msgstr "My data"
 
-#: src/audio/audio.html:37
+#: src/audio/audio.html:38
 msgid "speech_button_delete"
 msgstr "Delete"
 
-#: src/audio/audio.html:32
+#: src/audio/audio.html:33
 msgid "speech_button_listen"
 msgstr "Play"
 
-#: src/audio/audio.html:45
+#: src/audio/audio.html:46
 msgid "speech_button_skip"
 msgstr "Next without record"
 
-#: src/audio/audio.html:20
+#: src/audio/audio.html:21
 msgid "speech_button_start"
 msgstr "Start record"
 
-#: src/audio/audio.html:23 src/audio/audio.html:33
+#: src/audio/audio.html:24 src/audio/audio.html:34
 msgid "speech_button_stop"
 msgstr "Stop"
 
-#: src/audio/audio.html:3
+#: src/audio/audio.html:4
 msgid "speech_subtitle"
 msgstr "Record"
 
-#: build/ts.js:1622 src/overview/overview.html:120
+#: build/ts.js:1004
 msgid "speech_title"
 msgstr "Language"
 
-#: build/ts.js:2548
+#: src/ext_rhb/attributeTime/attributeTime.html:11
+msgid "time_day"
+msgstr "Day"
+
+#: src/ext_rhb/attributeTime/attributeTime.html:31
+msgid "time_hours"
+msgstr "Hours"
+
+#: src/ext_rhb/attributeTime/attributeTime.html:37
+msgid "time_minutes"
+msgstr "Minutes"
+
+#: src/ext_rhb/attributeTime/attributeTime.html:17
+msgid "time_month"
+msgstr "Month"
+
+#: src/ext_rhb/attributeTime/attributeTime.html:23
+msgid "time_year"
+msgstr "Year"
+
+#: src/ext_rhb/attributeTrain/attributeTrain.html:7
+msgid "train_train_number"
+msgstr "Train number"
+
+#: src/ext_rhb/attributeTrain/attributeTrain.html:20
+msgid "train_vehicle_number"
+msgstr "Vehicle number"
+
+#: build/ts.js:1540
 msgid "upload_status_connect"
 msgstr "Connect…"
 
-#: build/ts.js:2560
+#: build/ts.js:1552
 msgid "upload_status_image"
 msgstr "Image"
 
-#: build/ts.js:2560
+#: build/ts.js:1552
 msgid "upload_status_speech"
 msgstr "Language"
 
-#: build/ts.js:1761 build/ts.js:2559 build/ts.js:2571
+#: build/ts.js:1133 build/ts.js:1551 build/ts.js:1563
 msgid "upload_status_title"
 msgstr "Upload"
 
-#: build/ts.js:1761 build/ts.js:2572
+#: build/ts.js:1133 build/ts.js:1564
 msgid "upload_status_tweet"
 msgstr "Information"
 
-msgid "lbl_info_file_mandatory_multi"
-msgstr "(Fill in at least on field*)"
+#: src/ext_rhb/overview/overview.html:81 src/ext_rhb/overview/overview.html:82
+#: src/ext_rhb/visibility/visibility.html:4
+msgid "visibility_subheader"
+msgstr "Confidential message"
 
-msgid "lbl_info_file_mandatory"
-msgstr "(Fill in content*)"
+#: build/ts.js:3453 src/ext_rhb/overview/overview.html:77
+msgid "visibility_title"
+msgstr "Visibility"
 
-#~ msgid "location_button_map_style"
-#~ msgstr "Map"
+msgid "Was"
+msgstr "What"
 
-#~ msgid "location_button_my_position"
-#~ msgstr "Position"
+msgid "Wer"
+msgstr "Who"
 
-#~ msgid "attribute_time_button_skip"
-#~ msgstr "Skip Eventtime"
+msgid "Warum"
+msgstr "Why"
 
-#~ msgid "date"
-#~ msgstr "Date"
+msgid "Wie"
+msgstr "How"
 
-#~ msgid "hours"
-#~ msgstr "h"
+msgid "Was ist die Idee bzw. die Verbesserung?"
+msgstr "What is the idea or improvement?"
 
-#~ msgid "minutes"
-#~ msgstr "min"
+msgid "Wer profitiert von der Idee?"
+msgstr "Who benefits from the idea?"
 
-#~ msgid "personen"
-#~ msgstr "persons"
+msgid "Wer ist der Kunde?"
+msgstr "Who is the customer?"
 
-#~ msgid "attribute_error_no_valid_person"
-#~ msgstr "No valid person selcted"
+msgid "Weshalb soll die RhB diese Idee umsetzen?"
+msgstr "Why should the RhB implement this idea?"
 
-#~ msgid "attribute_subtitle"
-#~ msgstr "Adding involved persons"
+msgid "Welchen Nutzen hat die Idee?"
+msgstr "What benefit does the idea have?"
 
-#~ msgid "attribute_text"
-#~ msgstr "Enter person-ID or name"
+msgid "Wie kann die Idee umgesetzt werden?"
+msgstr "How can the idea be implemented?"
 
-#~ msgid "department"
-#~ msgstr "Department"
-
-#~ msgid "firstName"
-#~ msgstr "Firstname"
-
-#~ msgid "lastName"
-#~ msgstr "Lastname"
-
-#~ msgid "mydata_change"
-#~ msgstr "Change"
-
-#~ msgid "person_id"
-#~ msgstr "Person-ID"
-
-#~ msgid "personel_title"
-#~ msgstr "My data"
-
-#~ msgid "general_warning_title"
-#~ msgstr "Warning"
-
-#~ msgid "general_button_next"
-#~ msgstr "Next"
-
-#~ msgid "upload_cancel_title"
-#~ msgstr "Cancel upload"
-
-#~ msgid "upload_cancel_msg"
-#~ msgstr "Do you want to cancel the upload?"
-
-#~ msgid "personel_text"
-#~ msgstr "You can modify them any time."
-
-#~ msgid "personel_subtitle"
-#~ msgstr "Enter"
-
-#~ msgid "personel_error_email"
-#~ msgstr "Invalid e-mail"
-
-#~ msgid "category_subtitle"
-#~ msgstr "Select"
-
-#~ msgid "message_chars"
-#~ msgstr "{0} Character left"
-
-#~ msgid "speech_button_continue"
-#~ msgstr "New record"
-
-#~ msgid "speech_label_recording"
-#~ msgstr "Speech…"
-
-#~ msgid "speech_label_playing"
-#~ msgstr "Playback..."
-
-#~ msgid "speech_label_timer"
-#~ msgstr "{0}/{1}s"
-
-#~ msgid "speech_alert_delete"
-#~ msgstr "Do you want to delete the record?"
-
-#~ msgid "speech_alert_overwrite"
-#~ msgstr "Do you want to replace the record?"
-
-#~ msgid "speech_label_meter"
-#~ msgstr "Level"
-
-#~ msgid "overview_button_cancel"
-#~ msgstr "Cancel"
-
-#~ msgid "delete_overview_title"
-#~ msgstr "Delete"
-
-#~ msgid "delete_failed_message"
-#~ msgstr "Deleting the message failed"
-
-#~ msgid "delete_send_succesfull"
-#~ msgstr "Message successfully deleted"
-
-#~ msgid "ping_failed_message"
-#~ msgstr "Server not available"
-
-#~ msgid "settings_title_mytweets"
-#~ msgstr "My iTweets"
-
-#~ msgid "help_subtitle"
-#~ msgstr "-"
-
-#~ msgid "help_text_title"
-#~ msgstr "-"
-
-#~ msgid "help_text"
-#~ msgstr "-"
-
-#~ msgid "general_button_back"
-#~ msgstr "Back"
-
-#~ msgid "delete_status_title"
-#~ msgstr "Delete"
-
-#~ msgid "delete_status_message"
-#~ msgstr "Sent message is deleted"
-
-#~ msgid "delete_status_success"
-#~ msgstr "Successfully deleted"
-
-#~ msgid "delete_status_failed"
-#~ msgstr "Delete failed"
-
-#~ msgid "general_info_no_connection_title"
-#~ msgstr "Connection problem"
-
-#~ msgid "general_info_no_connection_text"
-#~ msgstr "No connection with iTweet could be made. Please try again later."
-
-#~ msgid "login_last_login_text"
-#~ msgstr "Last login"
-
-#~ msgid "login_title_login"
-#~ msgstr "Login"
-
-#~ msgid "login_subtitle_login"
-#~ msgstr "Capture"
-
-#~ msgid "login_subtitle_logedin"
-#~ msgstr "Registered"
-
-#~ msgid "login_status_title"
-#~ msgstr "Login"
-
-#~ msgid "login_status_success"
-#~ msgstr "Registration successfully"
-
-#~ msgid "login_status_fail"
-#~ msgstr "Registration failed"
-
-#~ msgid "login_loged_in_as"
-#~ msgstr "Logged in as:"
-
-#~ msgid "item_saved_date"
-#~ msgstr "Created"
+msgid "Welche Umsetzungshinweise/-Vorschläge gibt es?"
+msgstr "Which implementation hints/suggestions are there?"

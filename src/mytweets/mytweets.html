@@ -12,7 +12,7 @@
 			<div class="md-list-item-text sm-list-item-text">
 	            <h3 class="sm-list-item-text-entry">{{tweet.location}}</h3>
 	            <h4>{{categoryService.getCategoryName(tweet)}}</h4>
-	            <h4>{{tweet.dateAdded | date:'dd.MM.yyyy HH:mm'}}</h4>
+	            <h4>{{tweet.dateAdded | date:'short'}}</h4>
 	        </div>
 	        <ng-md-icon icon='delete' style="fill: #B8B8B8" options='{"duration": 375}' ng-click="vm.itemDeleteClicked(tweet)" aria-label="Delete Item" class="md-secondary md-hue-3"></ng-md-icon>
     	<md-divider></md-divider>

@@ -19,6 +19,10 @@
 				<div ng-show="!storageService.currentTweet.itemQs.refLocationId && !storageService.currentTweet.itemQs.refTrackId && !storageService.currentTweet.itemQs.trackPosition " layout="column" layout-align="center center" class="md-padding">
 					<span class="invalid" translate>overview_label_location_placeholder</span>
 				</div>
+				<div ng-show="!vm.isValidNumber(storageService.currentTweet.itemQs.trackPosition)" layout="column" layout-align="center center"
+					 class="md-padding">
+					<span class="invalid" translate>overview_message_track_position_invalid</span>
+				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
@@ -35,6 +39,8 @@
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
+	</div>
+	<div layout="row" layout-sm="column">
 		<div flex ng-hide="vm.isCatergoryIeadsProposal()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_time")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -43,13 +49,13 @@
 				<md-divider></md-divider>
 				<div layout="row" layout-align="center center" class="md-padding">
 					<div ng-hide="storageService.currentTweet.itemQs.dateEvent" translate>overview_label_time_placeholder</div>
-					<div ng-show="storageService.currentTweet.itemQs.dateEvent">{{storageService.currentTweet.itemQs.dateEvent | date:'dd/MM/yyyy - HH:mm'}}</div>
+					<div ng-show="storageService.currentTweet.itemQs.dateEvent">{{storageService.currentTweet.itemQs.dateEvent | date:'short'}}</div>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column">
+	<div ng-hide="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
 		<div flex>
 			<md-card ng-click='vm.gotoDetail("app.text")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
@@ -64,8 +70,85 @@
 			</md-card>
 		</div>
 	</div>
-	<div layout="row" layout-sm="column" ng-hide="vm.isCatergoryIeadsProposal()">
+	<!-- Idea texts -->
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
 		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_what")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Was</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWhat" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWhat"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_who")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Wer</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWho" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWho"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_why")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Warum</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaWhy" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaWhy"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div ng-show="vm.isCatergoryIeadsProposal()" layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.text_idea_how")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3><span translate>message_title</span> <span translate>Wie</span><span>?</span></h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-hide="storageService.currentTweet.textIdeaHow" class="invalid" translate>overview_label_text_placeholder</span>
+					<span ng-bind="storageService.currentTweet.textIdeaHow"></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+
+	<div layout="row" layout-sm="column">
+		<div flex>
+			<md-card ng-click='vm.gotoDetail("app.rhb_visibility")' role="button">
+				<div layout="row" layout-align="start center" layout-fill>
+					<h3 translate>visibility_title</h3>
+				</div>
+				<md-divider></md-divider>
+				<div layout="row" layout-align="center center" class="md-padding">
+					<span ng-show="storageService.currentTweet.refItemVisibilityId === 2"><span translate>visibility_subheader</span>: <span translate>lbl_no</span></span>
+					<span ng-show="storageService.currentTweet.refItemVisibilityId === 3"><span translate>visibility_subheader</span>: <span translate>lbl_yes</span></span>
+				</div>
+				<img src="img/edit.png" class="overview-img-right" />
+			</md-card>
+		</div>
+	</div>
+	<div layout="row" layout-sm="column">
+		<div flex ng-hide="vm.isCatergoryIeadsProposal()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_involvedPersons")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
 					<h3 translate>attribute_title_involvedPersons</h3>
@@ -80,18 +163,23 @@
 				</div>
 			</md-card>
 		</div>
-		<div flex>
+		<div flex ng-hide="vm.isCatergoryIeadsProposal() || vm.isCatergoryComplaint()">
 			<md-card ng-click='vm.gotoDetail("app.rhb_attribute_train")' role="button">
 				<div layout="row" layout-align="start center" layout-fill>
 					<h3 translate>attribute_title_train</h3>
 				</div>
 				<md-divider></md-divider>
-				<div ng-show="storageService.currentTweet.itemQs.refTrainId || storageService.currentTweet.itemQs.refWagonId" layout="column" layout-align="center center" class="md-padding">
+				<div ng-show="storageService.currentTweet.itemQs.refTrainId || storageService.currentTweet.itemQs.wagonsIds" layout="column" layout-align="center center" class="md-padding">
 					<div ng-show="storageService.currentTweet.itemQs.refTrainId"><span ng-bind="storageService.currentTweet.itemQs.refTrainName"></span></div>
-					<div ng-show="storageService.currentTweet.itemQs.refWagonId"><span ng-bind="storageService.currentTweet.itemQs.refWagonName"></span></div>
+					<div ng-repeat="wagonName in storageService.currentTweet.itemQs.wagonsNames">
+						<div ng-bind="wagonName"></div>
+					</div>
 				</div>
-				<div ng-show="!storageService.currentTweet.itemQs.refTrainId && !storageService.currentTweet.itemQs.refWagonId" layout="column" layout-align="center center" class="md-padding">
+				<div ng-show="!storageService.currentTweet.itemQs.refTrainId && !storageService.currentTweet.itemQs.wagonsIds" layout="column" layout-align="center center" class="md-padding">
 					<span translate>overview_label_train_placeholder</span>
+				</div>
+				<div layout="column" layout-align="center center" class="md-padding">
+					<span ng-show="!vm.isValidVehicle()" class="invalid" translate>overview_message_no_vehicle_data</span>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />
 			</md-card>
@@ -108,21 +196,6 @@
 					<div ng-repeat="image in mediaService.dataImages() track by $index" class="md-button md-icon-button photoButton">
 						<image flex ng-if="image" ng-src="{{image}}" class="myImg" />
 						<image flex ng-if="!image" ng-src="img/camera/camera_cleargrey.png" class="myImg" />
-					</div>
-				</div>
-				<img src="img/edit.png" class="overview-img-right" />
-			</md-card>
-		</div>
-		<div flex>
-			<md-card ng-click='vm.gotoDetail("app.audio")' role="button">
-				<div layout="row" layout-align="start center" layout-fill>
-					<h3 translate>speech_title</h3>
-				</div>
-				<md-divider></md-divider>
-				<div layout="row" layout-align="center center" class="md-padding">
-					<div class="md-button md-icon-button photoButton">
-						<image ng-show="storageService.getAudio()" ng-src="img/microphone_darkgrey_big.png" class="myImg" />
-						<image ng-hide="storageService.getAudio()" ng-src="img/microphone_cleargrey_big.png" class="myImg" />
 					</div>
 				</div>
 				<img src="img/edit.png" class="overview-img-right" />

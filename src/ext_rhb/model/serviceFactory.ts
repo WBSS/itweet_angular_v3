@@ -9,9 +9,9 @@ module itweet.model {
             public $timeout: angular.ITimeoutService,
             public $log: angular.ILogService,
             public gettextCatalog) {
-                super($http, config, $q, $window, $rootScope, ItweetStorage, $timeout, $log, gettextCatalog);
-                this.metadataService = new MetadataService(this);
-                this.categoryService = new RHBCategoryService(this);
+            super($http, config, $q, $window, $rootScope, ItweetStorage, $timeout, $log, gettextCatalog);
+            this.metadataService = new MetadataService(this);
+            this.categoryService = new RHBCategoryService(this);
             }
     }
     
@@ -55,6 +55,7 @@ module itweet.model {
             }
             else return null;
         }
+
     }
     
     export class MetadataService extends BasicService<MetadataResponse> {
@@ -84,6 +85,47 @@ module itweet.model {
                 this.runner.config.langISO + "/" +
                 this.contextToken()
             }
+        }
+
+        getCategoryQsById(id: number): any {
+            if (!id) return null;
+
+            var tweet = this.runner.ItweetStorage.currentTweet;
+            var token = itweet.model.Tweet.getCurrentContextToken(tweet, this.runner.ItweetStorage.user);
+            var categoriesQs = this.runner.ItweetStorage.metdataStore[token].categoriesQs;
+
+            for (var i = 0; i < categoriesQs.length; i++) {
+                if (categoriesQs[i].id === id) {
+                    return categoriesQs[i];
+                }
+            }
+        }
+
+        getCategoryQsTree(categoryQs: any) {
+            if (!categoryQs) {
+                return null;
+            }
+            var categoryQsTree = [];
+            var categoryQsParent;
+
+            if (categoryQs.parentId) {
+                categoryQsParent = this.getCategoryQsById(categoryQs.parentId);
+                if (categoryQsParent.parentId) {
+                    categoryQsTree[0] = this.getCategoryQsById(categoryQsParent.parentId);
+                    categoryQsTree[1] = categoryQsParent;
+                    categoryQsTree[2] = categoryQs;
+                } else {
+                    categoryQsTree[0] = categoryQsParent;
+                    categoryQsTree[1] = categoryQs;
+                    categoryQsTree[2] = null;
+                }
+            } else {
+                categoryQsTree[0] = categoryQs;
+                categoryQsTree[1] = null;
+                categoryQsTree[2] = null;
+            }
+
+            return categoryQsTree;
         }
     }
 }

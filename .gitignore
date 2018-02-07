@@ -1,7 +1,14 @@
+/publish/wbss_mobileapps.keystore
+/publish/key.txt
 bower_components/
 node_modules/
 platforms/
 plugins/
-www/
+www/css/
+www/img
+www/js
+www/*.html
 .idea/
 build/
+temp/
+.tscache/

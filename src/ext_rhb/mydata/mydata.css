@@ -20,3 +20,8 @@ md-autocomplete button md-icon{
 	font-weight: bold;
 	padding-left: 20px;
 }
+
+.highlight {
+	font-weight: bold;
+	color: black !important;
+}

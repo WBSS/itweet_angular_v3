@@ -86,46 +86,33 @@ module itweet.location {
 			if(meta.locations){
 				this.locations = new Array();
 				for (var i=0; i<meta.locations.length;i++){
-					var newLocation = {
-						id: meta.locations[i].id,
-						name: meta.locations[i].name,
-						query: meta.locations[i].name.toLocaleLowerCase()
+					if (meta.locations[i].enabled) {
+						var newLocation = {
+							id: meta.locations[i].id,
+							name: meta.locations[i].name,
+							query: meta.locations[i].name.toLocaleLowerCase()
+						}
+						this.locations.push(newLocation);
 					}
-					this.locations.push(newLocation);
 				}
 				
 			}
-			if(meta.locations){
+			if(meta.tracks){
 				this.loaded = true;
 				this.tracks = new Array();
 				for (var i=0; i<meta.tracks.length;i++){
-					var newTrack = {
-						id: meta.tracks[i].id,
-						name: meta.tracks[i].name,
-						query: meta.tracks[i].name.toLocaleLowerCase()
+					if (meta.tracks[i].enabled) {
+						var newTrack = {
+							id: meta.tracks[i].id,
+							name: meta.tracks[i].name,
+							query: meta.tracks[i].name.toLocaleLowerCase()
+						}
+						this.tracks.push(newTrack);
 					}
-					this.tracks.push(newTrack);
 				}
 			}
 		}
 		
-		selectedLoactionChange(location){
-			console.log('change location');
-			if(typeof location != 'undefined'){
-				this.$window.document.activeElement.blur();
-				this.selectedLoaction = location;
-			} else this.selectedLoaction = null;
-			
-		}
-		
-		selectedTrackChange(track){
-			console.log('change track',track);
-			if(typeof track != 'undefined'){
-				this.selectedTrack = track;
-				this.$window.document.activeElement.blur();
-			} else this.selectedTrack = null;
-		}
-
 		querySearch(query,list){
 			var results = list.filter(this.createFilterFor(query));
 			var t = results.slice(0,12);
@@ -164,7 +151,7 @@ module itweet.location {
 				this.$scope.storageService.currentTweet.itemQs.refTrackId = null;
 				this.$scope.storageService.currentTweet.itemQs.refTrackName = null;
 			}
-			
+
 			if(this.currentTrackPosition[0] != "" || this.currentTrackPosition[1] != ""){
 				if(this.currentTrackPosition[1] == "") this.currentTrackPosition[1] ="0"
 				if(this.currentTrackPosition[0] == "") this.currentTrackPosition[0] ="0"

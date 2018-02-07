@@ -19,6 +19,8 @@ module itweet.map {
 		private currentPosCircle: any;
 		public logCircle: any;
 		private center: any;
+		private latitudeDefault: number;
+		private longitudeDefualt: number;
 
 
 		//public loadOverlay:any
@@ -28,7 +30,7 @@ module itweet.map {
 		// See http://docs.angularjs.org/guide/di
 		public static $inject = [
 			'$scope','$log', 'gettextCatalog','uiGmapGoogleMapApi','uiGmapIsReady','ItweetStorage',
-			'ItweetNavigation','$rootScope','itweetNetwork','$cordovaGeolocation'
+			'ItweetNavigation','$rootScope','itweetNetwork'
 		];
 
 
@@ -43,10 +45,13 @@ module itweet.map {
 			private ItweetStorage : itweet.model.StorageService,
 			private ItweetNavigation: itweet.navigation.NavigationService,
 			private $rootScope: angular.IRootScopeService,
-			public iTweetNetwork: itweet.model.ServiceFactory,
-			private $cordovaGeolocation
+			public iTweetNetwork: itweet.model.ServiceFactory
 		) {
 			$scope.vm = this;
+
+			// defaults (WBSS zurich)
+			this.latitudeDefault=47.3738203;
+		    this.longitudeDefualt=8.5357981;
 
 			/* app ctrl */
 			$scope.menu_parameters = {'fullscreen':false};
@@ -64,8 +69,7 @@ module itweet.map {
 			// configure gmap
 			$scope.gmap = {
 				// default map center
-				//center: { latitude: 47.3738203, longitude: 8.5357981 },
-				center: { latitude: 46.854806418346406, longitude: 9.530209799110247 },
+				center: { latitude: this.latitudeDefault, longitude: this.longitudeDefualt },
 				zoom: 16,
 				// register events
 				events:{
@@ -142,7 +146,7 @@ module itweet.map {
 			}};
 
 			// set geo position app startup
-			 $scope.$watch(() => { return $scope.position }, (dataNew, dataOld) => {
+			 $scope.$watch(() => { return this.$scope.position }, (dataNew, dataOld) => {
 			 	if(dataNew && this.isInitialPos){
 					this.isInitialPos = false;
 					this.updatePos();
@@ -161,7 +165,6 @@ module itweet.map {
 				&& this.$scope.position.coords
 				&& this.$scope.gmap.map){
 				//var
-				this.$scope.logCircle = '';
 				let coords: any;
 				let accurancy: number;
 				//set var
@@ -172,14 +175,11 @@ module itweet.map {
 				if(this.currentPosCircle == null)
 				{
 					this.setCircle(coords);
-					this.$scope.logCircle = 'create';
 				}
 				else
 				{
 					this.currentPosCircle.setCenter(new google.maps.LatLng(coords.latitude, coords.longitude));
 					this.currentPosCircle.setRadius(accurancy);
-					this.$scope.logCircle = 'setCenter: ' + coords.latitude;
-
 				}
 
 				// center map current position
@@ -311,8 +311,8 @@ module itweet.map {
 				}
 			]).config(function(uiGmapGoogleMapApiProvider) {
 		uiGmapGoogleMapApiProvider.configure({
-
-			v: '3.23',
+			key: 'AIzaSyCn8zzN0dwWB22iImBpQYowkDscrK8pgXk',
+			v: '3.26',
 			libraries: 'places',
 			language:document.lang
 		});

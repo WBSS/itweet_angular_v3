@@ -22,7 +22,6 @@
 /// <reference path='app/menu.ts' />
 /// <reference path="context/context.ts" />
 /// <reference path="category/category.ts" />
-/// <reference path="text/text.ts" />
 /// <reference path="photo/photo.ts" />
 /// <reference path="audio/audio.ts" />
 /// <reference path="overview/overview.ts" />
@@ -33,7 +32,7 @@
 // *** common services *** //
 /// <reference path='model/awesomeFactory.ts' />
 /// <reference path='model/config.ts' />
-/// <reference path='model/storage.ts' />
+/// <reference path='model/storageService.ts' />
 /// <reference path='model/mediaFactory.ts' />
 
 // *** common models *** //
@@ -51,9 +50,12 @@
 /// <reference path='ext_rhb/attributeInvolvedPersons/attributeInvolvedPersons.ts' />
 /// <reference path='ext_rhb/attributeTime/attributeTime.ts' />
 /// <reference path='ext_rhb/attributeTrain/attributeTrain.ts' />
+/// <reference path='ext_rhb/visibility/visibility.ts' />
+/// <reference path='ext_rhb/qrInventory/qrInventory.ts' />
+/// <reference path="ext_rhb/text/text.ts" />
 
 // *** rhb services *** //
-/// <reference path='ext_rhb/navigation.ts' />
+/// <reference path='ext_rhb/navigationService.ts' />
 /// <reference path='ext_rhb/model/serviceFactory.ts' />
 /// <reference path='ext_rhb/modules.ts' />
 

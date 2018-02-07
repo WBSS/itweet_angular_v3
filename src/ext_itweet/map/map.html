@@ -46,14 +46,16 @@
             <ng-md-icon icon='remove_circle_outline' style="fill: #666666"></ng-md-icon>
         </md-button>-->
         <md-button class="map_button md-icon-button md-primary" ng-click="vm.myPosition()" aria-label="Settings" style="right:10px;top:10px;">
+            <md-tooltip md-direction="bottom"><span translate>lbl_map_geo_position</span></md-tooltip>
             <ng-md-icon icon='my_location' style="fill: #666666"></ng-md-icon>
         </md-button>
         <md-button class="map_button md-icon-button md-primary" ng-click="vm.toggleMap()" aria-label="Settings" style="right:68px;top:10px;">
+            <md-tooltip md-direction="bottom"><span translate>lbl_map_layer_selection</span></md-tooltip>
             <ng-md-icon icon='layers' style="fill: #666666"></ng-md-icon>
         </md-button>
     </div>
 </div>
 <div class="bottom-navigation-box animate-hide" ng-hide="menu_parameters.fullscreen" style="{{brand.getFooterStyle()}}">
-    <md-button class="md-primary footer-button" ng-click="navigationService.next()" style="{{brand.getFooterStyle()}}">{{logCircle}}&nbsp;&nbsp;{{isWatchPosNew}}&nbsp;&nbsp;{{errorGeoLocation}}&nbsp;&nbsp;<span translate>location_button_next</span>&nbsp;&nbsp;{{position.coords.latitude}}&nbsp;|&nbsp;{{position.coords.longitude}}</md-button>
+    <md-button class="md-primary footer-button" ng-click="navigationService.next()" style="{{brand.getFooterStyle()}}"><span translate>location_button_next</span></md-button>
     <!-- ng-if="vm.$previousState.get().state.name != 'map.overview'"-->
 </div>

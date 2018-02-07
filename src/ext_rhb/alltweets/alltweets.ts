@@ -9,10 +9,12 @@ module itweet.alltweets {
             var token = this.$scope.storageService.user.token || this.$scope.storageService.currentTweet.contextToken;
             var userid = this.$scope.storageService.user.userID;
 
-            var url =     this.ItweetConfig.endpoint_myitems+"/"+this.ItweetConfig.appId+"/"+lat+"/"+lng+"/"+
-                this.ItweetConfig.langISO+"/"+this.ItweetConfig.countryISO+"/"+this.ItweetConfig.platform+"/"+userid+"/"+token;
+            var url = this.ItweetConfig.endpoint_myitems + this.ItweetConfig.appId + "/" + lat + "/" + lng + "/" +
+                this.ItweetConfig.langISO + "/" + this.ItweetConfig.countryISO + "/" + this.ItweetConfig.platform + "/" + userid + "/" + token;
 
-            this.$log.debug( "Tweet URL: "+url);
+            var testUrl = "https://www.google.ch/";
+
+            this.$log.debug( "Tweet URL: " + url);
 
             return this.$sce.trustAsResourceUrl(url);
 

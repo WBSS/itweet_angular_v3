@@ -32,7 +32,7 @@
 
 // *** common services *** //
 /// <reference path='model/config.ts' />
-/// <reference path='model/storage.ts' />
+/// <reference path='model/storageService.ts' />
 /// <reference path='model/mediaFactory.ts' />
 
 // *** common models *** //
@@ -43,9 +43,13 @@
 /// <reference path='browser-fix.ts' />
 
 // *** itweet extra controllers *** //
+/// <reference path="ext_itweet/overview/overview.ts" />
+
+// *** itweet services *** //
 /// <reference path='ext_itweet/map/map.ts' />
-/// <reference path='ext_itweet/navigation.ts' />
+/// <reference path='ext_itweet/navigationService.ts' />
 /// <reference path='ext_itweet/register/register.ts' />
+/// <reference path='ext_itweet/overview/overview.ts' />
 /// <reference path='ext_itweet/modules.ts' />
 
 // *** itweet extra models *** //

@@ -5,7 +5,6 @@
  * app.default_route: set in properties.ts (dependence on app type)
  * uk: 2016-04-28
  */
-
 module itweet {
 
      angular.module('itweet', app.angular_modules)

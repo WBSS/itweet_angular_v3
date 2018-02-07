@@ -9,7 +9,6 @@ module itweet.mydata {
 		public loaded: Boolean = false;
 		public selectedPerson: any;
 		public searchText: string;
-		public searchPlaceholder:string;
 		public validPerson: Boolean = true;
 		public static $inject = [
 			'$scope', '$previousState', '$state', 'gettextCatalog', 'itweetNetwork', 'ItweetStorage', '$stateParams','ItweetNavigation','$window'
@@ -52,9 +51,6 @@ module itweet.mydata {
 				}
 			});
 			$scope.vm.searchText = "";
-			$scope.vm.searchPlaceholder = this.gettextCatalog.getString('search');
-			
-			
 		}
 
 		updateByMeta(meta: itweet.model.MetadataResponse = this.network.metadataService.getResponseData()) {
@@ -63,15 +59,17 @@ module itweet.mydata {
 				this.loaded = true;
 				this.persons = new Array();
 				for (var i=0; i<meta.persons.length;i++){
-					var newPerson = {
-						id: meta.persons[i].id,
-						firstName: meta.persons[i].firstName,
-						lastName: meta.persons[i].lastName,
-						department: meta.persons[i].department,
-						query: meta.persons[i].firstName.toLowerCase()+' '+meta.persons[i].lastName.toLowerCase(),
-						queryReverse: meta.persons[i].lastName.toLowerCase()+' '+meta.persons[i].firstName.toLowerCase()
+					if (meta.persons[i].enabled) {
+						var newPerson = {
+							id: meta.persons[i].id,
+							firstName: meta.persons[i].firstName,
+							lastName: meta.persons[i].lastName,
+							department: meta.persons[i].department,
+							query: meta.persons[i].firstName.toLowerCase() + ' ' + meta.persons[i].lastName.toLowerCase(),
+							queryReverse: meta.persons[i].lastName.toLowerCase() + ' ' + meta.persons[i].firstName.toLowerCase()
+						}
+						this.persons.push(newPerson);
 					}
-					this.persons.push(newPerson);
 				}
 				console.log(this.persons);
 				

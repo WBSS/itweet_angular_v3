@@ -49,7 +49,7 @@ module itweet.category {
 			this.displayName = this.network.categoryService.getCategoryName() + (append? "/" + append:"");
 			
 			if (meta && meta.categoriesQs) {
-				this.categories = meta.categoriesQs.filter((category) => category.parentId == parentId);
+				this.categories = meta.categoriesQs.filter((category) => category.parentId == parentId && category.enabled);
 			}
 		}
 

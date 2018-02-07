@@ -13,6 +13,7 @@ module itweet.model {
         address: string;
         location: string;
         refItemCategoryId: number;
+        refItemCategory: any;
         txt: string;
         mail: string;
         name: string;

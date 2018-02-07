@@ -18,6 +18,8 @@ module itweet.model {
         address: string;
         location: string;
         refItemCategoryId: number;
+        refItemCategory: any;
+        refItemVisibilityId: number;
         txt: string;
         mail: string;
         name: string;
@@ -26,6 +28,11 @@ module itweet.model {
         loginToken: string;
         contextToken: string;
         guid: string;
+        // Idea texts
+        textIdeaWhat: string;
+        textIdeaWho: string;
+        textIdeaWhy: string;
+        textIdeaHow: string;
         
         sent: boolean;
         save: boolean;
@@ -96,35 +103,43 @@ module itweet.model {
         firstName: string
         lastName: string
         department: string
+        enabled: boolean
     }
     export interface CategoriesQs {
         id: number
         name: string
         parentId: number
+        enabled: boolean
     }
     export interface Train {
         id: string
         trainNr: string
         route: string
         carrier: string
+        enabled: boolean
     }
     export interface Wagon {
         id: string
         wagonNr: string
         objectName: string
         name: string
+        orgCode: string
+        owner: string
+        enabled: boolean
     }
     export interface Location {
         id: string
         kmFrom: string
         kmTo: string
         name: string
+        enabled: boolean
     }
     export interface Track {
         id: string
         kmFrom: string
         kmTo: string
         name: string
+        enabled: boolean
     }
     export interface MetadataResponse {
         persons: Person[]
@@ -140,16 +155,34 @@ module itweet.model {
         refItemCategoryQsId: number = null
         refTrainId: string = null
         refTrainName: string = null
-        refWagonId: string = null
-        refWagonName: string = null
         refLocationId: number = null
         refTrackId: number = null
         refLocationName: string = null
         refTrackName: string = null
         trackPosition: number = null
         personsInvolvedIds:number[] = null
-        personsInvolvedNames:string[] =null
+        personsInvolvedNames:string[] = null
         dateEvent: string = null
+        wagonsIds:string[] = null
+        wagonsNames:string[] = null
     }
 
+    export class RefItemVisibility {
+        id: number;
+        nameTranslated: string;
+    }
+
+    export class WebServiceFilter {
+        interfaceShort: string;
+        objectId: string;
+    }
+
+    export class Record {
+        properties: Property[];
+    }
+
+    export class Property {
+        name: string;
+        value: string;
+    }
 }

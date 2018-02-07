@@ -1,7 +1,7 @@
 <ng-include src="'app/menu.html'"></ng-include>
-<md-subheader class="md-primary" style="{{::subheaderStyle}}">
-    <span style="colcor: #ffffff">Registrieren</span>
-</md-subheader>
+<!--<<md-subheader class="md-primary" style="{{::subheaderStyle}}">
+    <span style="color: #ffffff" translate>personel_register</span>
+</md-subheader>-->
 <md-content class="md-padding" flex>
       <form name="inputForm" ng-submit="vm.saveRegister()">
          <md-input-container>
@@ -17,7 +17,7 @@
               <input ng-minlength="3" md-maxlength="64" name="iname" ng-model="vm.user.name" type="text">
               <div ng-messages="inputForm.iname.$error">
                 <div ng-message="md-maxlength"><span translate>input_error_too_long</span></div>
-                <div ng-message="md-minlength"><span translate>This does not work</span></div>
+                <div ng-message="md-minlength"><span translate>input_error_too_short</span></div>
                 <div ng-message="minlength"><span translate>personel_error_name</span></div>
               </div>
         </md-input-container>

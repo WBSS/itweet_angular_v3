@@ -81,7 +81,7 @@ module itweet.login {
                    //ourData.title = "Hello World";
                 },
             	()=> {
-                    ourData.title = 'login_status_fail';
+                    ourData.title = this.gettextCatalog.getString('login_status_fail');
             		ourData.text = this.network.loginService.responseError;
                     ourData.progressing = undefined;
                 },
